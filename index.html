@@ -75,12 +75,12 @@
         .nav-container {
             max-width: 1200px;
             margin: auto;
-            padding: 16px 24px;
+            padding: 15px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 14px;
         }
 
         .brand {
@@ -90,7 +90,7 @@
             text-decoration: none;
             color: var(--dot-navy);
             font-weight: 800;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             letter-spacing: -0.02em;
         }
 
@@ -110,7 +110,7 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 22px;
             flex-wrap: wrap;
         }
 
@@ -118,7 +118,7 @@
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.92rem;
+            font-size: 0.86rem;
             text-transform: uppercase;
             letter-spacing: 0.04em;
             position: relative;
@@ -137,18 +137,18 @@
             transition: width 0.25s ease;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active-link {
             color: var(--dot-blue);
         }
 
-        nav a:hover::after {
+        nav a:hover::after, nav a.active-link::after {
             width: 100%;
         }
 
         .nav-cta {
             background: var(--dot-blue);
             color: var(--white) !important;
-            padding: 10px 20px;
+            padding: 9px 18px;
             border-radius: 50px;
             transition: background 0.25s ease, transform 0.2s ease;
         }
@@ -216,12 +216,14 @@
             flex-wrap: wrap;
         }
 
-        .btn-primary, .btn-outline {
-            display: inline-block;
-            padding: 14px 30px;
+        .btn-primary, .btn-outline, .btn-blue {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             text-decoration: none;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
         }
@@ -249,6 +251,16 @@
             transform: translateY(-2px);
         }
 
+        .btn-blue {
+            background: var(--dot-blue);
+            color: var(--white);
+        }
+
+        .btn-blue:hover {
+            background: var(--dot-emerald);
+            transform: translateY(-2px);
+        }
+
         /* Shared Section Styles */
         section {
             padding: 80px 24px;
@@ -261,6 +273,19 @@
 
         .section-header {
             margin-bottom: 40px;
+        }
+
+        .section-header-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .section-header-row .section-header {
+            margin-bottom: 0;
         }
 
         .section-kicker {
@@ -339,19 +364,6 @@
         /* Destinations Carousel Section */
         #destinations {
             background: var(--bg-light);
-        }
-
-        .carousel-header-row {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 32px;
-        }
-
-        .carousel-header-row .section-header {
-            margin-bottom: 0;
         }
 
         .carousel-controls {
@@ -455,7 +467,6 @@
             opacity: 0.9;
         }
 
-        /* Individual Card DOT Palette Colors & Background Photos */
         .card-minalungao { --card-rgb: 0, 122, 74; }
         .card-minalungao .card-bg {
             background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80');
@@ -552,17 +563,169 @@
             background: var(--dot-blue);
         }
 
-        /* =========================================================
-           DESTINATION DETAIL PAGE (Under the DOT Ribbon & Header)
-           ========================================================= */
-        #destinationPage {
+        /* ==================== CLICKABLE CULTURE CARDS WITH IMAGES ==================== */
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            margin-top: 24px;
+        }
+
+        .culture-item {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border: 1px solid #E2E8F0;
+            border-radius: 18px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 8px 22px rgba(11, 31, 58, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .culture-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 34px rgba(11, 31, 58, 0.14);
+        }
+
+        .culture-img-wrap {
+            position: relative;
+            height: 215px;
+            overflow: hidden;
+        }
+
+        .culture-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+
+        .culture-item:hover .culture-img-wrap img {
+            transform: scale(1.07);
+        }
+
+        .culture-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(11, 31, 58, 0.78);
+            backdrop-filter: blur(6px);
+            color: var(--white);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 5px 12px;
+            border-radius: 50px;
+        }
+
+        .culture-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .culture-dot {
+            width: 44px;
+            height: 5px;
+            border-radius: 4px;
+            margin-bottom: 14px;
+        }
+
+        .culture-item h3 {
+            color: var(--dot-navy);
+            font-size: 1.22rem;
+            margin-bottom: 10px;
+        }
+
+        .culture-item p {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+
+        .culture-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 0.86rem;
+            color: var(--dot-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: gap 0.25s ease;
+        }
+
+        .culture-item:hover .culture-cta {
+            gap: 12px;
+        }
+
+        /* Gallery Preview on Homepage */
+        #gallery {
+            background: var(--bg-light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 260px;
+            box-shadow: 0 8px 20px rgba(11, 31, 58, 0.1);
+            background: var(--dot-navy);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            inset: auto 0 0 0;
+            padding: 18px 18px 16px;
+            background: linear-gradient(180deg, transparent 0%, rgba(11, 31, 58, 0.86) 100%);
+            color: var(--white);
+        }
+
+        .gallery-caption span {
+            display: block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--dot-gold);
+            font-weight: 700;
+        }
+
+        .gallery-caption strong {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        /* ==================== SUBPAGES (DOT-STYLED UNDER RIBBON) ==================== */
+        .subpage {
             background: var(--bg-light);
             min-height: 85vh;
         }
 
         .detail-hero {
             position: relative;
-            min-height: 52vh;
+            min-height: 48vh;
             display: flex;
             align-items: flex-end;
             color: var(--white);
@@ -579,9 +742,9 @@
             z-index: -1;
             background: linear-gradient(
                 180deg,
-                rgba(var(--detail-rgb, 0, 56, 168), 0.32) 0%,
-                rgba(var(--detail-rgb, 0, 56, 168), 0.65) 55%,
-                rgba(11, 31, 58, 0.90) 100%
+                rgba(var(--detail-rgb, 0, 56, 168), 0.34) 0%,
+                rgba(var(--detail-rgb, 0, 56, 168), 0.68) 55%,
+                rgba(11, 31, 58, 0.92) 100%
             );
         }
 
@@ -603,8 +766,8 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.88rem;
-            margin-bottom: 24px;
+            font-size: 0.86rem;
+            margin-bottom: 22px;
             transition: background 0.25s ease, transform 0.2s ease;
         }
 
@@ -615,7 +778,7 @@
         }
 
         .detail-breadcrumb {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--dot-gold);
@@ -624,19 +787,19 @@
         }
 
         .detail-hero h1 {
-            font-size: clamp(2rem, 5vw, 3.4rem);
+            font-size: clamp(2rem, 5vw, 3.3rem);
             font-weight: 800;
             line-height: 1.15;
             margin-bottom: 12px;
         }
 
         .detail-tagline {
-            font-size: 1.1rem;
-            max-width: 720px;
+            font-size: 1.08rem;
+            max-width: 740px;
             color: rgba(255, 255, 255, 0.92);
         }
 
-        /* Quick Facts Ribbon */
+        /* Quick Facts Bar */
         .facts-bar {
             background: var(--white);
             border-bottom: 1px solid #E2E8F0;
@@ -659,7 +822,7 @@
 
         .fact-item span {
             display: block;
-            font-size: 0.75rem;
+            font-size: 0.74rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--text-muted);
@@ -669,19 +832,25 @@
 
         .fact-item strong {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.98rem;
+            font-size: 0.96rem;
             color: var(--dot-navy);
         }
 
-        /* Detail Body Content */
+        /* Detail Body Layout */
         .detail-content {
             max-width: 1200px;
             margin: auto;
-            padding: 56px 24px 80px;
+            padding: 52px 24px 80px;
             display: grid;
             grid-template-columns: 1.6fr 1fr;
             gap: 40px;
             align-items: start;
+        }
+
+        .subpage-body {
+            max-width: 1200px;
+            margin: auto;
+            padding: 56px 24px 84px;
         }
 
         .detail-card {
@@ -746,7 +915,6 @@
             font-size: 0.92rem;
         }
 
-        /* Sidebar Travel Guide */
         .sidebar-card {
             background: var(--white);
             border-radius: 18px;
@@ -808,73 +976,156 @@
             transform: translateX(4px);
         }
 
-        /* Culture & Heritage Section */
-        .culture-grid {
+        /* Editorial Entry Cards (Used on Cuisine, Restaurants & Expanded Culture Pages) */
+        .entry-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-            margin-top: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
         }
 
-        .culture-item {
+        .entry-card {
             background: var(--white);
-            border: 1px solid #E2E8F0;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: 0 4px 14px rgba(11, 31, 58, 0.04);
-            transition: transform 0.25s ease;
-        }
-
-        .culture-item:hover {
-            transform: translateY(-4px);
-        }
-
-        .culture-dot {
-            width: 42px;
-            height: 6px;
-            border-radius: 4px;
-            margin-bottom: 16px;
-        }
-
-        .culture-item h3 {
-            color: var(--dot-navy);
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-        }
-
-        .culture-item p {
-            color: var(--text-muted);
-            font-size: 0.94rem;
-        }
-
-        /* Gallery Section */
-        #gallery {
-            background: var(--bg-light);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-card {
-            position: relative;
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
-            height: 250px;
-            box-shadow: 0 8px 20px rgba(11, 31, 58, 0.1);
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 8px 24px rgba(11, 31, 58, 0.06);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .gallery-card img {
+        .entry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 34px rgba(11, 31, 58, 0.12);
+        }
+
+        .entry-img {
+            position: relative;
+            height: 225px;
+            overflow: hidden;
+        }
+
+        .entry-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.45s ease;
         }
 
-        .gallery-card:hover img {
+        .entry-card:hover .entry-img img {
             transform: scale(1.06);
+        }
+
+        .entry-pill {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(11, 31, 58, 0.82);
+            color: var(--dot-gold);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 5px 12px;
+            border-radius: 50px;
+        }
+
+        .entry-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .entry-body h3 {
+            color: var(--dot-navy);
+            font-size: 1.22rem;
+            margin-bottom: 8px;
+        }
+
+        .entry-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .meta-chip {
+            font-size: 0.76rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 50px;
+            background: var(--bg-light);
+            color: var(--dot-blue);
+            border: 1px solid #DBEAFE;
+        }
+
+        .meta-chip.red {
+            color: var(--dot-red);
+            background: #FEF2F2;
+            border-color: #FECACA;
+        }
+
+        .meta-chip.green {
+            color: var(--dot-emerald);
+            background: #ECFDF5;
+            border-color: #A7F3D0;
+        }
+
+        .entry-body p {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            flex: 1;
+        }
+
+        /* Gallery Filter Buttons */
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 2px solid #CBD5E1;
+            background: var(--white);
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 0.86rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--dot-blue);
+            border-color: var(--dot-blue);
+            color: var(--white);
+        }
+
+        /* Cross-Page Banner CTA */
+        .cross-cta {
+            margin-top: 48px;
+            background: linear-gradient(135deg, var(--dot-navy) 0%, var(--dot-blue) 100%);
+            color: var(--white);
+            border-radius: 20px;
+            padding: 36px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cross-cta h3 {
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+        }
+
+        .cross-cta p {
+            color: rgba(255, 255, 255, 0.86);
+            max-width: 560px;
         }
 
         /* Contact Section */
@@ -965,6 +1216,9 @@
             .contact-box, .detail-card {
                 padding: 24px 20px;
             }
+            nav {
+                gap: 14px;
+            }
         }
     </style>
 </head>
@@ -974,16 +1228,18 @@
 
 <header>
     <div class="nav-container">
-        <a href="#home" class="brand" id="brandLink">
+        <a href="#home" class="brand">
             <span class="brand-badge"></span>
             Lakbay, <span>Novo Ecijano</span>
         </a>
-        <nav>
-            <a href="#about" class="home-nav-link">About</a>
-            <a href="#destinations" class="home-nav-link">Destinations</a>
-            <a href="#culture" class="home-nav-link">Culture</a>
-            <a href="#gallery" class="home-nav-link">Gallery</a>
-            <a href="#contact" class="nav-cta home-nav-link">Plan a Visit</a>
+        <nav id="mainNav">
+            <a href="#about">About</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#culture">Culture</a>
+            <a href="#page/cuisine" data-route="#page/cuisine">Cuisine</a>
+            <a href="#page/restaurants" data-route="#page/restaurants">Restaurants</a>
+            <a href="#page/gallery" data-route="#page/gallery">Gallery</a>
+            <a href="#contact" class="nav-cta">Plan a Visit</a>
         </nav>
     </div>
 </header>
@@ -994,10 +1250,10 @@
         <div class="hero-content">
             <span class="hero-kicker">Love Nueva Ecija • Central Luzon</span>
             <h1>Lakbay, Novo Ecijano</h1>
-            <p>Experience emerald rivers, misty Sierra Madre ridges, living history, and warm Filipino hospitality in the Rice Granary of the Philippines.</p>
+            <p>Experience emerald rivers, misty Sierra Madre ridges, living history, iconic local flavors, and warm Filipino hospitality in the Rice Granary of the Philippines.</p>
             <div class="hero-actions">
                 <a href="#destinations" class="btn-primary">Explore Destinations</a>
-                <a href="#culture" class="btn-outline">Discover Heritage</a>
+                <a href="#page/cuisine" class="btn-outline">Taste Local Cuisine</a>
             </div>
         </div>
     </div>
@@ -1009,7 +1265,7 @@
                     <span class="section-kicker">Welcome to Nueva Ecija</span>
                     <h2>About Lakbay, Novo Ecijano</h2>
                 </div>
-                <p>Discover the beauty, culture, and heritage of Nueva Ecija. Lakbay, Novo Ecijano is your gateway to exploring the province’s rich history, breathtaking landscapes, and vibrant communities—from limestone river canyons to tranquil highland dams.</p>
+                <p>Discover the beauty, culture, and heritage of Nueva Ecija. Lakbay, Novo Ecijano is your gateway to exploring the province’s rich history, breathtaking landscapes, heirloom flavors, and vibrant communities—from limestone river canyons to tranquil highland dams.</p>
                 <div class="about-stats">
                     <div class="stat-box">
                         <strong>32</strong>
@@ -1033,7 +1289,7 @@
 
     <section id="destinations">
         <div class="container">
-            <div class="carousel-header-row">
+            <div class="section-header-row">
                 <div class="section-header">
                     <span class="section-kicker">Where to Go</span>
                     <h2>Top Destinations</h2>
@@ -1100,44 +1356,83 @@
             <div class="section-header">
                 <span class="section-kicker">Heart of the Province</span>
                 <h2>Culture & Heritage</h2>
-                <p class="section-subtitle">Nueva Ecija is known as the Rice Granary of the Philippines, home to traditions celebrating agriculture, community, and resilience.</p>
+                <p class="section-subtitle">Click any card below to explore the expanded stories of Nueva Ecija’s festivals, cuisine, and living traditions.</p>
             </div>
 
             <div class="culture-grid">
-                <div class="culture-item">
-                    <div class="culture-dot" style="background: var(--dot-gold);"></div>
-                    <h3>Vibrant Festivals</h3>
-                    <p>From the Taong Putik Festival in Aliaga to the Tanduyong Festival in San Jose, every town celebrates faith and harvest with color.</p>
-                </div>
-                <div class="culture-item">
-                    <div class="culture-dot" style="background: var(--dot-red);"></div>
-                    <h3>Local Cuisine</h3>
-                    <p>Savor Cabanatuan’s famous garlic longganisa, savory batotay, carabao milk pastillas, and freshly brewed highland coffee.</p>
-                </div>
-                <div class="culture-item">
-                    <div class="culture-dot" style="background: var(--dot-emerald);"></div>
-                    <h3>Craft & Resilience</h3>
-                    <p>Discover centuries-old churches, agricultural heritage, and warm Novo Ecijano hospitality passed down through generations.</p>
-                </div>
+                <a href="#culture/festivals" class="culture-item">
+                    <div class="culture-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=80" alt="Vibrant Festivals of Nueva Ecija">
+                        <span class="culture-badge">Traditions & Faith</span>
+                    </div>
+                    <div class="culture-body">
+                        <div class="culture-dot" style="background: var(--dot-gold);"></div>
+                        <h3>Vibrant Festivals</h3>
+                        <p>From the Taong Putik Festival in Aliaga to the Tanduyong Festival in San Jose, every town celebrates faith and harvest with color.</p>
+                        <span class="culture-cta">Read Full Guide <span>&#8594;</span></span>
+                    </div>
+                </a>
+
+                <a href="#page/cuisine" class="culture-item">
+                    <div class="culture-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Local Cuisine of Nueva Ecija">
+                        <span class="culture-badge">Food & Flavors</span>
+                    </div>
+                    <div class="culture-body">
+                        <div class="culture-dot" style="background: var(--dot-red);"></div>
+                        <h3>Local Cuisine</h3>
+                        <p>Savor Cabanatuan’s famous garlic longganisa, savory batotay, carabao milk pastillas, and freshly brewed highland coffee.</p>
+                        <span class="culture-cta">Explore Cuisine Page <span>&#8594;</span></span>
+                    </div>
+                </a>
+
+                <a href="#culture/heritage" class="culture-item">
+                    <div class="culture-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=900&q=80" alt="Craft and Heritage of Nueva Ecija">
+                        <span class="culture-badge">History & Crafts</span>
+                    </div>
+                    <div class="culture-body">
+                        <div class="culture-dot" style="background: var(--dot-emerald);"></div>
+                        <h3>Craft & Resilience</h3>
+                        <p>Discover centuries-old churches, agricultural heritage, artisan crafts, and warm Novo Ecijano hospitality passed down through generations.</p>
+                        <span class="culture-cta">Read Full Guide <span>&#8594;</span></span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
     <section id="gallery">
         <div class="container">
-            <div class="section-header">
-                <span class="section-kicker">Visual Journey</span>
-                <h2>Gallery</h2>
+            <div class="section-header-row">
+                <div class="section-header">
+                    <span class="section-kicker">Visual Journey</span>
+                    <h2>Gallery Highlights</h2>
+                    <p class="section-subtitle">A glimpse into Nueva Ecija’s landscapes, heritage, and flavors.</p>
+                </div>
+                <a href="#page/gallery" class="btn-blue">View Full Gallery &#8594;</a>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-card">
                     <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Mountain and river landscape">
+                    <div class="gallery-caption">
+                        <span>Nature</span>
+                        <strong>Sierra Madre River Valleys</strong>
+                    </div>
                 </div>
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80" alt="Philippine tropical scenery">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Savory Novo Ecijano cuisine">
+                    <div class="gallery-caption">
+                        <span>Cuisine</span>
+                        <strong>Cabanatuan Classic Flavors</strong>
+                    </div>
                 </div>
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80" alt="Travel adventure">
+                    <img src="https://images.unsplash.com/photo-1536657464919-892534f60d6e?auto=format&fit=crop&w=800&q=80" alt="Golden rice fields">
+                    <div class="gallery-caption">
+                        <span>Heritage</span>
+                        <strong>Rice Granary of the Philippines</strong>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1162,35 +1457,23 @@
     </section>
 </main>
 
-<!-- ==================== DESTINATION DETAIL PAGE VIEW ==================== -->
-<article id="destinationPage" class="hidden" aria-live="polite">
+<!-- ==================== DESTINATION DETAIL PAGE ==================== -->
+<article id="destinationPage" class="subpage hidden" aria-live="polite">
     <div class="detail-hero" id="detailHero">
         <div class="detail-hero-inner">
-            <a href="#destinations" class="back-btn" id="backToDestinations">&#8592; Back to Destinations</a>
+            <a href="#destinations" class="back-btn">&#8592; Back to Destinations</a>
             <div class="detail-breadcrumb" id="detailBreadcrumb">Home / Destinations / Place</div>
             <h1 id="detailTitle">Destination Name</h1>
-            <p class="detail-tagline" id="detailTagline">Destination tagline goes here.</p>
+            <p class="detail-tagline" id="detailTagline"></p>
         </div>
     </div>
 
     <div class="facts-bar">
         <div class="facts-grid">
-            <div class="fact-item">
-                <span>Location</span>
-                <strong id="factLocation">—</strong>
-            </div>
-            <div class="fact-item">
-                <span>Category</span>
-                <strong id="factCategory">—</strong>
-            </div>
-            <div class="fact-item">
-                <span>Best Time to Visit</span>
-                <strong id="factBestTime">—</strong>
-            </div>
-            <div class="fact-item">
-                <span>Ideal For</span>
-                <strong id="factIdealFor">—</strong>
-            </div>
+            <div class="fact-item"><span>Location</span><strong id="factLocation">—</strong></div>
+            <div class="fact-item"><span>Category</span><strong id="factCategory">—</strong></div>
+            <div class="fact-item"><span>Best Time to Visit</span><strong id="factBestTime">—</strong></div>
+            <div class="fact-item"><span>Ideal For</span><strong id="factIdealFor">—</strong></div>
         </div>
     </div>
 
@@ -1200,29 +1483,125 @@
                 <h2>About This Destination</h2>
                 <div id="detailOverview"></div>
             </div>
-
             <div class="detail-card">
                 <h2>Top Things to Do</h2>
                 <ul class="activity-list" id="detailActivities"></ul>
             </div>
         </div>
-
         <aside>
             <div class="sidebar-card">
                 <h3>How to Get There</h3>
                 <p id="detailDirections" style="color: var(--text-muted); font-size: 0.94rem;"></p>
             </div>
-
             <div class="sidebar-card">
                 <h3>Traveler Tips</h3>
                 <ul class="tip-list" id="detailTips"></ul>
             </div>
-
             <div class="sidebar-card">
                 <h3>Explore Other Places</h3>
                 <div class="other-places" id="otherPlacesList"></div>
             </div>
         </aside>
+    </div>
+</article>
+
+<!-- ==================== EXPANDED CULTURE PAGE ==================== -->
+<article id="culturePage" class="subpage hidden" aria-live="polite">
+    <div class="detail-hero" id="cultureHero">
+        <div class="detail-hero-inner">
+            <a href="#culture" class="back-btn">&#8592; Back to Culture & Heritage</a>
+            <div class="detail-breadcrumb" id="cultureBreadcrumb">Home / Culture</div>
+            <h1 id="cultureTitle">Culture Title</h1>
+            <p class="detail-tagline" id="cultureTagline"></p>
+        </div>
+    </div>
+    <div class="subpage-body">
+        <div class="detail-card">
+            <h2 id="cultureIntroHeading">Overview</h2>
+            <div id="cultureOverview"></div>
+        </div>
+        <div class="section-header" style="margin-top: 40px;">
+            <span class="section-kicker" id="cultureGridKicker">Highlights</span>
+            <h2 id="cultureGridHeading">Featured Traditions</h2>
+        </div>
+        <div class="entry-grid" id="cultureEntriesGrid"></div>
+    </div>
+</article>
+
+<!-- ==================== CUISINE PAGE ==================== -->
+<article id="cuisinePage" class="subpage hidden" aria-live="polite">
+    <div class="detail-hero" style="--detail-rgb: 185, 28, 44; background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80');">
+        <div class="detail-hero-inner">
+            <a href="#home" class="back-btn">&#8592; Back to Home</a>
+            <div class="detail-breadcrumb">Home / Food & Gastronomy / Cuisine</div>
+            <h1>Flavors of Nueva Ecija</h1>
+            <p class="detail-tagline">From garlicky Cabanatuan sausages and creamy carabao milk delicacies to freshly grilled river harvests—taste the heart of Central Luzon.</p>
+        </div>
+    </div>
+    <div class="subpage-body">
+        <div class="section-header">
+            <span class="section-kicker">Must-Try Specialties</span>
+            <h2>Iconic Novo Ecijano Dishes</h2>
+            <p class="section-subtitle">Every municipality in Nueva Ecija brings a distinct culinary heirloom to the table.</p>
+        </div>
+        <div class="entry-grid" id="cuisineGrid"></div>
+
+        <div class="cross-cta">
+            <div>
+                <h3>Ready to dine like a local?</h3>
+                <p>Explore our curated guide to the best heritage restaurants, bakeries, and lakeside dining spots across Nueva Ecija.</p>
+            </div>
+            <a href="#page/restaurants" class="btn-primary">Explore Restaurants &#8594;</a>
+        </div>
+    </div>
+</article>
+
+<!-- ==================== RESTAURANTS PAGE ==================== -->
+<article id="restaurantsPage" class="subpage hidden" aria-live="polite">
+    <div class="detail-hero" style="--detail-rgb: 0, 56, 168; background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80');">
+        <div class="detail-hero-inner">
+            <a href="#home" class="back-btn">&#8592; Back to Home</a>
+            <div class="detail-breadcrumb">Home / Food & Gastronomy / Restaurants</div>
+            <h1>Where to Eat in Nueva Ecija</h1>
+            <p class="detail-tagline">Beloved homegrown dining institutions, heritage cafes, and scenic highland spots across Cabanatuan, Pantabangan, and beyond.</p>
+        </div>
+    </div>
+    <div class="subpage-body">
+        <div class="section-header">
+            <span class="section-kicker">Top Dining Spots</span>
+            <h2>Featured Restaurants & Food Stops</h2>
+            <p class="section-subtitle">Whether you’re craving classic Kapampangan-Tagalog comfort food, iconic sherbet, or lakeside dining, start here.</p>
+        </div>
+        <div class="entry-grid" id="restaurantsGrid"></div>
+
+        <div class="cross-cta">
+            <div>
+                <h3>Curious about the dishes behind the menus?</h3>
+                <p>Discover the stories behind Batotay, Cabanatuan Longganisa, Carabao Milk Pastillas, and more.</p>
+            </div>
+            <a href="#page/cuisine" class="btn-primary">View Local Cuisine &#8594;</a>
+        </div>
+    </div>
+</article>
+
+<!-- ==================== GALLERY PAGE ==================== -->
+<article id="galleryPage" class="subpage hidden" aria-live="polite">
+    <div class="detail-hero" style="--detail-rgb: 0, 128, 145; background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80');">
+        <div class="detail-hero-inner">
+            <a href="#home" class="back-btn">&#8592; Back to Home</a>
+            <div class="detail-breadcrumb">Home / Visual Showcase / Gallery</div>
+            <h1>Nueva Ecija in Frames</h1>
+            <p class="detail-tagline">Explore emerald canyons, golden rice fields, festive celebrations, and mouthwatering dishes from across the province.</p>
+        </div>
+    </div>
+    <div class="subpage-body">
+        <div class="filter-bar" id="galleryFilters">
+            <button class="filter-btn active" data-filter="all">All Photos</button>
+            <button class="filter-btn" data-filter="nature">Nature & Landscapes</button>
+            <button class="filter-btn" data-filter="culture">Culture & Heritage</button>
+            <button class="filter-btn" data-filter="food">Cuisine & Dining</button>
+        </div>
+        <div class="gallery-grid" id="fullGalleryGrid"></div>
     </div>
 </article>
 
@@ -1235,7 +1614,7 @@
 </footer>
 
 <script>
-    /* ==================== DESTINATION DATA ==================== */
+    /* ==================== 1. DESTINATIONS DATA ==================== */
     const destinations = {
         minalungao: {
             title: "Minalungao National Park",
@@ -1261,8 +1640,7 @@
             tips: [
                 "Arrive early in the morning (before 9:00 AM) to enjoy clearer emerald water and fewer crowds.",
                 "Wear aqua shoes or sturdy sandals—the limestone rocks can be slippery.",
-                "Bring cash for environmental fees, bamboo raft rentals, and local food stalls.",
-                "Practice Leave No Trace: bring a reusable bag for your trash."
+                "Bring cash for environmental fees, bamboo raft rentals, and local food stalls."
             ]
         },
         pantabangan: {
@@ -1375,71 +1753,371 @@
         }
     };
 
+    /* ==================== 2. EXPANDED CULTURE PAGES DATA ==================== */
+    const culturePages = {
+        festivals: {
+            title: "Vibrant Festivals of Nueva Ecija",
+            breadcrumb: "Home / Culture / Vibrant Festivals",
+            tagline: "Year-round celebrations of faith, bountiful harvests, and community pride across every Novo Ecijano town.",
+            accentHex: "#C47A00",
+            accentRgb: "196, 122, 0",
+            heroImage: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1600&q=80",
+            overview: [
+                "Festivals in Nueva Ecija are deeply rooted in gratitude—honoring patron saints, celebrating abundant rice and onion harvests, and bringing entire communities together through street dancing, music, and shared feasts.",
+                "Whether you visit during the cool months of spring or the rainy season of June, there is always a colorful fiesta welcoming travelers with warmth."
+            ],
+            gridKicker: "Annual Celebrations",
+            gridHeading: "Must-Experience Festivals",
+            entries: [
+                {
+                    title: "Taong Putik Festival",
+                    badge: "Aliaga • June 24",
+                    tags: ["Religious Devotion", "Cultural Icon"],
+                    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80",
+                    desc: "Devotees in Barangay Bibiclat coat themselves in mud and dried banana leaves in honor of St. John the Baptist, reenacting an iconic local miracle of survival and humility."
+                },
+                {
+                    title: "Tanduyong Festival",
+                    badge: "San Jose City • April",
+                    tags: ["Harvest Fiesta", "Street Dance"],
+                    image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=80",
+                    desc: "Named after a native shallot grown abundantly in San Jose City, this lively festival bursts with vibrant costumes, brass bands, and thanksgiving dances."
+                },
+                {
+                    title: "Pagibang Damara Festival",
+                    badge: "San Jose City • April",
+                    tags: ["Rice Harvest", "Community"],
+                    image: "https://images.unsplash.com/photo-1536657464919-892534f60d6e?auto=format&fit=crop&w=900&q=80",
+                    desc: "Celebrates the traditional dismantling of the 'damara'—temporary bamboo shelters built in the rice fields—marking the joyful completion of a successful harvest."
+                },
+                {
+                    title: "Sibuyasan Festival",
+                    badge: "Bongabon • April",
+                    tags: ["Onion Capital", "Agri-Tourism"],
+                    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
+                    desc: "Honors Bongabon’s proud status as the Onion Capital of the Philippines with agri-fairs, culinary showcases, and colorful parades."
+                }
+            ]
+        },
+        heritage: {
+            title: "Craft, Architecture & Resilience",
+            breadcrumb: "Home / Culture / Craft & Resilience",
+            tagline: "Centuries-old churches, agricultural innovation, and artisan traditions shaped by generations of Novo Ecijanos.",
+            accentHex: "#008751",
+            accentRgb: "0, 122, 74",
+            heroImage: "https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=1600&q=80",
+            overview: [
+                "Beyond its natural wonders, Nueva Ecija is a living archive of Philippine history—from Spanish-era stone churches and revolutionary landmarks in San Isidro and Cabanatuan to the hardworking farming communities that feed the nation.",
+                "Local artisans, heritage conservationists, and modern agri-tourism centers continue to preserve this proud legacy for new generations of travelers."
+            ],
+            gridKicker: "Living Legacy",
+            gridHeading: "Heritage & Artisan Highlights",
+            entries: [
+                {
+                    title: "Three Kings Parish (Gapan City)",
+                    badge: "Gapan City • 1856",
+                    tags: ["National Shrine", "Byzantine Architecture"],
+                    image: "https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=900&q=80",
+                    desc: "One of the oldest and grandest Roman Catholic churches in Central Luzon, renowned for its limestone walls, towering facade, and centuries of spiritual history."
+                },
+                {
+                    title: "Science City of Muñoz & PhilRice",
+                    badge: "Muñoz • Agri-Heritage",
+                    tags: ["Rice Granary", "Science Tourism"],
+                    image: "https://images.unsplash.com/photo-1536657464919-892534f60d6e?auto=format&fit=crop&w=900&q=80",
+                    desc: "Home to the Philippine Rice Research Institute and the Philippine Carabao Center, showcasing the agricultural science and resilience behind the nation’s staple food."
+                },
+                {
+                    title: "Traditional Weaving & Slipper Making",
+                    badge: "Gapan & Cabiao",
+                    tags: ["Local Craft", "Pasalubong"],
+                    image: "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=900&q=80",
+                    desc: "Gapan City is famed as the 'Footwear Capital of the North,' where family-run workshops craft durable handmade slippers, woven bags, and native home decor."
+                },
+                {
+                    title: "Cabanatuan Historical Plaza & Monuments",
+                    badge: "Cabanatuan City",
+                    tags: ["Revolutionary History", "Heritage Walk"],
+                    image: "https://images.unsplash.com/photo-1565060169194-19fabf63012c?auto=format&fit=crop&w=900&q=80",
+                    desc: "Explore Plaza Lucero and the historic cathedral grounds linked to General Antonio Luna and the pivotal chapters of the First Philippine Republic."
+                }
+            ]
+        }
+    };
+
+    /* ==================== 3. CUISINE DATA (ALL WITH PICTURES) ==================== */
+    const cuisineItems = [
+        {
+            title: "Batotay (Sweet Beef Longganisa)",
+            origin: "Cabanatuan City",
+            type: "Signature Savory",
+            image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80",
+            desc: "Cabanatuan’s beloved sweet-savory beef sausage—juicy, aromatic, and caramelized when pan-fried, best paired with garlic fried rice and spiced vinegar."
+        },
+        {
+            title: "Cabanatuan Garlic Longganisa",
+            origin: "Cabanatuan Public Market",
+            type: "Breakfast Classic",
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+            desc: "Boldly seasoned with native garlic, black pepper, and vinegar, this skin-on pork sausage delivers an unmistakable punch of Central Luzon flavor."
+        },
+        {
+            title: "Carabao Milk Pastillas & Kesong Puti",
+            origin: "Muñoz & San Jose",
+            type: "Dairy Delicacy",
+            image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80",
+            desc: "Melt-in-your-mouth milk candies and fresh white cheese crafted from rich, locally sourced carabao milk—an essential Novo Ecijano pasalubong."
+        },
+        {
+            title: "Inihaw na Tilapia & Adobong Hito",
+            origin: "Pantabangan & Talavera",
+            type: "Freshwater Feast",
+            image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80",
+            desc: "Freshly caught tilapia stuffed with tomatoes and onions and grilled over charcoal, alongside tender catfish simmered in tangy soy-garlic sauce."
+        },
+        {
+            title: "Puno’s Cheese & Cashew Ice Cream",
+            origin: "Cabanatuan City",
+            type: "Iconic Dessert",
+            image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80",
+            desc: "A generational favorite since 1957—creamy homemade ice cream packed with generous chunks of cheddar cheese, roasted cashews, and sweet macapuno."
+        },
+        {
+            title: "Native Kakanin & Highland Coffee",
+            origin: "Gabaldon & Carranglan",
+            type: "Merienda",
+            image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
+            desc: "Smoky grilled glutinous rice treats, bibingka, and warm local brewed coffee enjoyed best after a cool morning hike or road trip."
+        }
+    ];
+
+    /* ==================== 4. RESTAURANTS DATA (ALL WITH PICTURES) ==================== */
+    const restaurantItems = [
+        {
+            title: "Hapag Vicentico’s",
+            location: "Cabanatuan City",
+            specialty: "Filipino Heritage Dining",
+            price: "₱₱ • Family-Friendly",
+            image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
+            desc: "A celebrated Cabanatuan institution known for elevated Filipino comfort food—famous for its crispy pata, kare-kare, and signature batotay platters."
+        },
+        {
+            title: "Puno’s Ice Cream & Sherbet",
+            location: "Cabanatuan City (Multiple Branches)",
+            specialty: "Artisanal Ice Cream & Sherbet",
+            price: "₱ • Must-Stop Dessert",
+            image: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=900&q=80",
+            desc: "Nueva Ecija’s most iconic homegrown creamery. Stop by for a scoop of Cheese Cashew Macapuno or refreshing Buko Lychee sherbet to beat the heat."
+        },
+        {
+            title: "Edna’s Cakeland & Bistro",
+            location: "Cabanatuan City",
+            specialty: "Cakes, Pastries & All-Day Dining",
+            price: "₱₱ • Cozy Cafe",
+            image: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=80",
+            desc: "A beloved local bakery-restaurant serving rich chocolate cakes, cheesy ensaymada, and hearty pasta and rice meals perfect for merienda."
+        },
+        {
+            title: "Highland Bali Lakeside Dining",
+            location: "Pantabangan, Nueva Ecija",
+            specialty: "Scenic Resort & Filipino-Asian Cuisine",
+            price: "₱₱₱ • Panoramic View",
+            image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80",
+            desc: "Dine overlooking the tranquil blue waters of Pantabangan Lake with cool mountain winds, fresh grilled tilapia, and Balinese-inspired ambiance."
+        },
+        {
+            title: "Joey’s Restaurant",
+            location: "Cabanatuan City",
+            specialty: "Classic Steaks & Filipino Favorites",
+            price: "₱₱ • Timeless Local Spot",
+            image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80",
+            desc: "A longtime favorite of Novo Ecijano families, serving sizzling plates, classic fried chicken, and comforting heirloom dishes in a warm setting."
+        },
+        {
+            title: "Bongabon & Gabaldon Roadside Grills",
+            location: "Bongabon – Gabaldon Highway",
+            specialty: "Charcoal-Grilled Meats & River Fish",
+            price: "₱ • Barkada Stopover",
+            image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+            desc: "Open-air eateries along the Sierra Madre foothills offering freshly grilled hito, sinigang sa bayabas, and farm-fresh vegetables straight from nearby fields."
+        }
+    ];
+
+    /* ==================== 5. FULL GALLERY DATA (ALL WITH PICTURES) ==================== */
+    const galleryPhotos = [
+        { title: "Minalungao Emerald Canyon", category: "nature", label: "Nature • General Tinio", image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" },
+        { title: "Pantabangan Highland Reservoir", category: "nature", label: "Nature • Pantabangan", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" },
+        { title: "Gabaldon Forest Cascades", category: "nature", label: "Nature • Gabaldon", image: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=900&q=80" },
+        { title: "Mt. 387 Sunrise Ridges", category: "nature", label: "Nature • Carranglan", image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=900&q=80" },
+        { title: "Golden Rice Fields of Nueva Ecija", category: "culture", label: "Heritage • Rice Granary", image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" },
+        { title: "Festive Street Celebrations", category: "culture", label: "Culture • Festivals", image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=80" },
+        { title: "Historic Stone Church Facades", category: "culture", label: "Heritage • Gapan City", image: "https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=900&q=80" },
+        { title: "Camp Pangatian Memorial Grounds", category: "culture", label: "History • Cabanatuan", image: "https://images.unsplash.com/photo-1565060169194-19fabf63012c?auto=format&fit=crop&w=900&q=80" },
+        { title: "Savory Batotay & Longganisa Feast", category: "food", label: "Cuisine • Cabanatuan", image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" },
+        { title: "Carabao Milk Pastillas & Sweets", category: "food", label: "Cuisine • Muñoz", image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80" },
+        { title: "Homegrown Ice Cream & Sherbet", category: "food", label: "Dining • Cabanatuan", image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80" },
+        { title: "Lakeside Dining Experience", category: "food", label: "Dining • Pantabangan", image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80" }
+    ];
+
+    /* ==================== RENDER STATIC SUBPAGE GRIDS ==================== */
+    function populateCuisineAndRestaurants() {
+        document.getElementById('cuisineGrid').innerHTML = cuisineItems.map(item => `
+            <div class="entry-card">
+                <div class="entry-img">
+                    <img src="${item.image}" alt="${item.title}">
+                    <span class="entry-pill">${item.origin}</span>
+                </div>
+                <div class="entry-body">
+                    <h3>${item.title}</h3>
+                    <div class="entry-meta">
+                        <span class="meta-chip red">${item.type}</span>
+                    </div>
+                    <p>${item.desc}</p>
+                </div>
+            </div>
+        `).join('');
+
+        document.getElementById('restaurantsGrid').innerHTML = restaurantItems.map(item => `
+            <div class="entry-card">
+                <div class="entry-img">
+                    <img src="${item.image}" alt="${item.title}">
+                    <span class="entry-pill">${item.location}</span>
+                </div>
+                <div class="entry-body">
+                    <h3>${item.title}</h3>
+                    <div class="entry-meta">
+                        <span class="meta-chip">${item.specialty}</span>
+                        <span class="meta-chip green">${item.price}</span>
+                    </div>
+                    <p>${item.desc}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function renderGallery(filter = 'all') {
+        const filtered = filter === 'all'
+            ? galleryPhotos
+            : galleryPhotos.filter(p => p.category === filter);
+
+        document.getElementById('fullGalleryGrid').innerHTML = filtered.map(photo => `
+            <div class="gallery-card">
+                <img src="${photo.image}" alt="${photo.title}">
+                <div class="gallery-caption">
+                    <span>${photo.label}</span>
+                    <strong>${photo.title}</strong>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    document.getElementById('galleryFilters').addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderGallery(btn.dataset.filter);
+    });
+
     /* ==================== PAGE ROUTING ==================== */
-    const homeView = document.getElementById('homeView');
-    const destinationPage = document.getElementById('destinationPage');
-    const detailHero = document.getElementById('detailHero');
+    const views = {
+        home: document.getElementById('homeView'),
+        destination: document.getElementById('destinationPage'),
+        culture: document.getElementById('culturePage'),
+        cuisine: document.getElementById('cuisinePage'),
+        restaurants: document.getElementById('restaurantsPage'),
+        gallery: document.getElementById('galleryPage')
+    };
+
+    function hideAllViews() {
+        Object.values(views).forEach(v => v.classList.add('hidden'));
+        document.querySelectorAll('#mainNav a').forEach(a => a.classList.remove('active-link'));
+    }
 
     function renderDestinationPage(slug) {
         const place = destinations[slug];
-        if (!place) {
-            showHomeView();
-            return;
-        }
+        if (!place) return showHomeView();
 
-        // Apply destination's DOT accent color theme
-        destinationPage.style.setProperty('--detail-accent', place.accentHex);
-        destinationPage.style.setProperty('--detail-rgb', place.accentRgb);
+        hideAllViews();
+        const page = views.destination;
+        page.style.setProperty('--detail-accent', place.accentHex);
+        page.style.setProperty('--detail-rgb', place.accentRgb);
 
-        // Hero content
-        detailHero.style.backgroundImage = `url('${place.image}')`;
+        document.getElementById('detailHero').style.backgroundImage = `url('${place.image}')`;
         document.getElementById('detailBreadcrumb').textContent = `Home / Destinations / ${place.title}`;
         document.getElementById('detailTitle').textContent = place.title;
         document.getElementById('detailTagline').textContent = place.tagline;
 
-        // Quick facts
         document.getElementById('factLocation').textContent = place.municipality;
         document.getElementById('factCategory').textContent = place.category;
         document.getElementById('factBestTime').textContent = place.bestTime;
         document.getElementById('factIdealFor').textContent = place.idealFor;
 
-        // Overview paragraphs
-        document.getElementById('detailOverview').innerHTML = place.overview
-            .map(p => `<p>${p}</p>`)
-            .join('');
-
-        // Activities
+        document.getElementById('detailOverview').innerHTML = place.overview.map(p => `<p>${p}</p>`).join('');
         document.getElementById('detailActivities').innerHTML = place.activities
-            .map(a => `<li><strong>${a.title}</strong><span>${a.desc}</span></li>`)
-            .join('');
-
-        // Directions & Tips
+            .map(a => `<li><strong>${a.title}</strong><span>${a.desc}</span></li>`).join('');
         document.getElementById('detailDirections').textContent = place.directions;
-        document.getElementById('detailTips').innerHTML = place.tips
-            .map(t => `<li>${t}</li>`)
-            .join('');
-
-        // Other destinations links
+        document.getElementById('detailTips').innerHTML = place.tips.map(t => `<li>${t}</li>`).join('');
         document.getElementById('otherPlacesList').innerHTML = Object.entries(destinations)
             .filter(([key]) => key !== slug)
-            .map(([key, item]) => `
-                <a href="#place/${key}" class="other-place-link">
-                    <span>${item.title}</span>
-                    <span>&#8594;</span>
-                </a>
-            `)
+            .map(([key, item]) => `<a href="#place/${key}" class="other-place-link"><span>${item.title}</span><span>&#8594;</span></a>`)
             .join('');
 
-        // Switch view and scroll directly under the ribbon/header
-        homeView.classList.add('hidden');
-        destinationPage.classList.remove('hidden');
+        page.classList.remove('hidden');
         document.title = `${place.title} | Lakbay, Novo Ecijano`;
         window.scrollTo({ top: 0, behavior: 'instant' });
     }
 
+    function renderCulturePage(slug) {
+        const data = culturePages[slug];
+        if (!data) return showHomeView('culture');
+
+        hideAllViews();
+        const page = views.culture;
+        page.style.setProperty('--detail-accent', data.accentHex);
+        page.style.setProperty('--detail-rgb', data.accentRgb);
+
+        document.getElementById('cultureHero').style.backgroundImage = `url('${data.heroImage}')`;
+        document.getElementById('cultureBreadcrumb').textContent = data.breadcrumb;
+        document.getElementById('cultureTitle').textContent = data.title;
+        document.getElementById('cultureTagline').textContent = data.tagline;
+        document.getElementById('cultureOverview').innerHTML = data.overview.map(p => `<p>${p}</p>`).join('');
+        document.getElementById('cultureGridKicker').textContent = data.gridKicker;
+        document.getElementById('cultureGridHeading').textContent = data.gridHeading;
+
+        document.getElementById('cultureEntriesGrid').innerHTML = data.entries.map(entry => `
+            <div class="entry-card">
+                <div class="entry-img">
+                    <img src="${entry.image}" alt="${entry.title}">
+                    <span class="entry-pill">${entry.badge}</span>
+                </div>
+                <div class="entry-body">
+                    <h3>${entry.title}</h3>
+                    <div class="entry-meta">
+                        ${entry.tags.map(t => `<span class="meta-chip">${t}</span>`).join('')}
+                    </div>
+                    <p>${entry.desc}</p>
+                </div>
+            </div>
+        `).join('');
+
+        page.classList.remove('hidden');
+        document.title = `${data.title} | Lakbay, Novo Ecijano`;
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function showStaticSubpage(name, pageTitle, routeHash) {
+        hideAllViews();
+        views[name].classList.remove('hidden');
+        const activeLink = document.querySelector(`#mainNav a[data-route="${routeHash}"]`);
+        if (activeLink) activeLink.classList.add('active-link');
+        document.title = `${pageTitle} | Lakbay, Novo Ecijano`;
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
     function showHomeView(sectionId) {
-        destinationPage.classList.add('hidden');
-        homeView.classList.remove('hidden');
+        hideAllViews();
+        views.home.classList.remove('hidden');
         document.title = 'Lakbay, Novo Ecijano | Love Nueva Ecija';
 
         if (sectionId) {
@@ -1455,16 +2133,20 @@
     function handleRoute() {
         const hash = window.location.hash || '';
         if (hash.startsWith('#place/')) {
-            const slug = hash.replace('#place/', '');
-            renderDestinationPage(slug);
+            renderDestinationPage(hash.replace('#place/', ''));
+        } else if (hash.startsWith('#culture/')) {
+            renderCulturePage(hash.replace('#culture/', ''));
+        } else if (hash === '#page/cuisine') {
+            showStaticSubpage('cuisine', 'Local Cuisine', '#page/cuisine');
+        } else if (hash === '#page/restaurants') {
+            showStaticSubpage('restaurants', 'Restaurants', '#page/restaurants');
+        } else if (hash === '#page/gallery') {
+            showStaticSubpage('gallery', 'Photo Gallery', '#page/gallery');
         } else {
             const sectionId = hash.replace('#', '');
             showHomeView(sectionId && sectionId !== 'home' ? sectionId : null);
         }
     }
-
-    window.addEventListener('hashchange', handleRoute);
-    window.addEventListener('DOMContentLoaded', handleRoute);
 
     /* ==================== CAROUSEL CONTROLS ==================== */
     const viewport = document.getElementById('carouselViewport');
@@ -1515,12 +2197,17 @@
 
     viewport.addEventListener('scroll', updateActiveDot);
 
-    /* ==================== CONTACT FORM ==================== */
+    /* ==================== INIT & CONTACT FORM ==================== */
     document.getElementById('contactForm').addEventListener('submit', (e) => {
         e.preventDefault();
         alert('Salamat! Your message has been sent to Lakbay, Novo Ecijano.');
         e.target.reset();
     });
+
+    populateCuisineAndRestaurants();
+    renderGallery('all');
+    window.addEventListener('hashchange', handleRoute);
+    window.addEventListener('DOMContentLoaded', handleRoute);
 </script>
 
 </body>
