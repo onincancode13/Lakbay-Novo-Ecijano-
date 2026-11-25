@@ -13,7 +13,7 @@
             --dot-blue: #0038A8;
             --dot-navy: #0B1F3A;
             --dot-gold: #FCD116;
-            --dot-amber: #E08E00;
+            --dot-amber: #C47A00;
             --dot-red: #CE1126;
             --dot-emerald: #008751;
             --dot-teal: #008B9A;
@@ -40,8 +40,12 @@
             line-height: 1.65;
         }
 
-        h1, h2, h3, .brand {
+        h1, h2, h3, h4, .brand {
             font-family: 'Montserrat', sans-serif;
+        }
+
+        .hidden {
+            display: none !important;
         }
 
         /* Multi-color Philippine Weave Accent Bar */
@@ -381,12 +385,12 @@
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
             padding: 8px 4px 20px;
         }
 
         .carousel-viewport::-webkit-scrollbar {
-            display: none; /* Chrome, Safari */
+            display: none;
         }
 
         .carousel-track {
@@ -394,12 +398,12 @@
             gap: 24px;
         }
 
-        /* Destination Card with Background Image & Mild Color Overlay */
+        /* Clickable Destination Card with Background Image & Mild Color Overlay */
         .card {
             position: relative;
             flex: 0 0 calc(33.333% - 16px);
             min-width: 300px;
-            height: 420px;
+            height: 430px;
             border-radius: 20px;
             overflow: hidden;
             scroll-snap-align: start;
@@ -408,6 +412,8 @@
             justify-content: flex-end;
             padding: 28px;
             color: var(--white);
+            text-decoration: none;
+            cursor: pointer;
             box-shadow: 0 12px 28px rgba(11, 31, 58, 0.14);
             transition: transform 0.35s ease, box-shadow 0.35s ease;
             isolation: isolate;
@@ -418,7 +424,6 @@
             box-shadow: 0 20px 38px rgba(11, 31, 58, 0.22);
         }
 
-        /* Background Photo Layer */
         .card-bg {
             position: absolute;
             inset: 0;
@@ -432,7 +437,6 @@
             transform: scale(1.08);
         }
 
-        /* Mild Color Overlay Layer (DOT Palette) */
         .card::before {
             content: '';
             position: absolute;
@@ -442,47 +446,37 @@
                 180deg,
                 rgba(var(--card-rgb), 0.22) 0%,
                 rgba(var(--card-rgb), 0.52) 55%,
-                rgba(var(--card-rgb), 0.84) 100%
+                rgba(var(--card-rgb), 0.86) 100%
             );
             transition: opacity 0.35s ease;
         }
 
         .card:hover::before {
-            opacity: 0.88;
+            opacity: 0.9;
         }
 
         /* Individual Card DOT Palette Colors & Background Photos */
-        .card-minalungao {
-            --card-rgb: 0, 122, 74; /* Tropical Emerald */
-        }
+        .card-minalungao { --card-rgb: 0, 122, 74; }
         .card-minalungao .card-bg {
             background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80');
         }
 
-        .card-pantabangan {
-            --card-rgb: 0, 56, 168; /* DOT Royal Blue */
-        }
+        .card-pantabangan { --card-rgb: 0, 56, 168; }
         .card-pantabangan .card-bg {
             background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80');
         }
 
-        .card-pangatian {
-            --card-rgb: 185, 28, 44; /* Fiesta Red */
-        }
+        .card-pangatian { --card-rgb: 185, 28, 44; }
         .card-pangatian .card-bg {
             background-image: url('https://images.unsplash.com/photo-1565060169194-19fabf63012c?auto=format&fit=crop&w=900&q=80');
         }
 
-        .card-gabaldon {
-            --card-rgb: 0, 128, 145; /* Coastal Teal */
-        }
+        .card-gabaldon { --card-rgb: 0, 128, 145; }
         .card-gabaldon .card-bg {
             background-image: url('https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=900&q=80');
         }
 
-        .card-mt387 {
-            --card-rgb: 196, 122, 0; /* Sunburst Gold / Amber */
-        }
+        .card-mt387 { --card-rgb: 196, 122, 0; }
         .card-mt387 .card-bg {
             background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=900&q=80');
         }
@@ -516,6 +510,23 @@
             line-height: 1.55;
             color: rgba(255, 255, 255, 0.95);
             text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 16px;
+        }
+
+        .card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--dot-gold);
+            transition: gap 0.25s ease;
+        }
+
+        .card:hover .card-cta {
+            gap: 12px;
         }
 
         .carousel-dots {
@@ -539,6 +550,262 @@
             width: 28px;
             border-radius: 50px;
             background: var(--dot-blue);
+        }
+
+        /* =========================================================
+           DESTINATION DETAIL PAGE (Under the DOT Ribbon & Header)
+           ========================================================= */
+        #destinationPage {
+            background: var(--bg-light);
+            min-height: 85vh;
+        }
+
+        .detail-hero {
+            position: relative;
+            min-height: 52vh;
+            display: flex;
+            align-items: flex-end;
+            color: var(--white);
+            padding: 48px 24px;
+            background-size: cover;
+            background-position: center;
+            isolation: isolate;
+        }
+
+        .detail-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(
+                180deg,
+                rgba(var(--detail-rgb, 0, 56, 168), 0.32) 0%,
+                rgba(var(--detail-rgb, 0, 56, 168), 0.65) 55%,
+                rgba(11, 31, 58, 0.90) 100%
+            );
+        }
+
+        .detail-hero-inner {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            margin-bottom: 24px;
+            transition: background 0.25s ease, transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--white);
+            color: var(--dot-navy);
+            transform: translateX(-3px);
+        }
+
+        .detail-breadcrumb {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--dot-gold);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .detail-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .detail-tagline {
+            font-size: 1.1rem;
+            max-width: 720px;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        /* Quick Facts Ribbon */
+        .facts-bar {
+            background: var(--white);
+            border-bottom: 1px solid #E2E8F0;
+            box-shadow: 0 4px 16px rgba(11, 31, 58, 0.04);
+        }
+
+        .facts-grid {
+            max-width: 1200px;
+            margin: auto;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .fact-item {
+            border-left: 4px solid var(--detail-accent, var(--dot-blue));
+            padding-left: 14px;
+        }
+
+        .fact-item span {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .fact-item strong {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.98rem;
+            color: var(--dot-navy);
+        }
+
+        /* Detail Body Content */
+        .detail-content {
+            max-width: 1200px;
+            margin: auto;
+            padding: 56px 24px 80px;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .detail-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 34px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 8px 24px rgba(11, 31, 58, 0.04);
+            margin-bottom: 28px;
+        }
+
+        .detail-card h2 {
+            font-size: 1.45rem;
+            color: var(--dot-navy);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-card h2::before {
+            content: '';
+            width: 6px;
+            height: 24px;
+            border-radius: 4px;
+            background: var(--detail-accent, var(--dot-blue));
+            display: inline-block;
+        }
+
+        .detail-card p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .detail-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .activity-list {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+
+        .activity-list li {
+            background: var(--bg-light);
+            padding: 16px 18px;
+            border-radius: 12px;
+            border-left: 4px solid var(--detail-accent, var(--dot-blue));
+        }
+
+        .activity-list strong {
+            display: block;
+            color: var(--dot-navy);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.98rem;
+            margin-bottom: 4px;
+        }
+
+        .activity-list span {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        /* Sidebar Travel Guide */
+        .sidebar-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 28px;
+            border: 1px solid #E2E8F0;
+            border-top: 5px solid var(--detail-accent, var(--dot-blue));
+            box-shadow: 0 8px 24px rgba(11, 31, 58, 0.05);
+            margin-bottom: 24px;
+        }
+
+        .sidebar-card h3 {
+            color: var(--dot-navy);
+            font-size: 1.15rem;
+            margin-bottom: 14px;
+        }
+
+        .tip-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .tip-list li {
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .tip-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--detail-accent, var(--dot-blue));
+            font-weight: 800;
+        }
+
+        .other-places {
+            display: grid;
+            gap: 10px;
+        }
+
+        .other-place-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--dot-navy);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .other-place-link:hover {
+            background: #E2E8F0;
+            transform: translateX(4px);
         }
 
         /* Culture & Heritage Section */
@@ -680,8 +947,11 @@
 
         /* Responsive Tweaks */
         @media (max-width: 900px) {
-            .about-grid {
+            .about-grid, .detail-content {
                 grid-template-columns: 1fr;
+            }
+            .facts-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             .card {
                 flex: 0 0 82%;
@@ -689,11 +959,11 @@
         }
 
         @media (max-width: 600px) {
-            .about-stats {
+            .about-stats, .facts-grid {
                 grid-template-columns: 1fr;
             }
-            .contact-box {
-                padding: 26px 20px;
+            .contact-box, .detail-card {
+                padding: 24px 20px;
             }
         }
     </style>
@@ -704,185 +974,257 @@
 
 <header>
     <div class="nav-container">
-        <a href="#" class="brand">
+        <a href="#home" class="brand" id="brandLink">
             <span class="brand-badge"></span>
             Lakbay, <span>Novo Ecijano</span>
         </a>
         <nav>
-            <a href="#about">About</a>
-            <a href="#destinations">Destinations</a>
-            <a href="#culture">Culture</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact" class="nav-cta">Plan a Visit</a>
+            <a href="#about" class="home-nav-link">About</a>
+            <a href="#destinations" class="home-nav-link">Destinations</a>
+            <a href="#culture" class="home-nav-link">Culture</a>
+            <a href="#gallery" class="home-nav-link">Gallery</a>
+            <a href="#contact" class="nav-cta home-nav-link">Plan a Visit</a>
         </nav>
     </div>
 </header>
 
-<div class="hero">
-    <div class="hero-content">
-        <span class="hero-kicker">Love Nueva Ecija • Central Luzon</span>
-        <h1>Lakbay, Novo Ecijano</h1>
-        <p>Experience emerald rivers, misty Sierra Madre ridges, living history, and warm Filipino hospitality in the Rice Granary of the Philippines.</p>
-        <div class="hero-actions">
-            <a href="#destinations" class="btn-primary">Explore Destinations</a>
-            <a href="#culture" class="btn-outline">Discover Heritage</a>
+<!-- ==================== HOMEPAGE VIEW ==================== -->
+<main id="homeView">
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-kicker">Love Nueva Ecija • Central Luzon</span>
+            <h1>Lakbay, Novo Ecijano</h1>
+            <p>Experience emerald rivers, misty Sierra Madre ridges, living history, and warm Filipino hospitality in the Rice Granary of the Philippines.</p>
+            <div class="hero-actions">
+                <a href="#destinations" class="btn-primary">Explore Destinations</a>
+                <a href="#culture" class="btn-outline">Discover Heritage</a>
+            </div>
         </div>
     </div>
-</div>
 
-<section id="about">
-    <div class="container about-grid">
+    <section id="about">
+        <div class="container about-grid">
+            <div>
+                <div class="section-header">
+                    <span class="section-kicker">Welcome to Nueva Ecija</span>
+                    <h2>About Lakbay, Novo Ecijano</h2>
+                </div>
+                <p>Discover the beauty, culture, and heritage of Nueva Ecija. Lakbay, Novo Ecijano is your gateway to exploring the province’s rich history, breathtaking landscapes, and vibrant communities—from limestone river canyons to tranquil highland dams.</p>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <strong>32</strong>
+                        <span>Cities & Municipalities</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>#1</strong>
+                        <span>Rice Granary of PH</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>Year-Round</strong>
+                        <span>Eco & Heritage Escapes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Lush green fields of Nueva Ecija">
+            </div>
+        </div>
+    </section>
+
+    <section id="destinations">
+        <div class="container">
+            <div class="carousel-header-row">
+                <div class="section-header">
+                    <span class="section-kicker">Where to Go</span>
+                    <h2>Top Destinations</h2>
+                    <p class="section-subtitle">Click any destination card to open its full travel guide, highlights, and tips.</p>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn" aria-label="Previous destination">&#8592;</button>
+                    <button class="carousel-btn" id="nextBtn" aria-label="Next destination">&#8594;</button>
+                </div>
+            </div>
+
+            <div class="carousel-viewport" id="carouselViewport">
+                <div class="carousel-track" id="carouselTrack">
+
+                    <a href="#place/minalungao" class="card card-minalungao">
+                        <div class="card-bg"></div>
+                        <span class="card-tag">General Tinio</span>
+                        <h3>Minalungao National Park</h3>
+                        <p>Experience emerald waters, towering limestone formations, and scenic river adventures.</p>
+                        <span class="card-cta">Explore Place <span>&#8594;</span></span>
+                    </a>
+
+                    <a href="#place/pantabangan" class="card card-pantabangan">
+                        <div class="card-bg"></div>
+                        <span class="card-tag">Pantabangan</span>
+                        <h3>Pantabangan Dam</h3>
+                        <p>A serene highland escape offering panoramic reservoir views, sunset vistas, and cool mountain air.</p>
+                        <span class="card-cta">Explore Place <span>&#8594;</span></span>
+                    </a>
+
+                    <a href="#place/pangatian" class="card card-pangatian">
+                        <div class="card-bg"></div>
+                        <span class="card-tag">Cabanatuan City</span>
+                        <h3>Camp Pangatian War Memorial</h3>
+                        <p>Walk through World War II history and honor the site of the legendary Great Raid of 1945.</p>
+                        <span class="card-cta">Explore Place <span>&#8594;</span></span>
+                    </a>
+
+                    <a href="#place/gabaldon" class="card card-gabaldon">
+                        <div class="card-bg"></div>
+                        <span class="card-tag">Gabaldon</span>
+                        <h3>Gabaldon Falls & Dupinga River</h3>
+                        <p>Unwind beside crystal-clear mountain cascades and refreshing rocky river pools along the Sierra Madre foothills.</p>
+                        <span class="card-cta">Explore Place <span>&#8594;</span></span>
+                    </a>
+
+                    <a href="#place/mt387" class="card card-mt387">
+                        <div class="card-bg"></div>
+                        <span class="card-tag">Carranglan</span>
+                        <h3>Mt. 387 (Batong Amat)</h3>
+                        <p>Trek scenic rolling green ridges with sweeping 360-degree mountain views and nearby Aloha Falls.</p>
+                        <span class="card-cta">Explore Place <span>&#8594;</span></span>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
+        </div>
+    </section>
+
+    <section id="culture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">Heart of the Province</span>
+                <h2>Culture & Heritage</h2>
+                <p class="section-subtitle">Nueva Ecija is known as the Rice Granary of the Philippines, home to traditions celebrating agriculture, community, and resilience.</p>
+            </div>
+
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <div class="culture-dot" style="background: var(--dot-gold);"></div>
+                    <h3>Vibrant Festivals</h3>
+                    <p>From the Taong Putik Festival in Aliaga to the Tanduyong Festival in San Jose, every town celebrates faith and harvest with color.</p>
+                </div>
+                <div class="culture-item">
+                    <div class="culture-dot" style="background: var(--dot-red);"></div>
+                    <h3>Local Cuisine</h3>
+                    <p>Savor Cabanatuan’s famous garlic longganisa, savory batotay, carabao milk pastillas, and freshly brewed highland coffee.</p>
+                </div>
+                <div class="culture-item">
+                    <div class="culture-dot" style="background: var(--dot-emerald);"></div>
+                    <h3>Craft & Resilience</h3>
+                    <p>Discover centuries-old churches, agricultural heritage, and warm Novo Ecijano hospitality passed down through generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">Visual Journey</span>
+                <h2>Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Mountain and river landscape">
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80" alt="Philippine tropical scenery">
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80" alt="Travel adventure">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <div class="section-header" style="margin-bottom: 24px;">
+                    <span class="section-kicker">Get in Touch</span>
+                    <h2>Contact Us</h2>
+                    <p class="section-subtitle">Planning a trip to Nueva Ecija? Send us a message for local travel tips and destination guides.</p>
+                </div>
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <textarea rows="5" placeholder="Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ==================== DESTINATION DETAIL PAGE VIEW ==================== -->
+<article id="destinationPage" class="hidden" aria-live="polite">
+    <div class="detail-hero" id="detailHero">
+        <div class="detail-hero-inner">
+            <a href="#destinations" class="back-btn" id="backToDestinations">&#8592; Back to Destinations</a>
+            <div class="detail-breadcrumb" id="detailBreadcrumb">Home / Destinations / Place</div>
+            <h1 id="detailTitle">Destination Name</h1>
+            <p class="detail-tagline" id="detailTagline">Destination tagline goes here.</p>
+        </div>
+    </div>
+
+    <div class="facts-bar">
+        <div class="facts-grid">
+            <div class="fact-item">
+                <span>Location</span>
+                <strong id="factLocation">—</strong>
+            </div>
+            <div class="fact-item">
+                <span>Category</span>
+                <strong id="factCategory">—</strong>
+            </div>
+            <div class="fact-item">
+                <span>Best Time to Visit</span>
+                <strong id="factBestTime">—</strong>
+            </div>
+            <div class="fact-item">
+                <span>Ideal For</span>
+                <strong id="factIdealFor">—</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="detail-content">
         <div>
-            <div class="section-header">
-                <span class="section-kicker">Welcome to Nueva Ecija</span>
-                <h2>About Lakbay, Novo Ecijano</h2>
+            <div class="detail-card">
+                <h2>About This Destination</h2>
+                <div id="detailOverview"></div>
             </div>
-            <p>Discover the beauty, culture, and heritage of Nueva Ecija. Lakbay, Novo Ecijano is your gateway to exploring the province’s rich history, breathtaking landscapes, and vibrant communities—from limestone river canyons to tranquil highland dams.</p>
-            <div class="about-stats">
-                <div class="stat-box">
-                    <strong>32</strong>
-                    <span>Cities & Municipalities</span>
-                </div>
-                <div class="stat-box">
-                    <strong>#1</strong>
-                    <span>Rice Granary of PH</span>
-                </div>
-                <div class="stat-box">
-                    <strong>Year-Round</strong>
-                    <span>Eco & Heritage Escapes</span>
-                </div>
+
+            <div class="detail-card">
+                <h2>Top Things to Do</h2>
+                <ul class="activity-list" id="detailActivities"></ul>
             </div>
         </div>
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Lush green fields of Nueva Ecija">
-        </div>
+
+        <aside>
+            <div class="sidebar-card">
+                <h3>How to Get There</h3>
+                <p id="detailDirections" style="color: var(--text-muted); font-size: 0.94rem;"></p>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>Traveler Tips</h3>
+                <ul class="tip-list" id="detailTips"></ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>Explore Other Places</h3>
+                <div class="other-places" id="otherPlacesList"></div>
+            </div>
+        </aside>
     </div>
-</section>
-
-<section id="destinations">
-    <div class="container">
-        <div class="carousel-header-row">
-            <div class="section-header">
-                <span class="section-kicker">Where to Go</span>
-                <h2>Top Destinations</h2>
-                <p class="section-subtitle">Swipe or use the arrows to explore Nueva Ecija’s most iconic natural wonders and historical landmarks.</p>
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-btn" id="prevBtn" aria-label="Previous destination">&#8592;</button>
-                <button class="carousel-btn" id="nextBtn" aria-label="Next destination">&#8594;</button>
-            </div>
-        </div>
-
-        <div class="carousel-viewport" id="carouselViewport">
-            <div class="carousel-track" id="carouselTrack">
-
-                <div class="card card-minalungao">
-                    <div class="card-bg"></div>
-                    <span class="card-tag">General Tinio</span>
-                    <h3>Minalungao National Park</h3>
-                    <p>Experience emerald waters, towering limestone formations, and scenic river adventures.</p>
-                </div>
-
-                <div class="card card-pantabangan">
-                    <div class="card-bg"></div>
-                    <span class="card-tag">Pantabangan</span>
-                    <h3>Pantabangan Dam</h3>
-                    <p>A serene highland escape offering panoramic reservoir views, sunset vistas, and cool mountain air.</p>
-                </div>
-
-                <div class="card card-pangatian">
-                    <div class="card-bg"></div>
-                    <span class="card-tag">Cabanatuan City</span>
-                    <h3>Camp Pangatian War Memorial</h3>
-                    <p>Walk through World War II history and honor the site of the legendary Great Raid of 1945.</p>
-                </div>
-
-                <div class="card card-gabaldon">
-                    <div class="card-bg"></div>
-                    <span class="card-tag">Gabaldon</span>
-                    <h3>Gabaldon Falls & Dupinga River</h3>
-                    <p>Unwind beside crystal-clear mountain cascades and refreshing rocky river pools along the Sierra Madre foothills.</p>
-                </div>
-
-                <div class="card card-mt387">
-                    <div class="card-bg"></div>
-                    <span class="card-tag">Carranglan</span>
-                    <h3>Mt. 387 (Batong Amat)</h3>
-                    <p>Trek scenic rolling green ridges with sweeping 360-degree mountain views and nearby Aloha Falls.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
-    </div>
-</section>
-
-<section id="culture">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-kicker">Heart of the Province</span>
-            <h2>Culture & Heritage</h2>
-            <p class="section-subtitle">Nueva Ecija is known as the Rice Granary of the Philippines, home to traditions celebrating agriculture, community, and resilience.</p>
-        </div>
-
-        <div class="culture-grid">
-            <div class="culture-item">
-                <div class="culture-dot" style="background: var(--dot-gold);"></div>
-                <h3>Vibrant Festivals</h3>
-                <p>From the Taong Putik Festival in Aliaga to the Tanduyong Festival in San Jose, every town celebrates faith and harvest with color.</p>
-            </div>
-            <div class="culture-item">
-                <div class="culture-dot" style="background: var(--dot-red);"></div>
-                <h3>Local Cuisine</h3>
-                <p>Savor Cabanatuan’s famous garlic longganisa, savory batotay, carabao milk pastillas, and freshly brewed highland coffee.</p>
-            </div>
-            <div class="culture-item">
-                <div class="culture-dot" style="background: var(--dot-emerald);"></div>
-                <h3>Craft & Resilience</h3>
-                <p>Discover centuries-old churches, agricultural heritage, and warm Novo Ecijano hospitality passed down through generations.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="gallery">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-kicker">Visual Journey</span>
-            <h2>Gallery</h2>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-card">
-                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Mountain and river landscape">
-            </div>
-            <div class="gallery-card">
-                <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80" alt="Philippine tropical scenery">
-            </div>
-            <div class="gallery-card">
-                <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80" alt="Travel adventure">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="container">
-        <div class="contact-box">
-            <div class="section-header" style="margin-bottom: 24px;">
-                <span class="section-kicker">Get in Touch</span>
-                <h2>Contact Us</h2>
-                <p class="section-subtitle">Planning a trip to Nueva Ecija? Send us a message for local travel tips and destination guides.</p>
-            </div>
-            <form id="contactForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <textarea rows="5" placeholder="Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </div>
-</section>
+</article>
 
 <footer>
     <div class="dot-ribbon"></div>
@@ -893,6 +1235,238 @@
 </footer>
 
 <script>
+    /* ==================== DESTINATION DATA ==================== */
+    const destinations = {
+        minalungao: {
+            title: "Minalungao National Park",
+            municipality: "General Tinio, Nueva Ecija",
+            category: "Eco-Tourism & River Canyon",
+            bestTime: "November – May (Dry Season)",
+            idealFor: "Families, Swimmers & Adventure Seekers",
+            tagline: "Emerald river waters winding through towering 16-meter limestone walls in the foothills of the Sierra Madre.",
+            accentHex: "#008751",
+            accentRgb: "0, 122, 74",
+            image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
+            overview: [
+                "Minalungao National Park is Nueva Ecija’s premier eco-tourism jewel, celebrated for the pristine Peñaranda River framed by dramatic karst limestone formations. Its name is derived from 'mina' (mine) and 'lungao' (cave), reflecting the many hidden caverns tucked along its cliffs.",
+                "Protected as a national park since 1967, the area offers a refreshing blend of calm riverside picnics and adrenaline-filled activities—making it a favorite day-trip destination from both Cabanatuan City and Metro Manila."
+            ],
+            activities: [
+                { title: "Bamboo Rafting & Swimming", desc: "Rent a floating bamboo cottage (balsa) with a guide and drift gently through the cool green river canyon." },
+                { title: "Climb the 1,000-Step Cross", desc: "Ascend the hillside stairway to reach a massive white cross overlooking the Sierra Madre range." },
+                { title: "Hanging Bridge & Zipline", desc: "Cross the steel suspension bridge for panoramic photos or glide high above the river on the park’s zipline." },
+                { title: "Cave Exploration", desc: "Hire a local guide to explore nearby limestone caves and rock formations." }
+            ],
+            directions: "From Cabanatuan City, take a jeepney or drive south toward Gapan or Santa Rosa, then head east to General Tinio (Papaya). Follow the paved tourism road straight to Barangay Pias where the park entrance is located (about 1–1.5 hours from Cabanatuan).",
+            tips: [
+                "Arrive early in the morning (before 9:00 AM) to enjoy clearer emerald water and fewer crowds.",
+                "Wear aqua shoes or sturdy sandals—the limestone rocks can be slippery.",
+                "Bring cash for environmental fees, bamboo raft rentals, and local food stalls.",
+                "Practice Leave No Trace: bring a reusable bag for your trash."
+            ]
+        },
+        pantabangan: {
+            title: "Pantabangan Dam",
+            municipality: "Pantabangan, Nueva Ecija",
+            category: "Highland Reservoir & Scenic Viewpoint",
+            bestTime: "December – May (Cool Breezes & Clear Sunsets)",
+            idealFor: "Road Trippers, Photographers & Relaxed Getaways",
+            tagline: "Sweeping mountain vistas, tranquil blue waters, and cool highland breezes at one of Southeast Asia’s largest earth-fill dams.",
+            accentHex: "#0038A8",
+            accentRgb: "0, 56, 168",
+            image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+            overview: [
+                "Completed in 1974, Pantabangan Dam is a landmark hydroelectric and irrigation reservoir that supplies water to vast stretches of Central Luzon’s farmlands. Surrounded by rolling hills and mountain ridges, the reservoir feels like a serene lakeside retreat.",
+                "Beneath its waters lies the submerged historic town of Old Pantabangan—during unusually dry seasons when water levels drop, ruins of the centuries-old church occasionally re-emerge, drawing curious visitors and history buffs alike."
+            ],
+            activities: [
+                { title: "Panoramic Viewdeck Sightseeing", desc: "Stop along the dam crest and hilltop viewpoints for golden-hour photography over the sprawling lake." },
+                { title: "Lakeside Dining & Resorts", desc: "Unwind at scenic lakeside resorts and cafes overlooking the water with cool mountain air." },
+                { title: "Boating & Sport Fishing", desc: "Enjoy calm boat rides across the reservoir or try freshwater bass and tilapia fishing with local guides." },
+                { title: "Old Pantabangan Heritage Viewing", desc: "Learn about the town’s relocation story and, during low-water dry months, view the historic sunken ruins." }
+            ],
+            directions: "From Cabanatuan City, head north via Maharlika Highway toward Rizal, Nueva Ecija, then follow the scenic winding road up to Pantabangan (roughly 1.5 hours by private vehicle or local bus/van).",
+            tips: [
+                "Bring a light jacket—the wind along the dam crest can get chilly, especially in the late afternoon.",
+                "Sunset (4:30 PM – 6:00 PM) offers the best lighting for photos over the reservoir.",
+                "Drive carefully along the uphill curves approaching Pantabangan."
+            ]
+        },
+        pangatian: {
+            title: "Camp Pangatian War Memorial",
+            municipality: "Cabanatuan City, Nueva Ecija",
+            category: "Historical Landmark & Shrine",
+            bestTime: "Year-Round (Especially January 30 Commemoration)",
+            idealFor: "History Enthusiasts, Students & Cultural Travelers",
+            tagline: "A solemn World War II memorial honoring the courage of Filipino guerrillas and Allied forces during the Great Raid of 1945.",
+            accentHex: "#CE1126",
+            accentRgb: "185, 28, 44",
+            image: "https://images.unsplash.com/photo-1565060169194-19fabf63012c?auto=format&fit=crop&w=1600&q=80",
+            overview: [
+                "Originally built as a Philippine Army training camp, Camp Pangatian became a Japanese Prisoner of War (POW) camp during World War II, holding thousands of American and Allied soldiers who survived the Bataan Death March.",
+                "On January 30, 1945, it became the stage for the legendary 'Great Raid'—a daring rescue mission carried out jointly by the U.S. Army 6th Ranger Battalion, Alamo Scouts, and Filipino guerrillas led by Capt. Juan Pajota and Capt. Eduardo Joson, freeing over 500 POWs."
+            ],
+            activities: [
+                { title: "Walk the Memorial Wall", desc: "Pay tribute at the marble memorial wall inscribed with the names of soldiers who perished at the camp." },
+                { title: "Visit the On-Site Museum", desc: "View WWII artifacts, historical photographs, and accounts of the 1945 rescue operation." },
+                { title: "Explore the Shrine Grounds", desc: "Stroll through the quiet, tree-lined park featuring the sundial monument and commemorative markers." },
+                { title: "Pair with a Cabanatuan Food Trip", desc: "After visiting, sample Cabanatuan’s famous garlic longganisa, batotay, and local delicacies nearby." }
+            ],
+            directions: "Located along the Cabanatuan–Bongabon Road in Barangay Pangatian, just 15–20 minutes east of Cabanatuan City proper. Easily accessible by tricycle, jeepney, or private car.",
+            tips: [
+                "Observe quiet and respectful behavior—the grounds serve as a solemn war memorial.",
+                "Check local opening hours before going if you plan to enter the indoor museum.",
+                "Bring water and sun protection while walking the open-air monument grounds."
+            ]
+        },
+        gabaldon: {
+            title: "Gabaldon Falls & Dupinga River",
+            municipality: "Gabaldon, Nueva Ecija",
+            category: "Waterfalls & River Nature Park",
+            bestTime: "December – May",
+            idealFor: "Nature Lovers, Barkadas & Weekend Picnics",
+            tagline: "Crisp mountain cascades and crystal-clear rocky river pools nestled at the base of the Sierra Madre mountain range.",
+            accentHex: "#008B9A",
+            accentRgb: "0, 128, 145",
+            image: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1600&q=80",
+            overview: [
+                "Tucked in the eastern valley of Nueva Ecija near the border of Aurora, Gabaldon is surrounded by lush Sierra Madre forestland. Gabaldon Falls sits inside the sprawling NEUST–Gabaldon campus, reachable via a short, scenic forest trail with cool, misty waters plunging into a natural rock basin.",
+                "Just a short drive away, the Dupinga River offers wide, shallow, crystal-clear mountain streams lined with smooth boulders and riverside cottages—making it a classic weekend picnic spot for families and groups."
+            ],
+            activities: [
+                { title: "Trek to Gabaldon Falls", desc: "Take an easy 15–20 minute shaded walk through lush greenery and dip into the refreshing waterfall pool." },
+                { title: "Riverside Picnic at Dupinga River", desc: "Rent a nipa hut along the rocky riverbank, grill local favorites, and swim in cool flowing mountain water." },
+                { title: "Nature Photography", desc: "Capture dramatic mist-covered views of the Sierra Madre mountains framing the valley." },
+                { title: "Gateway Stopover to Dingalan", desc: "Combine your Gabaldon trip with a short drive over the mountain pass to Dingalan, Aurora’s coastline." }
+            ],
+            directions: "From Cabanatuan City, drive or ride a bus/van east through Palayan City and Bongabon toward Gabaldon (about 1.5 hours). Dupinga River sits right along the main highway, while Gabaldon Falls is inside the NEUST Gabaldon campus.",
+            tips: [
+                "Avoid swimming in the river during heavy rainfall, as mountain water levels can rise quickly.",
+                "Wear grippy footwear for the mossy rocks around Gabaldon Falls and Dupinga River.",
+                "Bring extra dry clothes and cash for cottage rentals and environmental fees."
+            ]
+        },
+        mt387: {
+            title: "Mt. 387 (Batong Amat)",
+            municipality: "Carranglan, Nueva Ecija",
+            category: "Mountain Trekking & Eco-Adventure",
+            bestTime: "November – May (Sunrise Hikes)",
+            idealFor: "Beginner Hikers, Campers & Adventure Groups",
+            tagline: "Rolling emerald cogon-grass ridges, dramatic 360-degree mountain panoramas, and a refreshing post-hike dip at Aloha Falls.",
+            accentHex: "#C47A00",
+            accentRgb: "196, 122, 0",
+            image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1600&q=80",
+            overview: [
+                "Rising approximately 724 meters above sea level in Barangay Puncan, Carranglan, Mt. 387—locally known as Batong Amat—is one of Northern and Central Luzon’s most beloved beginner-friendly hikes. Its name comes from the 387 hectares of protected forestland cared for by the local community.",
+                "Hikers are rewarded with picturesque open ridges reminiscent of Batanes’ rolling hills, a famous lone 'Lovers' Tree' photo spot, and sweeping views where the Caraballo and Sierra Madre mountain ranges meet."
+            ],
+            activities: [
+                { title: "Sunrise Summit Hike", desc: "Complete a rewarding 2–3 hour ascent to catch a sea of clouds and golden sunrise over the ridges." },
+                { title: "Photo Stop at Lovers' Tree", desc: "Pause along the breezy grassy ridge for iconic wide-angle mountain portraits." },
+                { title: "Side Trip to Aloha Falls", desc: "Cool off after your descent with a short trek to the cascading, tiered waters of nearby Aloha Falls." },
+                { title: "Tree Planting & Eco-Tourism", desc: "Support the local community’s reforestation efforts by joining guided eco-activities at the jump-off." }
+            ],
+            directions: "From Cabanatuan City or San Jose City, travel north along Maharlika Highway toward Carranglan and stop at Barangay Puncan (the official registration and jump-off point, about 1.5–2 hours from Cabanatuan).",
+            tips: [
+                "Register at the Barangay Puncan tourism office—hiring a certified local guide is required.",
+                "Start early (around 4:30 AM – 5:30 AM) because the open ridge trail gets sunny by mid-morning.",
+                "Pack at least 1.5–2 liters of water, trail snacks, sunblock, and a windbreaker."
+            ]
+        }
+    };
+
+    /* ==================== PAGE ROUTING ==================== */
+    const homeView = document.getElementById('homeView');
+    const destinationPage = document.getElementById('destinationPage');
+    const detailHero = document.getElementById('detailHero');
+
+    function renderDestinationPage(slug) {
+        const place = destinations[slug];
+        if (!place) {
+            showHomeView();
+            return;
+        }
+
+        // Apply destination's DOT accent color theme
+        destinationPage.style.setProperty('--detail-accent', place.accentHex);
+        destinationPage.style.setProperty('--detail-rgb', place.accentRgb);
+
+        // Hero content
+        detailHero.style.backgroundImage = `url('${place.image}')`;
+        document.getElementById('detailBreadcrumb').textContent = `Home / Destinations / ${place.title}`;
+        document.getElementById('detailTitle').textContent = place.title;
+        document.getElementById('detailTagline').textContent = place.tagline;
+
+        // Quick facts
+        document.getElementById('factLocation').textContent = place.municipality;
+        document.getElementById('factCategory').textContent = place.category;
+        document.getElementById('factBestTime').textContent = place.bestTime;
+        document.getElementById('factIdealFor').textContent = place.idealFor;
+
+        // Overview paragraphs
+        document.getElementById('detailOverview').innerHTML = place.overview
+            .map(p => `<p>${p}</p>`)
+            .join('');
+
+        // Activities
+        document.getElementById('detailActivities').innerHTML = place.activities
+            .map(a => `<li><strong>${a.title}</strong><span>${a.desc}</span></li>`)
+            .join('');
+
+        // Directions & Tips
+        document.getElementById('detailDirections').textContent = place.directions;
+        document.getElementById('detailTips').innerHTML = place.tips
+            .map(t => `<li>${t}</li>`)
+            .join('');
+
+        // Other destinations links
+        document.getElementById('otherPlacesList').innerHTML = Object.entries(destinations)
+            .filter(([key]) => key !== slug)
+            .map(([key, item]) => `
+                <a href="#place/${key}" class="other-place-link">
+                    <span>${item.title}</span>
+                    <span>&#8594;</span>
+                </a>
+            `)
+            .join('');
+
+        // Switch view and scroll directly under the ribbon/header
+        homeView.classList.add('hidden');
+        destinationPage.classList.remove('hidden');
+        document.title = `${place.title} | Lakbay, Novo Ecijano`;
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function showHomeView(sectionId) {
+        destinationPage.classList.add('hidden');
+        homeView.classList.remove('hidden');
+        document.title = 'Lakbay, Novo Ecijano | Love Nueva Ecija';
+
+        if (sectionId) {
+            const target = document.getElementById(sectionId);
+            if (target) {
+                setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 30);
+                return;
+            }
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function handleRoute() {
+        const hash = window.location.hash || '';
+        if (hash.startsWith('#place/')) {
+            const slug = hash.replace('#place/', '');
+            renderDestinationPage(slug);
+        } else {
+            const sectionId = hash.replace('#', '');
+            showHomeView(sectionId && sectionId !== 'home' ? sectionId : null);
+        }
+    }
+
+    window.addEventListener('hashchange', handleRoute);
+    window.addEventListener('DOMContentLoaded', handleRoute);
+
+    /* ==================== CAROUSEL CONTROLS ==================== */
     const viewport = document.getElementById('carouselViewport');
     const track = document.getElementById('carouselTrack');
     const cards = Array.from(track.querySelectorAll('.card'));
@@ -900,7 +1474,6 @@
     const nextBtn = document.getElementById('nextBtn');
     const dotsContainer = document.getElementById('carouselDots');
 
-    // Build pagination dots
     cards.forEach((_, index) => {
         const dot = document.createElement('button');
         dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
@@ -942,7 +1515,7 @@
 
     viewport.addEventListener('scroll', updateActiveDot);
 
-    // Simple form feedback
+    /* ==================== CONTACT FORM ==================== */
     document.getElementById('contactForm').addEventListener('submit', (e) => {
         e.preventDefault();
         alert('Salamat! Your message has been sent to Lakbay, Novo Ecijano.');
