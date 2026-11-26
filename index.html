@@ -23,30 +23,16 @@
             --white: #FFFFFF;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Plus Jakarta Sans', Arial, sans-serif;
             color: var(--text-dark);
             background-color: var(--white);
             line-height: 1.65;
         }
-
-        h1, h2, h3, h4, .brand {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .hidden {
-            display: none !important;
-        }
+        h1, h2, h3, h4, .brand { font-family: 'Montserrat', sans-serif; }
+        .hidden { display: none !important; }
 
         /* Multi-color Philippine Weave Accent Bar */
         .dot-ribbon {
@@ -93,11 +79,7 @@
             font-size: 1.2rem;
             letter-spacing: -0.02em;
         }
-
-        .brand span {
-            color: var(--dot-blue);
-        }
-
+        .brand span { color: var(--dot-blue); }
         .brand-badge {
             display: inline-block;
             width: 12px;
@@ -107,24 +89,17 @@
             box-shadow: 0 0 0 3px rgba(252, 209, 22, 0.35);
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            flex-wrap: wrap;
-        }
-
+        nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
         nav a {
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.86rem;
+            font-size: 0.82rem;
             text-transform: uppercase;
             letter-spacing: 0.04em;
             position: relative;
             transition: color 0.25s ease;
         }
-
         nav a::after {
             content: '';
             position: absolute;
@@ -136,14 +111,8 @@
             border-radius: 2px;
             transition: width 0.25s ease;
         }
-
-        nav a:hover, nav a.active-link {
-            color: var(--dot-blue);
-        }
-
-        nav a:hover::after, nav a.active-link::after {
-            width: 100%;
-        }
+        nav a:hover, nav a.active-link { color: var(--dot-blue); }
+        nav a:hover::after, nav a.active-link::after { width: 100%; }
 
         .nav-cta {
             background: var(--dot-blue);
@@ -152,15 +121,8 @@
             border-radius: 50px;
             transition: background 0.25s ease, transform 0.2s ease;
         }
-
-        .nav-cta::after {
-            display: none;
-        }
-
-        .nav-cta:hover {
-            background: var(--dot-red);
-            transform: translateY(-1px);
-        }
+        .nav-cta::after { display: none; }
+        .nav-cta:hover { background: var(--dot-red); transform: translateY(-1px); }
 
         /* Hero Section */
         .hero {
@@ -173,14 +135,10 @@
             color: var(--white);
             background:
                 linear-gradient(135deg, rgba(11, 31, 58, 0.72) 0%, rgba(0, 56, 168, 0.48) 55%, rgba(0, 135, 81, 0.42) 100%),
-                url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+                url('https://commons.wikimedia.org/wiki/Special:FilePath/Minalungao_National_Park_2.jpg?width=1600') center/cover no-repeat;
             padding: 80px 24px;
         }
-
-        .hero-content {
-            max-width: 820px;
-        }
-
+        .hero-content { max-width: 820px; }
         .hero-kicker {
             display: inline-block;
             background: rgba(252, 209, 22, 0.95);
@@ -193,7 +151,6 @@
             border-radius: 50px;
             margin-bottom: 20px;
         }
-
         .hero h1 {
             font-size: clamp(2.5rem, 6vw, 4.2rem);
             font-weight: 800;
@@ -201,20 +158,13 @@
             margin-bottom: 18px;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
         }
-
         .hero p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            max-width: 640px;
+            font-size: clamp(1rem, 2vw, 1.18rem);
+            max-width: 660px;
             margin: 0 auto 32px;
-            color: rgba(255, 255, 255, 0.93);
+            color: rgba(255, 255, 255, 0.94);
         }
-
-        .hero-actions {
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
+        .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 
         .btn-primary, .btn-outline, .btn-blue {
             display: inline-flex;
@@ -227,54 +177,21 @@
             text-decoration: none;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
         }
-
         .btn-primary {
             background: var(--dot-gold);
             color: var(--dot-navy);
             box-shadow: 0 8px 20px rgba(252, 209, 22, 0.3);
         }
-
-        .btn-primary:hover {
-            background: #ffe047;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--white);
-            color: var(--white);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .btn-outline:hover {
-            background: var(--white);
-            color: var(--dot-navy);
-            transform: translateY(-2px);
-        }
-
-        .btn-blue {
-            background: var(--dot-blue);
-            color: var(--white);
-        }
-
-        .btn-blue:hover {
-            background: var(--dot-emerald);
-            transform: translateY(-2px);
-        }
+        .btn-primary:hover { background: #ffe047; transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--white); color: var(--white); background: rgba(255, 255, 255, 0.08); }
+        .btn-outline:hover { background: var(--white); color: var(--dot-navy); transform: translateY(-2px); }
+        .btn-blue { background: var(--dot-blue); color: var(--white); }
+        .btn-blue:hover { background: var(--dot-emerald); transform: translateY(-2px); }
 
         /* Shared Section Styles */
-        section {
-            padding: 80px 24px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-header {
-            margin-bottom: 40px;
-        }
-
+        section { padding: 80px 24px; }
+        .container { max-width: 1200px; margin: auto; }
+        .section-header { margin-bottom: 40px; }
         .section-header-row {
             display: flex;
             align-items: flex-end;
@@ -283,11 +200,7 @@
             flex-wrap: wrap;
             margin-bottom: 32px;
         }
-
-        .section-header-row .section-header {
-            margin-bottom: 0;
-        }
-
+        .section-header-row .section-header { margin-bottom: 0; }
         .section-kicker {
             display: inline-block;
             color: var(--dot-blue);
@@ -297,88 +210,56 @@
             letter-spacing: 0.12em;
             margin-bottom: 8px;
         }
-
         .section-header h2 {
             font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             color: var(--dot-navy);
             font-weight: 800;
             line-height: 1.2;
         }
+        .section-subtitle { color: var(--text-muted); max-width: 680px; margin-top: 10px; }
 
-        .section-subtitle {
+        /* Image Source Attribution Footer */
+        .img-source {
+            font-size: 0.74rem;
             color: var(--text-muted);
-            max-width: 650px;
-            margin-top: 10px;
+            padding: 8px 14px;
+            background: #F1F5F9;
+            border-top: 1px solid #E2E8F0;
+            line-height: 1.4;
         }
+        .img-source a { color: var(--dot-blue); text-decoration: none; font-weight: 600; }
+        .img-source a:hover { text-decoration: underline; }
+        .img-source-dark { font-size: 0.72rem; color: rgba(255, 255, 255, 0.8); margin-top: 8px; }
+        .img-source-dark a { color: var(--dot-gold); text-decoration: none; font-weight: 600; }
+        .img-source-dark a:hover { text-decoration: underline; }
 
         /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: 28px;
-        }
-
-        .stat-box {
-            background: var(--bg-light);
-            padding: 18px;
-            border-radius: 12px;
-            border-top: 4px solid var(--dot-blue);
-        }
-
+        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+        .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+        .stat-box { background: var(--bg-light); padding: 18px; border-radius: 12px; border-top: 4px solid var(--dot-blue); }
         .stat-box:nth-child(2) { border-top-color: var(--dot-emerald); }
         .stat-box:nth-child(3) { border-top-color: var(--dot-red); }
-
-        .stat-box strong {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            color: var(--dot-navy);
-        }
-
-        .stat-box span {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-        }
-
+        .stat-box strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 1.4rem; color: var(--dot-navy); }
+        .stat-box span { font-size: 0.82rem; color: var(--text-muted); }
         .about-image {
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(11, 31, 58, 0.12);
+            border: 1px solid #E2E8F0;
         }
-
-        .about-image img {
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-            display: block;
-        }
+        .about-image img { width: 100%; height: 340px; object-fit: cover; display: block; }
 
         /* Destinations Carousel Section */
-        #destinations {
-            background: var(--bg-light);
-        }
-
-        .carousel-controls {
-            display: flex;
-            gap: 10px;
-        }
-
+        #destinations { background: var(--bg-light); }
+        .carousel-controls { display: flex; gap: 10px; }
         .carousel-btn {
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
             border: 2px solid var(--dot-blue);
             background: var(--white);
             color: var(--dot-blue);
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             cursor: pointer;
             display: flex;
@@ -386,13 +267,7 @@
             justify-content: center;
             transition: all 0.25s ease;
         }
-
-        .carousel-btn:hover {
-            background: var(--dot-blue);
-            color: var(--white);
-            transform: scale(1.05);
-        }
-
+        .carousel-btn:hover { background: var(--dot-blue); color: var(--white); transform: scale(1.05); }
         .carousel-viewport {
             overflow-x: auto;
             scroll-snap-type: x mandatory;
@@ -400,17 +275,10 @@
             scrollbar-width: none;
             padding: 8px 4px 20px;
         }
+        .carousel-viewport::-webkit-scrollbar { display: none; }
+        .carousel-track { display: flex; gap: 24px; }
 
-        .carousel-viewport::-webkit-scrollbar {
-            display: none;
-        }
-
-        .carousel-track {
-            display: flex;
-            gap: 24px;
-        }
-
-        /* Clickable Destination Card with Background Image & Mild Color Overlay */
+        /* Clickable Destination Card */
         .card {
             position: relative;
             flex: 0 0 calc(33.333% - 16px);
@@ -430,12 +298,7 @@
             transition: transform 0.35s ease, box-shadow 0.35s ease;
             isolation: isolate;
         }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 38px rgba(11, 31, 58, 0.22);
-        }
-
+        .card:hover { transform: translateY(-6px); box-shadow: 0 20px 38px rgba(11, 31, 58, 0.22); }
         .card-bg {
             position: absolute;
             inset: 0;
@@ -444,11 +307,7 @@
             z-index: -2;
             transition: transform 0.5s ease;
         }
-
-        .card:hover .card-bg {
-            transform: scale(1.08);
-        }
-
+        .card:hover .card-bg { transform: scale(1.08); }
         .card::before {
             content: '';
             position: absolute;
@@ -457,40 +316,21 @@
             background: linear-gradient(
                 180deg,
                 rgba(var(--card-rgb), 0.22) 0%,
-                rgba(var(--card-rgb), 0.52) 55%,
-                rgba(var(--card-rgb), 0.86) 100%
+                rgba(var(--card-rgb), 0.54) 55%,
+                rgba(var(--card-rgb), 0.88) 100%
             );
             transition: opacity 0.35s ease;
         }
-
-        .card:hover::before {
-            opacity: 0.9;
-        }
-
         .card-minalungao { --card-rgb: 0, 122, 74; }
-        .card-minalungao .card-bg {
-            background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80');
-        }
-
+        .card-minalungao .card-bg { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Minalungao_National_Park_2.jpg?width=900'); }
         .card-pantabangan { --card-rgb: 0, 56, 168; }
-        .card-pantabangan .card-bg {
-            background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80');
-        }
-
+        .card-pantabangan .card-bg { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Pantabangan_Lake_Nueva_Ecija.jpg?width=900'); }
         .card-pangatian { --card-rgb: 185, 28, 44; }
-        .card-pangatian .card-bg {
-            background-image: url('https://images.unsplash.com/photo-1565060169194-19fabf63012c?auto=format&fit=crop&w=900&q=80');
-        }
-
+        .card-pangatian .card-bg { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/The_Camp_Pangatian_Shrine_in_Cabanatuan_City,_Nueva_Eija.JPG?width=900'); }
         .card-gabaldon { --card-rgb: 0, 128, 145; }
-        .card-gabaldon .card-bg {
-            background-image: url('https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=900&q=80');
-        }
-
+        .card-gabaldon .card-bg { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/DupingaRiverjf9490_10.JPG?width=900'); }
         .card-mt387 { --card-rgb: 196, 122, 0; }
-        .card-mt387 .card-bg {
-            background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=900&q=80');
-        }
+        .card-mt387 .card-bg { background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=900&q=80'); }
 
         .card-tag {
             position: absolute;
@@ -507,23 +347,8 @@
             padding: 5px 12px;
             border-radius: 50px;
         }
-
-        .card h3 {
-            font-size: 1.38rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            line-height: 1.25;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-        }
-
-        .card p {
-            font-size: 0.94rem;
-            line-height: 1.55;
-            color: rgba(255, 255, 255, 0.95);
-            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-            margin-bottom: 16px;
-        }
-
+        .card h3 { font-size: 1.38rem; font-weight: 800; margin-bottom: 10px; line-height: 1.25; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25); }
+        .card p { font-size: 0.93rem; line-height: 1.55; color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2); margin-bottom: 16px; }
         .card-cta {
             display: inline-flex;
             align-items: center;
@@ -535,18 +360,9 @@
             color: var(--dot-gold);
             transition: gap 0.25s ease;
         }
+        .card:hover .card-cta { gap: 12px; }
 
-        .card:hover .card-cta {
-            gap: 12px;
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 12px;
-        }
-
+        .carousel-dots { display: flex; justify-content: center; gap: 10px; margin-top: 12px; }
         .carousel-dot {
             width: 10px;
             height: 10px;
@@ -556,56 +372,125 @@
             cursor: pointer;
             transition: all 0.25s ease;
         }
+        .carousel-dot.active { width: 28px; border-radius: 50px; background: var(--dot-blue); }
 
-        .carousel-dot.active {
-            width: 28px;
-            border-radius: 50px;
-            background: var(--dot-blue);
+        /* ==================== SUBPAGE TOP CLICKABLE HERO CAROUSEL ==================== */
+        .page-carousel-wrap { background: var(--dot-navy); padding: 28px 24px 36px; position: relative; }
+        .page-carousel-container { max-width: 1200px; margin: auto; }
+        .page-carousel-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 18px;
         }
+        .page-carousel-heading h1 {
+            color: var(--white);
+            font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-top: 6px;
+        }
+        .page-carousel-heading p { color: rgba(255, 255, 255, 0.86); max-width: 680px; font-size: 0.96rem; margin-top: 6px; }
+        .page-carousel-stage {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+        .page-carousel-slides { display: flex; transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+        .page-carousel-slide {
+            min-width: 100%;
+            height: 410px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+            text-decoration: none;
+            color: var(--white);
+            background-size: cover;
+            background-position: center;
+            isolation: isolate;
+        }
+        .page-carousel-slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(180deg, rgba(11, 31, 58, 0.18) 0%, rgba(11, 31, 58, 0.55) 52%, rgba(11, 31, 58, 0.93) 100%);
+        }
+        .page-slide-content { padding: 32px 36px; max-width: 760px; }
+        .page-slide-badge {
+            display: inline-block;
+            background: var(--dot-gold);
+            color: var(--dot-navy);
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+        .page-slide-content h2 { font-size: clamp(1.45rem, 3vw, 2.15rem); color: var(--white); margin-bottom: 8px; }
+        .page-slide-content p { color: rgba(255, 255, 255, 0.92); font-size: 0.96rem; margin-bottom: 14px; }
+        .page-slide-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--dot-gold);
+        }
+        .stage-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(11, 31, 58, 0.65);
+            backdrop-filter: blur(6px);
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .stage-arrow:hover { background: var(--dot-blue); transform: translateY(-50%) scale(1.06); }
+        .stage-arrow.prev { left: 16px; }
+        .stage-arrow.next { right: 16px; }
+        .page-carousel-dots { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
+        .page-carousel-dots .carousel-dot { background: rgba(255, 255, 255, 0.35); }
+        .page-carousel-dots .carousel-dot.active { background: var(--dot-gold); }
+        .entry-highlight { box-shadow: 0 0 0 4px var(--dot-gold), 0 16px 34px rgba(0, 56, 168, 0.22) !important; transform: translateY(-5px); }
 
         /* ==================== CLICKABLE CULTURE CARDS WITH IMAGES ==================== */
-        .culture-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 28px;
-            margin-top: 24px;
-        }
-
-        .culture-item {
+        .culture-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; margin-top: 24px; }
+        .culture-card-shell {
             display: flex;
             flex-direction: column;
             background: var(--white);
             border: 1px solid #E2E8F0;
             border-radius: 18px;
             overflow: hidden;
-            text-decoration: none;
-            color: inherit;
             box-shadow: 0 8px 22px rgba(11, 31, 58, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .culture-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 34px rgba(11, 31, 58, 0.14);
-        }
-
-        .culture-img-wrap {
-            position: relative;
-            height: 215px;
-            overflow: hidden;
-        }
-
-        .culture-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.45s ease;
-        }
-
-        .culture-item:hover .culture-img-wrap img {
-            transform: scale(1.07);
-        }
-
+        .culture-card-shell:hover { transform: translateY(-6px); box-shadow: 0 18px 34px rgba(11, 31, 58, 0.14); }
+        .culture-item { display: flex; flex-direction: column; text-decoration: none; color: inherit; flex: 1; }
+        .culture-img-wrap { position: relative; height: 220px; overflow: hidden; }
+        .culture-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
+        .culture-card-shell:hover .culture-img-wrap img { transform: scale(1.07); }
         .culture-badge {
             position: absolute;
             top: 14px;
@@ -620,34 +505,10 @@
             padding: 5px 12px;
             border-radius: 50px;
         }
-
-        .culture-body {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .culture-dot {
-            width: 44px;
-            height: 5px;
-            border-radius: 4px;
-            margin-bottom: 14px;
-        }
-
-        .culture-item h3 {
-            color: var(--dot-navy);
-            font-size: 1.22rem;
-            margin-bottom: 10px;
-        }
-
-        .culture-item p {
-            color: var(--text-muted);
-            font-size: 0.94rem;
-            margin-bottom: 18px;
-            flex: 1;
-        }
-
+        .culture-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+        .culture-dot { width: 44px; height: 5px; border-radius: 4px; margin-bottom: 14px; }
+        .culture-item h3 { color: var(--dot-navy); font-size: 1.22rem; margin-bottom: 10px; }
+        .culture-item p { color: var(--text-muted); font-size: 0.94rem; margin-bottom: 18px; flex: 1; }
         .culture-cta {
             display: inline-flex;
             align-items: center;
@@ -659,73 +520,130 @@
             letter-spacing: 0.05em;
             transition: gap 0.25s ease;
         }
+        .culture-card-shell:hover .culture-cta { gap: 12px; }
 
-        .culture-item:hover .culture-cta {
-            gap: 12px;
+        /* ==================== TRAVEL GUIDE SECTION ==================== */
+        #travel-guide { background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%); }
+        .season-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 44px; }
+        .season-card {
+            background: var(--white);
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 24px;
+            border-top: 5px solid var(--dot-blue);
+            box-shadow: 0 8px 22px rgba(11, 31, 58, 0.05);
+        }
+        .season-card.cool { border-top-color: var(--dot-teal); }
+        .season-card.summer { border-top-color: var(--dot-gold); }
+        .season-card.fiesta { border-top-color: var(--dot-red); }
+        .season-card.green { border-top-color: var(--dot-emerald); }
+        .season-tag {
+            display: inline-block;
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 12px;
+            border-radius: 50px;
+            background: var(--bg-light);
+            color: var(--dot-navy);
+            margin-bottom: 12px;
+        }
+        .season-card h3 { font-size: 1.12rem; color: var(--dot-navy); margin-bottom: 8px; }
+        .season-card p { font-size: 0.92rem; color: var(--text-muted); }
+
+        .budget-card-wrap {
+            background: var(--white);
+            border-radius: 20px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 12px 30px rgba(11, 31, 58, 0.07);
+            overflow: hidden;
+        }
+        .budget-card-head {
+            background: linear-gradient(135deg, var(--dot-navy) 0%, var(--dot-blue) 100%);
+            color: var(--white);
+            padding: 26px 30px;
+        }
+        .budget-card-head h3 { font-size: 1.35rem; margin-bottom: 6px; }
+        .budget-card-head p { color: rgba(255, 255, 255, 0.88); font-size: 0.94rem; }
+        .budget-table-scroll { overflow-x: auto; }
+        .budget-table { width: 100%; border-collapse: collapse; min-width: 720px; }
+        .budget-table th {
+            text-align: left;
+            padding: 16px 20px;
+            background: #F8FAFC;
+            color: var(--dot-navy);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border-bottom: 2px solid #E2E8F0;
+        }
+        .budget-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #E2E8F0;
+            font-size: 0.93rem;
+            color: var(--text-muted);
+            vertical-align: top;
+        }
+        .budget-table tr:last-child td { border-bottom: none; }
+        .budget-table tr:hover td { background: #F8FAFC; }
+        .budget-place { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--dot-navy); display: block; margin-bottom: 3px; }
+        .budget-pill {
+            display: inline-block;
+            background: #ECFDF5;
+            color: var(--dot-emerald);
+            border: 1px solid #A7F3D0;
+            font-weight: 700;
+            font-size: 0.84rem;
+            padding: 4px 12px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+        .month-pill {
+            display: inline-block;
+            background: #EFF6FF;
+            color: var(--dot-blue);
+            border: 1px solid #BFDBFE;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 4px 10px;
+            border-radius: 50px;
+            white-space: nowrap;
         }
 
         /* Gallery Preview on Homepage */
-        #gallery {
-            background: var(--bg-light);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
+        #gallery { background: var(--bg-light); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; }
         .gallery-card {
-            position: relative;
             border-radius: 16px;
             overflow: hidden;
-            height: 260px;
             box-shadow: 0 8px 20px rgba(11, 31, 58, 0.1);
-            background: var(--dot-navy);
+            background: var(--white);
+            border: 1px solid #E2E8F0;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
         }
-
-        .gallery-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.45s ease;
-        }
-
-        .gallery-card:hover img {
-            transform: scale(1.06);
-        }
-
+        .gallery-card:hover { transform: translateY(-4px); }
+        .gallery-media { position: relative; height: 245px; overflow: hidden; cursor: pointer; background: var(--dot-navy); }
+        .gallery-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
+        .gallery-card:hover .gallery-media img { transform: scale(1.06); }
         .gallery-caption {
             position: absolute;
             inset: auto 0 0 0;
             padding: 18px 18px 16px;
-            background: linear-gradient(180deg, transparent 0%, rgba(11, 31, 58, 0.86) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(11, 31, 58, 0.88) 100%);
             color: var(--white);
         }
+        .gallery-caption span { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dot-gold); font-weight: 700; }
+        .gallery-caption strong { font-family: 'Montserrat', sans-serif; font-size: 1rem; }
 
-        .gallery-caption span {
-            display: block;
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--dot-gold);
-            font-weight: 700;
-        }
-
-        .gallery-caption strong {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-        }
-
-        /* ==================== SUBPAGES (DOT-STYLED UNDER RIBBON) ==================== */
-        .subpage {
-            background: var(--bg-light);
-            min-height: 85vh;
-        }
-
+        /* ==================== SUBPAGES ==================== */
+        .subpage { background: var(--bg-light); min-height: 85vh; }
         .detail-hero {
             position: relative;
-            min-height: 48vh;
+            min-height: 46vh;
             display: flex;
             align-items: flex-end;
             color: var(--white);
@@ -734,7 +652,6 @@
             background-position: center;
             isolation: isolate;
         }
-
         .detail-hero::before {
             content: '';
             position: absolute;
@@ -747,94 +664,34 @@
                 rgba(11, 31, 58, 0.92) 100%
             );
         }
-
-        .detail-hero-inner {
-            max-width: 1200px;
-            width: 100%;
-            margin: auto;
-        }
-
+        .detail-hero-inner { max-width: 1200px; width: 100%; margin: auto; }
         .back-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.16);
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.35);
             color: var(--white);
-            padding: 10px 20px;
+            padding: 9px 18px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.86rem;
-            margin-bottom: 22px;
+            font-size: 0.84rem;
+            margin-bottom: 14px;
             transition: background 0.25s ease, transform 0.2s ease;
         }
-
-        .back-btn:hover {
-            background: var(--white);
-            color: var(--dot-navy);
-            transform: translateX(-3px);
-        }
-
-        .detail-breadcrumb {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--dot-gold);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .detail-hero h1 {
-            font-size: clamp(2rem, 5vw, 3.3rem);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 12px;
-        }
-
-        .detail-tagline {
-            font-size: 1.08rem;
-            max-width: 740px;
-            color: rgba(255, 255, 255, 0.92);
-        }
+        .back-btn:hover { background: var(--white); color: var(--dot-navy); transform: translateX(-3px); }
+        .detail-breadcrumb { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--dot-gold); font-weight: 700; margin-bottom: 8px; }
+        .detail-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+        .detail-tagline { font-size: 1.06rem; max-width: 740px; color: rgba(255, 255, 255, 0.92); }
 
         /* Quick Facts Bar */
-        .facts-bar {
-            background: var(--white);
-            border-bottom: 1px solid #E2E8F0;
-            box-shadow: 0 4px 16px rgba(11, 31, 58, 0.04);
-        }
-
-        .facts-grid {
-            max-width: 1200px;
-            margin: auto;
-            padding: 24px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .fact-item {
-            border-left: 4px solid var(--detail-accent, var(--dot-blue));
-            padding-left: 14px;
-        }
-
-        .fact-item span {
-            display: block;
-            font-size: 0.74rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .fact-item strong {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.96rem;
-            color: var(--dot-navy);
-        }
+        .facts-bar { background: var(--white); border-bottom: 1px solid #E2E8F0; box-shadow: 0 4px 16px rgba(11, 31, 58, 0.04); }
+        .facts-grid { max-width: 1200px; margin: auto; padding: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .fact-item { border-left: 4px solid var(--detail-accent, var(--dot-blue)); padding-left: 14px; }
+        .fact-item span { display: block; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }
+        .fact-item strong { font-family: 'Montserrat', sans-serif; font-size: 0.96rem; color: var(--dot-navy); }
 
         /* Detail Body Layout */
         .detail-content {
@@ -846,13 +703,7 @@
             gap: 40px;
             align-items: start;
         }
-
-        .subpage-body {
-            max-width: 1200px;
-            margin: auto;
-            padding: 56px 24px 84px;
-        }
-
+        .subpage-body { max-width: 1200px; margin: auto; padding: 52px 24px 84px; }
         .detail-card {
             background: var(--white);
             border-radius: 18px;
@@ -861,16 +712,7 @@
             box-shadow: 0 8px 24px rgba(11, 31, 58, 0.04);
             margin-bottom: 28px;
         }
-
-        .detail-card h2 {
-            font-size: 1.45rem;
-            color: var(--dot-navy);
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
+        .detail-card h2 { font-size: 1.45rem; color: var(--dot-navy); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
         .detail-card h2::before {
             content: '';
             width: 6px;
@@ -879,41 +721,13 @@
             background: var(--detail-accent, var(--dot-blue));
             display: inline-block;
         }
+        .detail-card p { color: var(--text-muted); margin-bottom: 16px; }
+        .detail-card p:last-child { margin-bottom: 0; }
 
-        .detail-card p {
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .detail-card p:last-child {
-            margin-bottom: 0;
-        }
-
-        .activity-list {
-            list-style: none;
-            display: grid;
-            gap: 14px;
-        }
-
-        .activity-list li {
-            background: var(--bg-light);
-            padding: 16px 18px;
-            border-radius: 12px;
-            border-left: 4px solid var(--detail-accent, var(--dot-blue));
-        }
-
-        .activity-list strong {
-            display: block;
-            color: var(--dot-navy);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.98rem;
-            margin-bottom: 4px;
-        }
-
-        .activity-list span {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-        }
+        .activity-list { list-style: none; display: grid; gap: 14px; }
+        .activity-list li { background: var(--bg-light); padding: 16px 18px; border-radius: 12px; border-left: 4px solid var(--detail-accent, var(--dot-blue)); }
+        .activity-list strong { display: block; color: var(--dot-navy); font-family: 'Montserrat', sans-serif; font-size: 0.98rem; margin-bottom: 4px; }
+        .activity-list span { color: var(--text-muted); font-size: 0.92rem; }
 
         .sidebar-card {
             background: var(--white);
@@ -924,39 +738,12 @@
             box-shadow: 0 8px 24px rgba(11, 31, 58, 0.05);
             margin-bottom: 24px;
         }
+        .sidebar-card h3 { color: var(--dot-navy); font-size: 1.15rem; margin-bottom: 14px; }
+        .tip-list { list-style: none; display: grid; gap: 10px; color: var(--text-muted); font-size: 0.92rem; }
+        .tip-list li { padding-left: 18px; position: relative; }
+        .tip-list li::before { content: '•'; position: absolute; left: 0; color: var(--detail-accent, var(--dot-blue)); font-weight: 800; }
 
-        .sidebar-card h3 {
-            color: var(--dot-navy);
-            font-size: 1.15rem;
-            margin-bottom: 14px;
-        }
-
-        .tip-list {
-            list-style: none;
-            display: grid;
-            gap: 10px;
-            color: var(--text-muted);
-            font-size: 0.92rem;
-        }
-
-        .tip-list li {
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .tip-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--detail-accent, var(--dot-blue));
-            font-weight: 800;
-        }
-
-        .other-places {
-            display: grid;
-            gap: 10px;
-        }
-
+        .other-places { display: grid; gap: 10px; }
         .other-place-link {
             display: flex;
             align-items: center;
@@ -970,19 +757,10 @@
             font-size: 0.9rem;
             transition: background 0.2s ease, transform 0.2s ease;
         }
+        .other-place-link:hover { background: #E2E8F0; transform: translateX(4px); }
 
-        .other-place-link:hover {
-            background: #E2E8F0;
-            transform: translateX(4px);
-        }
-
-        /* Editorial Entry Cards (Used on Cuisine, Restaurants & Expanded Culture Pages) */
-        .entry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
-        }
-
+        /* Editorial Entry Cards */
+        .entry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
         .entry-card {
             background: var(--white);
             border-radius: 18px;
@@ -993,29 +771,10 @@
             flex-direction: column;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .entry-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 34px rgba(11, 31, 58, 0.12);
-        }
-
-        .entry-img {
-            position: relative;
-            height: 225px;
-            overflow: hidden;
-        }
-
-        .entry-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.45s ease;
-        }
-
-        .entry-card:hover .entry-img img {
-            transform: scale(1.06);
-        }
-
+        .entry-card:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(11, 31, 58, 0.12); }
+        .entry-img { position: relative; height: 225px; overflow: hidden; }
+        .entry-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
+        .entry-card:hover .entry-img img { transform: scale(1.06); }
         .entry-pill {
             position: absolute;
             top: 14px;
@@ -1029,27 +788,9 @@
             padding: 5px 12px;
             border-radius: 50px;
         }
-
-        .entry-body {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .entry-body h3 {
-            color: var(--dot-navy);
-            font-size: 1.22rem;
-            margin-bottom: 8px;
-        }
-
-        .entry-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 12px;
-        }
-
+        .entry-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+        .entry-body h3 { color: var(--dot-navy); font-size: 1.22rem; margin-bottom: 8px; }
+        .entry-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
         .meta-chip {
             font-size: 0.76rem;
             font-weight: 700;
@@ -1059,33 +800,12 @@
             color: var(--dot-blue);
             border: 1px solid #DBEAFE;
         }
-
-        .meta-chip.red {
-            color: var(--dot-red);
-            background: #FEF2F2;
-            border-color: #FECACA;
-        }
-
-        .meta-chip.green {
-            color: var(--dot-emerald);
-            background: #ECFDF5;
-            border-color: #A7F3D0;
-        }
-
-        .entry-body p {
-            color: var(--text-muted);
-            font-size: 0.94rem;
-            flex: 1;
-        }
+        .meta-chip.red { color: var(--dot-red); background: #FEF2F2; border-color: #FECACA; }
+        .meta-chip.green { color: var(--dot-emerald); background: #ECFDF5; border-color: #A7F3D0; }
+        .entry-body p { color: var(--text-muted); font-size: 0.94rem; flex: 1; }
 
         /* Gallery Filter Buttons */
-        .filter-bar {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 32px;
-        }
-
+        .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
         .filter-btn {
             padding: 10px 20px;
             border-radius: 50px;
@@ -1097,12 +817,307 @@
             cursor: pointer;
             transition: all 0.25s ease;
         }
+        .filter-btn:hover, .filter-btn.active { background: var(--dot-blue); border-color: var(--dot-blue); color: var(--white); }
 
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--dot-blue);
-            border-color: var(--dot-blue);
-            color: var(--white);
+        /* Lightbox Modal for Gallery */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 31, 58, 0.9);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
         }
+        .lightbox-box {
+            max-width: 880px;
+            width: 100%;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+            position: relative;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(11, 31, 58, 0.8);
+            color: var(--white);
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 5;
+        }
+        .lightbox-box img { width: 100%; max-height: 62vh; object-fit: cover; display: block; }
+        .lightbox-info { padding: 20px 24px; }
+        .lightbox-info span { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dot-blue); font-weight: 700; }
+        .lightbox-info h3 { color: var(--dot-navy); margin: 4px 0 6px; }
+        .lightbox-info p { color: var(--text-muted); font-size: 0.93rem; }
+
+        /* ==================== MEMBERS RIBBON & YEARBOOK PAGE ==================== */
+        .members-hero {
+            background: linear-gradient(135deg, var(--dot-navy) 0%, var(--dot-blue) 62%, var(--dot-teal) 100%);
+            color: var(--white);
+            padding: 44px 24px 52px;
+            position: relative;
+        }
+        .members-hero-inner { max-width: 1200px; margin: auto; }
+        .members-hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 10px; }
+        .members-hero p { color: rgba(255, 255, 255, 0.9); max-width: 720px; font-size: 1rem; }
+
+        .member-ribbon-strip {
+            margin-top: 22px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            backdrop-filter: blur(8px);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--dot-gold);
+        }
+        .member-ribbon-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dot-gold); }
+
+        /* 10-Member Yearbook Grid (2 neat rows of 5 on desktop) */
+        .yearbook-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 22px;
+            margin-bottom: 64px;
+        }
+        .yearbook-card {
+            background: var(--white);
+            border: 1px solid #E2E8F0;
+            border-top: 5px solid var(--member-color, var(--dot-blue));
+            border-radius: 16px;
+            padding: 16px 14px 20px;
+            text-align: center;
+            box-shadow: 0 10px 24px rgba(11, 31, 58, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .yearbook-card:hover { transform: translateY(-5px); box-shadow: 0 18px 34px rgba(11, 31, 58, 0.12); }
+
+        /* Classic Yearbook Portrait Frame */
+        .yearbook-frame {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            padding: 7px;
+            background: var(--white);
+            border: 2px solid var(--dot-navy);
+            outline: 2px solid var(--dot-gold);
+            outline-offset: -6px;
+            border-radius: 10px;
+            box-shadow: inset 0 2px 8px rgba(11, 31, 58, 0.08), 0 6px 14px rgba(11, 31, 58, 0.08);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            margin-bottom: 14px;
+        }
+        .yearbook-frame-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+            background: linear-gradient(160deg, #EFF6FF 0%, #E2E8F0 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .yearbook-frame-inner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .yearbook-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: var(--dot-navy);
+            opacity: 0.72;
+            padding: 10px;
+        }
+        .yearbook-placeholder svg { width: 54px; height: 54px; fill: var(--member-color, var(--dot-blue)); opacity: 0.85; }
+        .yearbook-placeholder span { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+        .yearbook-num {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: var(--member-color, var(--dot-blue));
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 50px;
+            z-index: 2;
+        }
+        .yearbook-upload-hint {
+            position: absolute;
+            inset: auto 0 0 0;
+            background: rgba(11, 31, 58, 0.76);
+            color: var(--dot-gold);
+            font-size: 0.66rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 5px 6px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .yearbook-frame:hover .yearbook-upload-hint { opacity: 1; }
+        .yearbook-name { font-family: 'Montserrat', sans-serif; font-size: 0.96rem; font-weight: 800; color: var(--dot-navy); line-height: 1.3; margin-bottom: 6px; }
+        .yearbook-motto { font-size: 0.8rem; font-style: italic; color: var(--text-muted); line-height: 1.45; padding-top: 6px; border-top: 1px dashed #CBD5E1; width: 100%; }
+
+        /* ==================== WORK ATTRIBUTION & CONTRIBUTION (DONUT CHART) ==================== */
+        .contrib-section {
+            background: var(--white);
+            border: 1px solid #E2E8F0;
+            border-radius: 22px;
+            box-shadow: 0 14px 36px rgba(11, 31, 58, 0.07);
+            overflow: hidden;
+        }
+        .contrib-header {
+            background: linear-gradient(135deg, var(--dot-navy) 0%, var(--dot-blue) 100%);
+            color: var(--white);
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .contrib-header h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--white); margin-bottom: 4px; }
+        .contrib-header p { color: rgba(255, 255, 255, 0.86); font-size: 0.92rem; max-width: 620px; }
+        .contrib-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .contrib-action-btn {
+            padding: 9px 16px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.14);
+            color: var(--white);
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .contrib-action-btn:hover { background: var(--dot-gold); border-color: var(--dot-gold); color: var(--dot-navy); }
+
+        .contrib-body {
+            padding: 36px 32px;
+            display: grid;
+            grid-template-columns: 1fr 1.35fr;
+            gap: 36px;
+            align-items: start;
+        }
+        .donut-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--bg-light);
+            border: 1px solid #E2E8F0;
+            border-radius: 18px;
+            padding: 28px 20px;
+        }
+        .donut-wrap { position: relative; width: 100%; max-width: 310px; aspect-ratio: 1 / 1; }
+        .donut-svg { width: 100%; height: 100%; overflow: visible; }
+        .donut-slice {
+            fill: none;
+            stroke-width: 44;
+            cursor: pointer;
+            transition: stroke-dasharray 0.35s ease, stroke-dashoffset 0.35s ease, stroke-width 0.2s ease, opacity 0.2s ease;
+        }
+        .donut-slice:hover, .donut-slice.active-slice { stroke-width: 52; }
+        .donut-center {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            pointer-events: none;
+            padding: 0 58px;
+        }
+        .donut-center-kicker { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+        .donut-center-value { font-family: 'Montserrat', sans-serif; font-size: 1.75rem; font-weight: 800; color: var(--dot-navy); line-height: 1.15; margin: 2px 0; }
+        .donut-center-sub { font-size: 0.76rem; font-weight: 600; color: var(--dot-blue); max-width: 165px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .donut-legend { width: 100%; margin-top: 22px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 12px; }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            background: var(--white);
+            border: 1px solid #E2E8F0;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+        .legend-item:hover { border-color: var(--dot-blue); }
+        .legend-left { display: flex; align-items: center; gap: 7px; min-width: 0; }
+        .legend-swatch { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+        .legend-name { font-weight: 600; color: var(--dot-navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .legend-pct { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--dot-blue); flex-shrink: 0; }
+
+        .contrib-controls-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+        .contrib-controls-head h3 { color: var(--dot-navy); font-size: 1.08rem; }
+        .contrib-total-pill {
+            background: #EFF6FF;
+            color: var(--dot-blue);
+            border: 1px solid #BFDBFE;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 5px 12px;
+            border-radius: 50px;
+        }
+        .contrib-list { display: grid; gap: 10px; }
+        .contrib-row {
+            display: grid;
+            grid-template-columns: 14px 1.25fr 1.25fr 1.1fr 68px 62px;
+            gap: 10px;
+            align-items: center;
+            background: var(--bg-light);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 10px 12px;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .contrib-row:hover { border-color: var(--dot-blue); background: #F1F5F9; }
+        .contrib-color-bar { width: 10px; height: 32px; border-radius: 6px; }
+        .contrib-input {
+            width: 100%;
+            padding: 7px 10px;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            background: var(--white);
+            font-family: inherit;
+            font-size: 0.82rem;
+            color: var(--dot-navy);
+        }
+        .contrib-input:focus { outline: none; border-color: var(--dot-blue); box-shadow: 0 0 0 2px rgba(0, 56, 168, 0.12); }
+        .contrib-num-input { text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        .contrib-slider { width: 100%; accent-color: var(--dot-blue); cursor: pointer; }
+        .contrib-pct-badge { text-align: right; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.84rem; color: var(--dot-emerald); }
 
         /* Cross-Page Banner CTA */
         .cross-cta {
@@ -1117,16 +1132,8 @@
             gap: 24px;
             flex-wrap: wrap;
         }
-
-        .cross-cta h3 {
-            font-size: 1.4rem;
-            margin-bottom: 6px;
-        }
-
-        .cross-cta p {
-            color: rgba(255, 255, 255, 0.86);
-            max-width: 560px;
-        }
+        .cross-cta h3 { font-size: 1.4rem; margin-bottom: 6px; }
+        .cross-cta p { color: rgba(255, 255, 255, 0.86); max-width: 560px; }
 
         /* Contact Section */
         .contact-box {
@@ -1138,7 +1145,6 @@
             padding: 40px;
             box-shadow: 0 14px 32px rgba(11, 31, 58, 0.06);
         }
-
         form input, form textarea {
             width: 100%;
             padding: 14px 16px;
@@ -1149,13 +1155,7 @@
             font-size: 0.95rem;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-
-        form input:focus, form textarea:focus {
-            outline: none;
-            border-color: var(--dot-blue);
-            box-shadow: 0 0 0 3px rgba(0, 56, 168, 0.12);
-        }
-
+        form input:focus, form textarea:focus { outline: none; border-color: var(--dot-blue); box-shadow: 0 0 0 3px rgba(0, 56, 168, 0.12); }
         form button {
             background: var(--dot-blue);
             color: var(--white);
@@ -1167,25 +1167,11 @@
             cursor: pointer;
             transition: background 0.25s ease, transform 0.2s ease;
         }
-
-        form button:hover {
-            background: var(--dot-emerald);
-            transform: translateY(-2px);
-        }
+        form button:hover { background: var(--dot-emerald); transform: translateY(-2px); }
 
         /* Footer */
-        footer {
-            background: var(--dot-navy);
-            color: rgba(255, 255, 255, 0.85);
-            text-align: center;
-        }
-
-        .footer-inner {
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px 24px;
-        }
-
+        footer { background: var(--dot-navy); color: rgba(255, 255, 255, 0.85); text-align: center; }
+        .footer-inner { max-width: 1200px; margin: auto; padding: 40px 24px; }
         .footer-tagline {
             font-family: 'Montserrat', sans-serif;
             color: var(--dot-gold);
@@ -1197,28 +1183,29 @@
         }
 
         /* Responsive Tweaks */
-        @media (max-width: 900px) {
-            .about-grid, .detail-content {
-                grid-template-columns: 1fr;
-            }
-            .facts-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .card {
-                flex: 0 0 82%;
-            }
+        @media (max-width: 1080px) {
+            .yearbook-grid { grid-template-columns: repeat(3, 1fr); }
+            .contrib-body { grid-template-columns: 1fr; }
         }
-
+        @media (max-width: 900px) {
+            .about-grid, .detail-content { grid-template-columns: 1fr; }
+            .facts-grid { grid-template-columns: repeat(2, 1fr); }
+            .card { flex: 0 0 82%; }
+            .page-carousel-slide { height: 360px; }
+        }
+        @media (max-width: 720px) {
+            .yearbook-grid { grid-template-columns: repeat(2, 1fr); }
+            .contrib-row { grid-template-columns: 10px 1fr 1fr; }
+            .contrib-body, .contrib-header { padding: 22px 18px; }
+        }
         @media (max-width: 600px) {
-            .about-stats, .facts-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-box, .detail-card {
-                padding: 24px 20px;
-            }
-            nav {
-                gap: 14px;
-            }
+            .about-stats, .facts-grid { grid-template-columns: 1fr; }
+            .contact-box, .detail-card { padding: 24px 20px; }
+            .page-slide-content { padding: 22px 20px; }
+            nav { gap: 12px; }
+        }
+        @media (max-width: 460px) {
+            .yearbook-grid, .donut-legend { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -1236,9 +1223,11 @@
             <a href="#about">About</a>
             <a href="#destinations">Destinations</a>
             <a href="#culture">Culture</a>
+            <a href="#travel-guide">Travel Guide</a>
             <a href="#page/cuisine" data-route="#page/cuisine">Cuisine</a>
             <a href="#page/restaurants" data-route="#page/restaurants">Restaurants</a>
             <a href="#page/gallery" data-route="#page/gallery">Gallery</a>
+            <a href="#page/members" data-route="#page/members">Members</a>
             <a href="#contact" class="nav-cta">Plan a Visit</a>
         </nav>
     </div>
@@ -1250,7 +1239,7 @@
         <div class="hero-content">
             <span class="hero-kicker">Love Nueva Ecija • Central Luzon</span>
             <h1>Lakbay, Novo Ecijano</h1>
-            <p>Experience emerald rivers, misty Sierra Madre ridges, living history, iconic local flavors, and warm Filipino hospitality in the Rice Granary of the Philippines.</p>
+            <p>I-experience ang emerald rivers, malamig na ridges ng Sierra Madre, makulay na kasaysayan, sikat na local food, at mainit na Filipino hospitality dito sa Rice Granary of the Philippines.</p>
             <div class="hero-actions">
                 <a href="#destinations" class="btn-primary">Explore Destinations</a>
                 <a href="#page/cuisine" class="btn-outline">Taste Local Cuisine</a>
@@ -1265,24 +1254,18 @@
                     <span class="section-kicker">Welcome to Nueva Ecija</span>
                     <h2>About Lakbay, Novo Ecijano</h2>
                 </div>
-                <p>Discover the beauty, culture, and heritage of Nueva Ecija. Lakbay, Novo Ecijano is your gateway to exploring the province’s rich history, breathtaking landscapes, heirloom flavors, and vibrant communities—from limestone river canyons to tranquil highland dams.</p>
+                <p>Tara at i-discover ang ganda, kultura, at heritage ng Nueva Ecija! Ang Lakbay, Novo Ecijano ang magiging travel buddy mo para ma-explore ang mayamang kasaysayan, scenic views, heirloom dishes, at mababait na komunidad ng probinsya—mula sa limestone river canyons hanggang sa peaceful highland dams.</p>
                 <div class="about-stats">
-                    <div class="stat-box">
-                        <strong>32</strong>
-                        <span>Cities & Municipalities</span>
-                    </div>
-                    <div class="stat-box">
-                        <strong>#1</strong>
-                        <span>Rice Granary of PH</span>
-                    </div>
-                    <div class="stat-box">
-                        <strong>Year-Round</strong>
-                        <span>Eco & Heritage Escapes</span>
-                    </div>
+                    <div class="stat-box"><strong>32</strong><span>Cities & Municipalities</span></div>
+                    <div class="stat-box"><strong>#1</strong><span>Rice Granary of PH</span></div>
+                    <div class="stat-box"><strong>Year-Round</strong><span>Eco & Heritage Escapes</span></div>
                 </div>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Lush green fields of Nueva Ecija">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jaen_rice_field_(Jaen,_Nueva_Ecija;_07-23-2023).jpg?width=900" alt="Lush green rice fields in Jaen, Nueva Ecija">
+                <div class="img-source">
+                    Source: <a href="https://commons.wikimedia.org/wiki/File:Jaen_rice_field_(Jaen,_Nueva_Ecija;_07-23-2023).jpg" target="_blank" rel="noopener">Wikimedia Commons — Patrickroque01 (Jaen, Nueva Ecija)</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1293,7 +1276,7 @@
                 <div class="section-header">
                     <span class="section-kicker">Where to Go</span>
                     <h2>Top Destinations</h2>
-                    <p class="section-subtitle">Click any destination card to open its full travel guide, highlights, and tips.</p>
+                    <p class="section-subtitle">I-click lang ang kahit anong destination card para makita ang full travel guide, mga pwedeng gawin, at local tips.</p>
                 </div>
                 <div class="carousel-controls">
                     <button class="carousel-btn" id="prevBtn" aria-label="Previous destination">&#8592;</button>
@@ -1303,50 +1286,43 @@
 
             <div class="carousel-viewport" id="carouselViewport">
                 <div class="carousel-track" id="carouselTrack">
-
                     <a href="#place/minalungao" class="card card-minalungao">
                         <div class="card-bg"></div>
                         <span class="card-tag">General Tinio</span>
                         <h3>Minalungao National Park</h3>
-                        <p>Experience emerald waters, towering limestone formations, and scenic river adventures.</p>
+                        <p>Mag-chill sa emerald waters, matataas na limestone formations, at masayang bamboo raft river adventure.</p>
                         <span class="card-cta">Explore Place <span>&#8594;</span></span>
                     </a>
-
                     <a href="#place/pantabangan" class="card card-pantabangan">
                         <div class="card-bg"></div>
                         <span class="card-tag">Pantabangan</span>
                         <h3>Pantabangan Dam</h3>
-                        <p>A serene highland escape offering panoramic reservoir views, sunset vistas, and cool mountain air.</p>
+                        <p>Isang peaceful highland getaway na may panoramic lake views, magandang sunset, at preskong hangin.</p>
                         <span class="card-cta">Explore Place <span>&#8594;</span></span>
                     </a>
-
                     <a href="#place/pangatian" class="card card-pangatian">
                         <div class="card-bg"></div>
                         <span class="card-tag">Cabanatuan City</span>
                         <h3>Camp Pangatian War Memorial</h3>
-                        <p>Walk through World War II history and honor the site of the legendary Great Raid of 1945.</p>
+                        <p>Balikan ang World War II history at alalahanin ang kabayanihan sa sikat na Great Raid of 1945.</p>
                         <span class="card-cta">Explore Place <span>&#8594;</span></span>
                     </a>
-
                     <a href="#place/gabaldon" class="card card-gabaldon">
                         <div class="card-bg"></div>
                         <span class="card-tag">Gabaldon</span>
                         <h3>Gabaldon Falls & Dupinga River</h3>
-                        <p>Unwind beside crystal-clear mountain cascades and refreshing rocky river pools along the Sierra Madre foothills.</p>
+                        <p>Mag-unwind sa malinaw na falls at malamig na rocky river pools sa paanan ng Sierra Madre.</p>
                         <span class="card-cta">Explore Place <span>&#8594;</span></span>
                     </a>
-
                     <a href="#place/mt387" class="card card-mt387">
                         <div class="card-bg"></div>
                         <span class="card-tag">Carranglan</span>
                         <h3>Mt. 387 (Batong Amat)</h3>
-                        <p>Trek scenic rolling green ridges with sweeping 360-degree mountain views and nearby Aloha Falls.</p>
+                        <p>Mag-hike sa scenic green ridges na may 360-degree mountain view at mag-sidetrip sa Aloha Falls.</p>
                         <span class="card-cta">Explore Place <span>&#8594;</span></span>
                     </a>
-
                 </div>
             </div>
-
             <div class="carousel-dots" id="carouselDots" aria-label="Carousel pagination"></div>
         </div>
     </section>
@@ -1356,48 +1332,142 @@
             <div class="section-header">
                 <span class="section-kicker">Heart of the Province</span>
                 <h2>Culture & Heritage</h2>
-                <p class="section-subtitle">Click any card below to explore the expanded stories of Nueva Ecija’s festivals, cuisine, and living traditions.</p>
+                <p class="section-subtitle">I-click ang bawat card sa ibaba para mas makilala pa ang mga fiesta, pagkain, at buhay na tradisyon ng Nueva Ecija.</p>
             </div>
 
             <div class="culture-grid">
-                <a href="#culture/festivals" class="culture-item">
-                    <div class="culture-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=80" alt="Vibrant Festivals of Nueva Ecija">
-                        <span class="culture-badge">Traditions & Faith</span>
-                    </div>
-                    <div class="culture-body">
-                        <div class="culture-dot" style="background: var(--dot-gold);"></div>
-                        <h3>Vibrant Festivals</h3>
-                        <p>From the Taong Putik Festival in Aliaga to the Tanduyong Festival in San Jose, every town celebrates faith and harvest with color.</p>
-                        <span class="culture-cta">Read Full Guide <span>&#8594;</span></span>
-                    </div>
-                </a>
+                <div class="culture-card-shell">
+                    <a href="#culture/festivals" class="culture-item">
+                        <div class="culture-img-wrap">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Taong-Putik_Festival.jpg?width=900" alt="Taong Putik Festival in Aliaga, Nueva Ecija">
+                            <span class="culture-badge">Traditions & Faith</span>
+                        </div>
+                        <div class="culture-body">
+                            <div class="culture-dot" style="background: var(--dot-gold);"></div>
+                            <h3>Vibrant Festivals</h3>
+                            <p>Mula sa Taong Putik Festival sa Aliaga hanggang sa Tanduyong Festival sa San Jose, bawat bayan dito ay puno ng pananampalataya, pasasalamat, at saya.</p>
+                            <span class="culture-cta">Read Full Guide <span>&#8594;</span></span>
+                        </div>
+                    </a>
+                    <div class="img-source">Source: <a href="https://commons.wikimedia.org/wiki/File:Taong-Putik_Festival.jpg" target="_blank" rel="noopener">Wikimedia Commons — Taong-Putik Festival, Aliaga</a></div>
+                </div>
 
-                <a href="#page/cuisine" class="culture-item">
-                    <div class="culture-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Local Cuisine of Nueva Ecija">
-                        <span class="culture-badge">Food & Flavors</span>
-                    </div>
-                    <div class="culture-body">
-                        <div class="culture-dot" style="background: var(--dot-red);"></div>
-                        <h3>Local Cuisine</h3>
-                        <p>Savor Cabanatuan’s famous garlic longganisa, savory batotay, carabao milk pastillas, and freshly brewed highland coffee.</p>
-                        <span class="culture-cta">Explore Cuisine Page <span>&#8594;</span></span>
-                    </div>
-                </a>
+                <div class="culture-card-shell">
+                    <a href="#page/cuisine" class="culture-item">
+                        <div class="culture-img-wrap">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Longganisa_two_varieties.jpg?width=900" alt="Local Longganisa and Cuisine of Nueva Ecija">
+                            <span class="culture-badge">Food & Flavors</span>
+                        </div>
+                        <div class="culture-body">
+                            <div class="culture-dot" style="background: var(--dot-red);"></div>
+                            <h3>Local Cuisine</h3>
+                            <p>Tikman ang pamosong garlic longganisa ng Cabanatuan, malinamnam na batotay, creamy carabao milk pastillas, at mainit na highland coffee.</p>
+                            <span class="culture-cta">Explore Cuisine Page <span>&#8594;</span></span>
+                        </div>
+                    </a>
+                    <div class="img-source">Source: <a href="https://commons.wikimedia.org/wiki/File:Longganisa_two_varieties.jpg" target="_blank" rel="noopener">Wikimedia Commons — Philippine Longganisa Varieties</a></div>
+                </div>
 
-                <a href="#culture/heritage" class="culture-item">
-                    <div class="culture-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=900&q=80" alt="Craft and Heritage of Nueva Ecija">
-                        <span class="culture-badge">History & Crafts</span>
-                    </div>
-                    <div class="culture-body">
-                        <div class="culture-dot" style="background: var(--dot-emerald);"></div>
-                        <h3>Craft & Resilience</h3>
-                        <p>Discover centuries-old churches, agricultural heritage, artisan crafts, and warm Novo Ecijano hospitality passed down through generations.</p>
-                        <span class="culture-cta">Read Full Guide <span>&#8594;</span></span>
-                    </div>
-                </a>
+                <div class="culture-card-shell">
+                    <a href="#culture/heritage" class="culture-item">
+                        <div class="culture-img-wrap">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gapan_Church.jpg?width=900" alt="Three Kings Parish Church in Gapan City, Nueva Ecija">
+                            <span class="culture-badge">History & Crafts</span>
+                        </div>
+                        <div class="culture-body">
+                            <div class="culture-dot" style="background: var(--dot-emerald);"></div>
+                            <h3>Craft & Resilience</h3>
+                            <p>Tuklasin ang mga lumang simbahan, agricultural heritage, gawang-kamay na produkto, at ang kilalang tatag at hospitality ng mga Novo Ecijano.</p>
+                            <span class="culture-cta">Read Full Guide <span>&#8594;</span></span>
+                        </div>
+                    </a>
+                    <div class="img-source">Source: <a href="https://commons.wikimedia.org/wiki/File:Gapan_Church.jpg" target="_blank" rel="noopener">Wikimedia Commons — Elmer B. Domingo (Gapan Church)</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TRAVEL GUIDE SECTION ==================== -->
+    <section id="travel-guide">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">Plan Your Trip</span>
+                <h2>Travel Guide</h2>
+                <p class="section-subtitle">Alamin kung anong buwan ang pinaka-okay bumisita sa Nueva Ecija at kung magkano ang ideal budget para hassle-free ang gala mo.</p>
+            </div>
+
+            <div class="season-grid">
+                <div class="season-card cool">
+                    <span class="season-tag">December – February</span>
+                    <h3>Cool & Breezy Season</h3>
+                    <p>Pinakamagandang timing para sa road trip sa Pantabangan Dam at sunrise hike sa Mt. 387! Presko ang hangin, clear ang sky, at hindi sobrang init habang naglalakad.</p>
+                </div>
+                <div class="season-card summer">
+                    <span class="season-tag">March – May</span>
+                    <h3>Dry & Summer Escapes</h3>
+                    <p>Peak season para mag-swimming sa Minalungao National Park, Dupinga River, at Gabaldon Falls. Mas malinaw at emerald-green ang tubig dahil walang malakas na ulan.</p>
+                </div>
+                <div class="season-card fiesta">
+                    <span class="season-tag">April & June</span>
+                    <h3>Festival & Harvest Months</h3>
+                    <p>Perfect kung gusto mo ng makulay na cultural trip! Abangan ang Tanduyong at Sibuyasan sa Abril, at ang kakaibang Taong Putik Festival sa Aliaga tuwing June 24.</p>
+                </div>
+                <div class="season-card green">
+                    <span class="season-tag">July – November</span>
+                    <h3>Lush & Budget-Friendly Season</h3>
+                    <p>Mas konti ang crowd at super green ng mga palayan. Ideal ito para sa Cabanatuan food trip, heritage churches, at Camp Pangatian—magdala lang lagi ng payong.</p>
+                </div>
+            </div>
+
+            <div class="budget-card-wrap">
+                <div class="budget-card-head">
+                    <h3>Best Time to Visit & Ideal Budget per Destination</h3>
+                    <p>Estimated day-trip budget per person (may kasama nang local transpo/gas share, entrance/environmental fees, food, at basic activities).</p>
+                </div>
+                <div class="budget-table-scroll">
+                    <table class="budget-table">
+                        <thead>
+                            <tr>
+                                <th>Destination</th>
+                                <th>Best Time of the Year</th>
+                                <th>Ideal Budget (Per Person)</th>
+                                <th>What’s Covered & Tips</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="budget-place">Minalungao National Park</span>General Tinio</td>
+                                <td><span class="month-pill">Nov – May</span></td>
+                                <td><span class="budget-pill">₱900 – ₱1,600</span></td>
+                                <td>Kasama na ang entrance/environmental fee, hati-hati sa bamboo raft (balsa) rental, zipline o cave guide, at riverside lunch. Mas makakatipid kung barkada o family group.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="budget-place">Pantabangan Dam</span>Pantabangan</td>
+                                <td><span class="month-pill">Dec – May</span></td>
+                                <td><span class="budget-pill">₱1,000 – ₱2,500</span></td>
+                                <td>Swak na para sa transpo, viewdeck stops, at lakeside meal o day-tour sa resort. Mag-add ng extra budget kung mag-o-overnight stay sa mga highland resorts.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="budget-place">Camp Pangatian & City Food Trip</span>Cabanatuan City</td>
+                                <td><span class="month-pill">Year-Round (Best: Jan)</span></td>
+                                <td><span class="budget-pill">₱600 – ₱1,200</span></td>
+                                <td>Budget-friendly! Libre o minimal ang donation sa memorial grounds, kaya pwedeng ilaan ang budget sa tricycle tour, Batotay, Puno’s Ice Cream, at pasalubong.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="budget-place">Gabaldon Falls & Dupinga River</span>Gabaldon</td>
+                                <td><span class="month-pill">Dec – May</span></td>
+                                <td><span class="budget-pill">₱700 – ₱1,400</span></td>
+                                <td>Sakto para sa entrance fees, hati sa nipa hut/cottage rental sa tabi ng ilog, ihaw-ihaw ingredients, at short hike papuntang Gabaldon Falls.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="budget-place">Mt. 387 (Batong Amat)</span>Carranglan</td>
+                                <td><span class="month-pill">Nov – May</span></td>
+                                <td><span class="budget-pill">₱1,100 – ₱1,800</span></td>
+                                <td>Kasama ang registration at environmental fee sa Brgy. Puncan, shared tour guide fee, trail food/tubig, at sidetrip sa Aloha Falls.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
@@ -1408,31 +1478,31 @@
                 <div class="section-header">
                     <span class="section-kicker">Visual Journey</span>
                     <h2>Gallery Highlights</h2>
-                    <p class="section-subtitle">A glimpse into Nueva Ecija’s landscapes, heritage, and flavors.</p>
+                    <p class="section-subtitle">Silipin ang mga magagandang tanawin, kultura, at masasarap na pagkain ng Nueva Ecija.</p>
                 </div>
                 <a href="#page/gallery" class="btn-blue">View Full Gallery &#8594;</a>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Mountain and river landscape">
-                    <div class="gallery-caption">
-                        <span>Nature</span>
-                        <strong>Sierra Madre River Valleys</strong>
+                    <div class="gallery-media" onclick="openLightbox('Minalungao Emerald River', 'Nature • General Tinio', 'https://commons.wikimedia.org/wiki/Special:FilePath/Minalungao_National_Park_2.jpg?width=1200', 'Malinaw na emerald waters at matataas na limestone walls na proud eco-tourism gem ng Nueva Ecija.', 'Wikimedia Commons — Minalungao National Park', 'https://commons.wikimedia.org/wiki/File:Minalungao_National_Park_2.jpg')">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minalungao_National_Park_2.jpg?width=800" alt="Minalungao National Park">
+                        <div class="gallery-caption"><span>Nature</span><strong>Sierra Madre River Valleys</strong></div>
                     </div>
+                    <div class="img-source">Source: <a href="https://commons.wikimedia.org/wiki/File:Minalungao_National_Park_2.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></div>
                 </div>
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Savory Novo Ecijano cuisine">
-                    <div class="gallery-caption">
-                        <span>Cuisine</span>
-                        <strong>Cabanatuan Classic Flavors</strong>
+                    <div class="gallery-media" onclick="openLightbox('Pastillas de Leche (Carabao Milk)', 'Cuisine • Nueva Ecija', 'https://commons.wikimedia.org/wiki/Special:FilePath/Pastillas_made_from_carabao%27s_milk.jpg?width=1200', 'Creamy at malinamnam na gatas ng kalabaw pastillas—paboritong pasalubong ng mga bumibisita sa probinsya.', 'Wikimedia Commons — Pastillas made from carabao milk', 'https://commons.wikimedia.org/wiki/File:Pastillas_made_from_carabao%27s_milk.jpg')">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pastillas_made_from_carabao%27s_milk.jpg?width=800" alt="Carabao Milk Pastillas">
+                        <div class="gallery-caption"><span>Cuisine</span><strong>Cabanatuan Classic Flavors</strong></div>
                     </div>
+                    <div class="img-source">Source: <a href="https://commons.wikimedia.org/wiki/File:Pastillas_made_from_carabao%27s_milk.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></div>
                 </div>
                 <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1536657464919-892534f60d6e?auto=format&fit=crop&w=800&q=80" alt="Golden rice fields">
-                    <div class="gallery-caption">
-                        <span>Heritage</span>
-                        <strong>Rice Granary of the Philippines</strong>
+                    <div class="gallery-media" onclick="openLightbox('PhilRice Fields in Muñoz', 'Heritage • Science City of Muñoz', 'https://commons.wikimedia.org/wiki/Special:FilePath/09196jfPhilippine_Rice_Research_Institute_Fields_Mu%C3%B1oz_Nueva_Ecijafvf_10.JPG?width=1200', 'Malawak na bukirin sa Science City of Muñoz na simbolo ng Rice Granary of the Philippines.', 'Wikimedia Commons — Judgefloro', 'https://commons.wikimedia.org/wiki/File:09196jfPhilippine_Rice_Research_Institute_Fields_Mu%C3%B1oz_Nueva_Ecijafvf_10.JPG')">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/09196jfPhilippine_Rice_Research_Institute_Fields_Mu%C3%B1oz_Nueva_Ecijafvf_10.JPG?width=800" alt="PhilRice Fields in Muñoz, Nueva Ecija">
+                        <div class="gallery-caption"><span>Heritage</span><strong>Rice Granary of the Philippines</strong></div>
                     </div>
+                    <div class="img-source">Source: <a href="https://commons.wikimedia.org/wiki/File:09196jfPhilippine_Rice_Research_Institute_Fields_Mu%C3%B1oz_Nueva_Ecijafvf_10.JPG" target="_blank" rel="noopener">Wikimedia Commons — Judgefloro</a></div>
                 </div>
             </div>
         </div>
@@ -1444,7 +1514,7 @@
                 <div class="section-header" style="margin-bottom: 24px;">
                     <span class="section-kicker">Get in Touch</span>
                     <h2>Contact Us</h2>
-                    <p class="section-subtitle">Planning a trip to Nueva Ecija? Send us a message for local travel tips and destination guides.</p>
+                    <p class="section-subtitle">Nagpa-plano ka bang pumunta ng Nueva Ecija? Mag-message ka lang sa amin para sa local travel tips, itinerary ideas, at destination guides!</p>
                 </div>
                 <form id="contactForm">
                     <input type="text" placeholder="Your Name" required>
@@ -1465,6 +1535,7 @@
             <div class="detail-breadcrumb" id="detailBreadcrumb">Home / Destinations / Place</div>
             <h1 id="detailTitle">Destination Name</h1>
             <p class="detail-tagline" id="detailTagline"></p>
+            <div class="img-source-dark" id="detailHeroSource"></div>
         </div>
     </div>
 
@@ -1513,6 +1584,7 @@
             <div class="detail-breadcrumb" id="cultureBreadcrumb">Home / Culture</div>
             <h1 id="cultureTitle">Culture Title</h1>
             <p class="detail-tagline" id="cultureTagline"></p>
+            <div class="img-source-dark" id="cultureHeroSource"></div>
         </div>
     </div>
     <div class="subpage-body">
@@ -1528,72 +1600,105 @@
     </div>
 </article>
 
-<!-- ==================== CUISINE PAGE ==================== -->
+<!-- ==================== CUISINE PAGE (WITH CLICKABLE TOP CAROUSEL) ==================== -->
 <article id="cuisinePage" class="subpage hidden" aria-live="polite">
-    <div class="detail-hero" style="--detail-rgb: 185, 28, 44; background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80');">
-        <div class="detail-hero-inner">
-            <a href="#home" class="back-btn">&#8592; Back to Home</a>
-            <div class="detail-breadcrumb">Home / Food & Gastronomy / Cuisine</div>
-            <h1>Flavors of Nueva Ecija</h1>
-            <p class="detail-tagline">From garlicky Cabanatuan sausages and creamy carabao milk delicacies to freshly grilled river harvests—taste the heart of Central Luzon.</p>
+    <div class="page-carousel-wrap">
+        <div class="page-carousel-container">
+            <div class="page-carousel-top">
+                <div class="page-carousel-heading">
+                    <a href="#home" class="back-btn">&#8592; Back to Home</a>
+                    <div class="detail-breadcrumb">Home / Food & Gastronomy / Cuisine</div>
+                    <h1>Flavors of Nueva Ecija</h1>
+                    <p>Mula sa malinamnam na Cabanatuan sausages at creamy carabao milk delicacies hanggang sa bagong ihaw na river fish—tikman ang sarap ng Central Luzon! I-click ang slide para mag-jump sa dish.</p>
+                </div>
+            </div>
+            <div class="page-carousel-stage">
+                <button class="stage-arrow prev" id="cuisinePrev" aria-label="Previous dish">&#8592;</button>
+                <div class="page-carousel-slides" id="cuisineCarouselTrack"></div>
+                <button class="stage-arrow next" id="cuisineNext" aria-label="Next dish">&#8594;</button>
+            </div>
+            <div class="page-carousel-dots" id="cuisineCarouselDots"></div>
         </div>
     </div>
+
     <div class="subpage-body">
         <div class="section-header">
             <span class="section-kicker">Must-Try Specialties</span>
             <h2>Iconic Novo Ecijano Dishes</h2>
-            <p class="section-subtitle">Every municipality in Nueva Ecija brings a distinct culinary heirloom to the table.</p>
+            <p class="section-subtitle">Bawat bayan sa Nueva Ecija ay may sariling ipinagmamalaking lutuin at pasalubong na hindi mo dapat palampasin.</p>
         </div>
         <div class="entry-grid" id="cuisineGrid"></div>
 
         <div class="cross-cta">
             <div>
                 <h3>Ready to dine like a local?</h3>
-                <p>Explore our curated guide to the best heritage restaurants, bakeries, and lakeside dining spots across Nueva Ecija.</p>
+                <p>Silipin ang aming curated list ng mga paboritong heritage restaurants, cafes, at lakeside kainan sa buong Nueva Ecija.</p>
             </div>
             <a href="#page/restaurants" class="btn-primary">Explore Restaurants &#8594;</a>
         </div>
     </div>
 </article>
 
-<!-- ==================== RESTAURANTS PAGE ==================== -->
+<!-- ==================== RESTAURANTS PAGE (WITH CLICKABLE TOP CAROUSEL) ==================== -->
 <article id="restaurantsPage" class="subpage hidden" aria-live="polite">
-    <div class="detail-hero" style="--detail-rgb: 0, 56, 168; background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80');">
-        <div class="detail-hero-inner">
-            <a href="#home" class="back-btn">&#8592; Back to Home</a>
-            <div class="detail-breadcrumb">Home / Food & Gastronomy / Restaurants</div>
-            <h1>Where to Eat in Nueva Ecija</h1>
-            <p class="detail-tagline">Beloved homegrown dining institutions, heritage cafes, and scenic highland spots across Cabanatuan, Pantabangan, and beyond.</p>
+    <div class="page-carousel-wrap">
+        <div class="page-carousel-container">
+            <div class="page-carousel-top">
+                <div class="page-carousel-heading">
+                    <a href="#home" class="back-btn">&#8592; Back to Home</a>
+                    <div class="detail-breadcrumb">Home / Food & Gastronomy / Restaurants</div>
+                    <h1>Where to Eat in Nueva Ecija</h1>
+                    <p>Mga sikat na homegrown kainan, cozy cafes, at scenic lakeside spots sa Cabanatuan, Pantabangan, at iba pang bayan. I-click ang slide para tingnan ang restaurant details.</p>
+                </div>
+            </div>
+            <div class="page-carousel-stage">
+                <button class="stage-arrow prev" id="restoPrev" aria-label="Previous restaurant">&#8592;</button>
+                <div class="page-carousel-slides" id="restoCarouselTrack"></div>
+                <button class="stage-arrow next" id="restoNext" aria-label="Next restaurant">&#8594;</button>
+            </div>
+            <div class="page-carousel-dots" id="restoCarouselDots"></div>
         </div>
     </div>
+
     <div class="subpage-body">
         <div class="section-header">
             <span class="section-kicker">Top Dining Spots</span>
             <h2>Featured Restaurants & Food Stops</h2>
-            <p class="section-subtitle">Whether you’re craving classic Kapampangan-Tagalog comfort food, iconic sherbet, or lakeside dining, start here.</p>
+            <p class="section-subtitle">Mapa-classic Filipino comfort food, pamosong sherbet, o chill lakeside dining man ang hanap mo, dito ka magsimula.</p>
         </div>
         <div class="entry-grid" id="restaurantsGrid"></div>
 
         <div class="cross-cta">
             <div>
                 <h3>Curious about the dishes behind the menus?</h3>
-                <p>Discover the stories behind Batotay, Cabanatuan Longganisa, Carabao Milk Pastillas, and more.</p>
+                <p>Kilalanin ang kwento at sarap ng Batotay, Cabanatuan Longganisa, Carabao Milk Pastillas, at marami pang iba.</p>
             </div>
             <a href="#page/cuisine" class="btn-primary">View Local Cuisine &#8594;</a>
         </div>
     </div>
 </article>
 
-<!-- ==================== GALLERY PAGE ==================== -->
+<!-- ==================== GALLERY PAGE (WITH CLICKABLE TOP CAROUSEL) ==================== -->
 <article id="galleryPage" class="subpage hidden" aria-live="polite">
-    <div class="detail-hero" style="--detail-rgb: 0, 128, 145; background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80');">
-        <div class="detail-hero-inner">
-            <a href="#home" class="back-btn">&#8592; Back to Home</a>
-            <div class="detail-breadcrumb">Home / Visual Showcase / Gallery</div>
-            <h1>Nueva Ecija in Frames</h1>
-            <p class="detail-tagline">Explore emerald canyons, golden rice fields, festive celebrations, and mouthwatering dishes from across the province.</p>
+    <div class="page-carousel-wrap">
+        <div class="page-carousel-container">
+            <div class="page-carousel-top">
+                <div class="page-carousel-heading">
+                    <a href="#home" class="back-btn">&#8592; Back to Home</a>
+                    <div class="detail-breadcrumb">Home / Visual Showcase / Gallery</div>
+                    <h1>Nueva Ecija in Frames</h1>
+                    <p>Tingnan ang ganda ng emerald canyons, berdeng palayan, makukulay na fiesta, at nakakatakam na pagkain ng probinsya. I-click ang bawat slide para ma-view nang malaki.</p>
+                </div>
+            </div>
+            <div class="page-carousel-stage">
+                <button class="stage-arrow prev" id="galleryPrev" aria-label="Previous photo">&#8592;</button>
+                <div class="page-carousel-slides" id="galleryCarouselTrack"></div>
+                <button class="stage-arrow next" id="galleryNext" aria-label="Next photo">&#8594;</button>
+            </div>
+            <div class="page-carousel-dots" id="galleryCarouselDots"></div>
         </div>
     </div>
+
     <div class="subpage-body">
         <div class="filter-bar" id="galleryFilters">
             <button class="filter-btn active" data-filter="all">All Photos</button>
@@ -1605,6 +1710,87 @@
     </div>
 </article>
 
+<!-- ==================== MEMBERS PAGE (YEARBOOK + WORK ATTRIBUTION DONUT) ==================== -->
+<article id="membersPage" class="subpage hidden" aria-live="polite">
+    <div class="members-hero">
+        <div class="members-hero-inner">
+            <a href="#home" class="back-btn">&#8592; Back to Home</a>
+            <div class="detail-breadcrumb">Home / Team / Members</div>
+            <h1>Members Yearbook</h1>
+            <p>Kilalanin ang 10 miyembro sa likod ng Lakbay, Novo Ecijano. I-click ang kahit anong photo frame para mag-upload ng larawan, at i-adjust ang contribution chart sa ibaba.</p>
+            <div class="member-ribbon-strip">
+                <span class="member-ribbon-dot"></span>
+                <span>Official Project Team • 10 Members • Love Nueva Ecija</span>
+            </div>
+        </div>
+    </div>
+    <div class="dot-ribbon"></div>
+
+    <div class="subpage-body">
+        <div class="section-header">
+            <span class="section-kicker">Class & Project Yearbook</span>
+            <h2>Meet the 10 Members</h2>
+            <p class="section-subtitle">Bawat frame ay naka-format bilang yearbook portrait na may pangalan at motto sa ilalim. Pwede mong palitan ang placeholder data sa script o i-click ang photo frame para mag-preview ng picture.</p>
+        </div>
+
+        <div class="yearbook-grid" id="yearbookGrid"></div>
+
+        <!-- Interactive Donut Pie Graph Section -->
+        <section class="contrib-section" style="padding: 0;">
+            <div class="contrib-header">
+                <div>
+                    <span class="section-kicker" style="color: var(--dot-gold); margin-bottom: 4px;">Interactive Team Breakdown</span>
+                    <h2>Work Attribution and Contribution</h2>
+                    <p>I-input ang contribution score ng bawat miyembro gamit ang number box o slider—automatic na mako-compute ang percentage at mag-a-update ang donut pie graph.</p>
+                </div>
+                <div class="contrib-actions">
+                    <button type="button" class="contrib-action-btn" id="equalContribBtn">Equal Share (10% each)</button>
+                    <button type="button" class="contrib-action-btn" id="resetContribBtn">Reset Defaults</button>
+                </div>
+            </div>
+
+            <div class="contrib-body">
+                <div class="donut-panel">
+                    <div class="donut-wrap">
+                        <svg class="donut-svg" viewBox="0 0 320 320" aria-label="Work Attribution and Contribution Donut Chart">
+                            <circle cx="160" cy="160" r="112" fill="none" stroke="#E2E8F0" stroke-width="44"></circle>
+                            <g id="donutSlices" transform="rotate(-90 160 160)"></g>
+                        </svg>
+                        <div class="donut-center">
+                            <span class="donut-center-kicker" id="donutCenterKicker">Total Contribution</span>
+                            <strong class="donut-center-value" id="donutCenterValue">100%</strong>
+                            <span class="donut-center-sub" id="donutCenterSub">100 pts • 10 Members</span>
+                        </div>
+                    </div>
+                    <div class="donut-legend" id="donutLegend"></div>
+                </div>
+
+                <div>
+                    <div class="contrib-controls-head">
+                        <h3>Input Member Attribution &amp; Contribution</h3>
+                        <span class="contrib-total-pill" id="contribTotalPill">Total: 100 pts (100.0%)</span>
+                    </div>
+                    <div class="contrib-list" id="contribInputsList"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+</article>
+
+<!-- ==================== PHOTO LIGHTBOX MODAL ==================== -->
+<div id="photoLightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Photo preview">
+    <div class="lightbox-box">
+        <button class="lightbox-close" id="closeLightbox" aria-label="Close preview">&times;</button>
+        <img id="lightboxImg" src="" alt="">
+        <div class="lightbox-info">
+            <span id="lightboxLabel"></span>
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxDesc"></p>
+        </div>
+        <div class="img-source" id="lightboxSource"></div>
+    </div>
+</div>
+
 <footer>
     <div class="dot-ribbon"></div>
     <div class="footer-inner">
@@ -1612,9 +1798,8 @@
         <p>© 2026 Lakbay, Novo Ecijano. All Rights Reserved.</p>
     </div>
 </footer>
-
 <script>
-    /* ==================== 1. DESTINATIONS DATA ==================== */
+    /* ==================== 1. DESTINATIONS DATA (TAGLISH DESCRIPTIONS + REAL SOURCES) ==================== */
     const destinations = {
         minalungao: {
             title: "Minalungao National Park",
@@ -1622,25 +1807,27 @@
             category: "Eco-Tourism & River Canyon",
             bestTime: "November – May (Dry Season)",
             idealFor: "Families, Swimmers & Adventure Seekers",
-            tagline: "Emerald river waters winding through towering 16-meter limestone walls in the foothills of the Sierra Madre.",
+            tagline: "Malinaw na emerald-green river na napapalibutan ng matataas na 16-meter limestone walls sa paanan ng Sierra Madre.",
             accentHex: "#008751",
             accentRgb: "0, 122, 74",
-            image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Minalungao_National_Park_2.jpg?width=1400",
+            sourceName: "Wikimedia Commons — Minalungao National Park",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Minalungao_National_Park_2.jpg",
             overview: [
-                "Minalungao National Park is Nueva Ecija’s premier eco-tourism jewel, celebrated for the pristine Peñaranda River framed by dramatic karst limestone formations. Its name is derived from 'mina' (mine) and 'lungao' (cave), reflecting the many hidden caverns tucked along its cliffs.",
-                "Protected as a national park since 1967, the area offers a refreshing blend of calm riverside picnics and adrenaline-filled activities—making it a favorite day-trip destination from both Cabanatuan City and Metro Manila."
+                "Ang Minalungao National Park ang sikat na eco-tourism gem ng Nueva Ecija! Kilala ito sa malinaw na Peñaranda River na binabantayan ng malalaking limestone formations. Galing ang pangalan nito sa 'mina' (mine) at 'lungao' (kweba) dahil sa dami ng hidden caves sa paligid ng mga bato.",
+                "Simula pa noong 1967 ay protected national park na ito. Perfect combo siya ng chill na riverside picnic at nakaka-excite na activities—kaya super patok sa day-trip mula Cabanatuan City o kahit galing Metro Manila."
             ],
             activities: [
-                { title: "Bamboo Rafting & Swimming", desc: "Rent a floating bamboo cottage (balsa) with a guide and drift gently through the cool green river canyon." },
-                { title: "Climb the 1,000-Step Cross", desc: "Ascend the hillside stairway to reach a massive white cross overlooking the Sierra Madre range." },
-                { title: "Hanging Bridge & Zipline", desc: "Cross the steel suspension bridge for panoramic photos or glide high above the river on the park’s zipline." },
-                { title: "Cave Exploration", desc: "Hire a local guide to explore nearby limestone caves and rock formations." }
+                { title: "Bamboo Rafting & Swimming", desc: "Mag-rent ng floating bamboo cottage (balsa) kasama ang local guide at mag-chill habang lumulutang sa malamig na ilog." },
+                { title: "Climb the 1,000-Step Cross", desc: "Akyatin ang sikat na 1,000 steps papunta sa malaking puting krus para sa solid na overlooking view ng Sierra Madre." },
+                { title: "Hanging Bridge & Zipline", desc: "Tumawid sa steel hanging bridge para sa IG-worthy shots o subukan ang zipline sa itaas ng ilog." },
+                { title: "Cave Exploration", desc: "Mag-hire ng local guide para ma-explore ang malalapit na limestone caves at kakaibang rock formations." }
             ],
-            directions: "From Cabanatuan City, take a jeepney or drive south toward Gapan or Santa Rosa, then head east to General Tinio (Papaya). Follow the paved tourism road straight to Barangay Pias where the park entrance is located (about 1–1.5 hours from Cabanatuan).",
+            directions: "Mula Cabanatuan City, sumakay ng jeep o mag-drive pa-south papuntang Gapan o Santa Rosa, tapos kumaliwa pa-east patungong General Tinio (Papaya). Sundan lang ang sementadong tourism road diretso sa Barangay Pias (mga 1 hanggang 1.5 oras ang biyahe mula Cabanatuan).",
             tips: [
-                "Arrive early in the morning (before 9:00 AM) to enjoy clearer emerald water and fewer crowds.",
-                "Wear aqua shoes or sturdy sandals—the limestone rocks can be slippery.",
-                "Bring cash for environmental fees, bamboo raft rentals, and local food stalls."
+                "Pumunta nang maaga (bago mag-9:00 AM) para mas malinaw ang emerald water at hindi pa crowded.",
+                "Magsuot ng aqua shoes o sandals na may grip—madulas minsan ang mga limestone rocks.",
+                "Magdala ng cash para sa environmental fees, balsa rentals, at mga local food stalls."
             ]
         },
         pantabangan: {
@@ -1649,25 +1836,27 @@
             category: "Highland Reservoir & Scenic Viewpoint",
             bestTime: "December – May (Cool Breezes & Clear Sunsets)",
             idealFor: "Road Trippers, Photographers & Relaxed Getaways",
-            tagline: "Sweeping mountain vistas, tranquil blue waters, and cool highland breezes at one of Southeast Asia’s largest earth-fill dams.",
+            tagline: "Malawak na mountain views, kalmadong asul na tubig, at preskong hangin sa isa sa pinakamalalaking earth-fill dams sa Southeast Asia.",
             accentHex: "#0038A8",
             accentRgb: "0, 56, 168",
-            image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Pantabangan_Lake_Nueva_Ecija.jpg?width=1400",
+            sourceName: "Wikimedia Commons — Pantabangan Lake, Nueva Ecija",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Pantabangan_Lake_Nueva_Ecija.jpg",
             overview: [
-                "Completed in 1974, Pantabangan Dam is a landmark hydroelectric and irrigation reservoir that supplies water to vast stretches of Central Luzon’s farmlands. Surrounded by rolling hills and mountain ridges, the reservoir feels like a serene lakeside retreat.",
-                "Beneath its waters lies the submerged historic town of Old Pantabangan—during unusually dry seasons when water levels drop, ruins of the centuries-old church occasionally re-emerge, drawing curious visitors and history buffs alike."
+                "Natapos noong 1974, ang Pantabangan Dam ay mahalagang hydroelectric at irrigation reservoir na nagpapatubig sa malawak na bukirin ng Central Luzon. Dahil napapalibutan ito ng mga burol at kabundukan, para kang nasa isang relaxing highland lake retreat.",
+                "Sa ilalim ng tubig nito nakalubog ang lumang bayan ng Old Pantabangan—tuwing matindi ang tag-init at bumababa ang water level, minsan ay lumilitaw ulit ang mga lumang guho ng simbahan na talagang dinarayo ng mga bisita."
             ],
             activities: [
-                { title: "Panoramic Viewdeck Sightseeing", desc: "Stop along the dam crest and hilltop viewpoints for golden-hour photography over the sprawling lake." },
-                { title: "Lakeside Dining & Resorts", desc: "Unwind at scenic lakeside resorts and cafes overlooking the water with cool mountain air." },
-                { title: "Boating & Sport Fishing", desc: "Enjoy calm boat rides across the reservoir or try freshwater bass and tilapia fishing with local guides." },
-                { title: "Old Pantabangan Heritage Viewing", desc: "Learn about the town’s relocation story and, during low-water dry months, view the historic sunken ruins." }
+                { title: "Panoramic Viewdeck Sightseeing", desc: "Mag-stopover sa dam crest at mga viewdeck para sa golden-hour photos habang tanaw ang buong lake." },
+                { title: "Lakeside Dining & Resorts", desc: "Mag-relax sa mga lakeside resorts at cafes habang nagkakape o kumakain sa gitna ng malamig na hangin." },
+                { title: "Boating & Sport Fishing", desc: "Subukan ang calm boat rides sa reservoir o mag-fishing ng bass at tilapia kasama ang local guides." },
+                { title: "Old Pantabangan Heritage Viewing", desc: "Alamin ang kwento ng relocation ng lumang bayan at silipin ang sunken ruins tuwing dry season." }
             ],
-            directions: "From Cabanatuan City, head north via Maharlika Highway toward Rizal, Nueva Ecija, then follow the scenic winding road up to Pantabangan (roughly 1.5 hours by private vehicle or local bus/van).",
+            directions: "Mula Cabanatuan City, bumiyahe pa-north via Maharlika Highway papuntang Rizal, Nueva Ecija, tapos sundan ang zigzag na paakyat na daan papuntang Pantabangan (mga 1.5 oras via private car, bus, o van).",
             tips: [
-                "Bring a light jacket—the wind along the dam crest can get chilly, especially in the late afternoon.",
-                "Sunset (4:30 PM – 6:00 PM) offers the best lighting for photos over the reservoir.",
-                "Drive carefully along the uphill curves approaching Pantabangan."
+                "Magdala ng manipis na jacket—medyo malamig ang hangin sa dam crest lalo na kapag hapon.",
+                "The best ang lighting para sa photos kapag sunset (4:30 PM – 6:00 PM).",
+                "Mag-ingat sa pagda-drive sa paakyat at kurbadang kalsada papuntang Pantabangan."
             ]
         },
         pangatian: {
@@ -1676,25 +1865,27 @@
             category: "Historical Landmark & Shrine",
             bestTime: "Year-Round (Especially January 30 Commemoration)",
             idealFor: "History Enthusiasts, Students & Cultural Travelers",
-            tagline: "A solemn World War II memorial honoring the courage of Filipino guerrillas and Allied forces during the Great Raid of 1945.",
+            tagline: "Isang makabuluhang World War II shrine bilang pagpupugay sa tapang ng mga Filipino guerrillas at Allied forces noong Great Raid of 1945.",
             accentHex: "#CE1126",
             accentRgb: "185, 28, 44",
-            image: "https://images.unsplash.com/photo-1565060169194-19fabf63012c?auto=format&fit=crop&w=1600&q=80",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Camp_Pangatian_Shrine_in_Cabanatuan_City,_Nueva_Eija.JPG?width=1400",
+            sourceName: "Wikimedia Commons — Camp Pangatian Shrine",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Camp_Pangatian_Shrine_in_Cabanatuan_City,_Nueva_Eija.JPG",
             overview: [
-                "Originally built as a Philippine Army training camp, Camp Pangatian became a Japanese Prisoner of War (POW) camp during World War II, holding thousands of American and Allied soldiers who survived the Bataan Death March.",
-                "On January 30, 1945, it became the stage for the legendary 'Great Raid'—a daring rescue mission carried out jointly by the U.S. Army 6th Ranger Battalion, Alamo Scouts, and Filipino guerrillas led by Capt. Juan Pajota and Capt. Eduardo Joson, freeing over 500 POWs."
+                "Dati itong training camp ng Philippine Army na ginawang Japanese Prisoner of War (POW) camp noong World War II, kung saan ikinulong ang libo-libong sundalong nakaligtas sa Bataan Death March.",
+                "Noong January 30, 1945, dito naganap ang makasaysayang 'Great Raid'—isang matapang na rescue mission na pinagsamang ginawa ng U.S. Army Rangers, Alamo Scouts, at mga Filipino guerrillas sa pamumuno nina Capt. Juan Pajota at Capt. Eduardo Joson, kung saan mahigit 500 POWs ang nailigtas."
             ],
             activities: [
-                { title: "Walk the Memorial Wall", desc: "Pay tribute at the marble memorial wall inscribed with the names of soldiers who perished at the camp." },
-                { title: "Visit the On-Site Museum", desc: "View WWII artifacts, historical photographs, and accounts of the 1945 rescue operation." },
-                { title: "Explore the Shrine Grounds", desc: "Stroll through the quiet, tree-lined park featuring the sundial monument and commemorative markers." },
-                { title: "Pair with a Cabanatuan Food Trip", desc: "After visiting, sample Cabanatuan’s famous garlic longganisa, batotay, and local delicacies nearby." }
+                { title: "Walk the Memorial Wall", desc: "Magbigay-pugay sa marble memorial wall kung saan nakaukit ang mga pangalan ng mga sundalong nagbuwis ng buhay." },
+                { title: "Visit the On-Site Museum", desc: "Tingnan ang mga WWII artifacts, lumang litrato, at kwento ng makasaysayang 1945 rescue operation." },
+                { title: "Explore the Shrine Grounds", desc: "Maglakad-lakad sa tahimik at mapunong parke kung saan makikita ang sundial monument at historical markers." },
+                { title: "Pair with a Cabanatuan Food Trip", desc: "Pagkatapos ng tour, pwedeng-pwede kang dumiretso sa bayan para mag-Batotay, garlic longganisa, at Puno’s Ice Cream." }
             ],
-            directions: "Located along the Cabanatuan–Bongabon Road in Barangay Pangatian, just 15–20 minutes east of Cabanatuan City proper. Easily accessible by tricycle, jeepney, or private car.",
+            directions: "Matatagpuan ito sa kahabaan ng Cabanatuan–Bongabon Road sa Barangay Pangatian, mga 15–20 minuto lang mula sa sentro ng Cabanatuan City. Madaling puntahan gamit ang tricycle, jeep, o sariling sasakyan.",
             tips: [
-                "Observe quiet and respectful behavior—the grounds serve as a solemn war memorial.",
-                "Check local opening hours before going if you plan to enter the indoor museum.",
-                "Bring water and sun protection while walking the open-air monument grounds."
+                "Panatilihin ang katahimikan at respeto dahil solemn war memorial ang buong lugar.",
+                "I-check muna ang local museum hours bago pumunta kung gusto mong pumasok sa indoor gallery.",
+                "Magdala ng tubig at payong o sumbrero dahil open-air ang malaking bahagi ng shrine."
             ]
         },
         gabaldon: {
@@ -1703,25 +1894,27 @@
             category: "Waterfalls & River Nature Park",
             bestTime: "December – May",
             idealFor: "Nature Lovers, Barkadas & Weekend Picnics",
-            tagline: "Crisp mountain cascades and crystal-clear rocky river pools nestled at the base of the Sierra Madre mountain range.",
+            tagline: "Malamig na falls at super linaw na mabato at mababaw na ilog na naka-pwesto sa paanan ng Sierra Madre.",
             accentHex: "#008B9A",
             accentRgb: "0, 128, 145",
-            image: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1600&q=80",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/DupingaRiverjf9490_10.JPG?width=1400",
+            sourceName: "Wikimedia Commons — Ramon FVelasquez (Dupinga River)",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:DupingaRiverjf9490_10.JPG",
             overview: [
-                "Tucked in the eastern valley of Nueva Ecija near the border of Aurora, Gabaldon is surrounded by lush Sierra Madre forestland. Gabaldon Falls sits inside the sprawling NEUST–Gabaldon campus, reachable via a short, scenic forest trail with cool, misty waters plunging into a natural rock basin.",
-                "Just a short drive away, the Dupinga River offers wide, shallow, crystal-clear mountain streams lined with smooth boulders and riverside cottages—making it a classic weekend picnic spot for families and groups."
+                "Nakatago sa silangang bahagi ng Nueva Ecija malapit sa Aurora, ang Gabaldon ay napapalibutan ng berdeng kabundukan ng Sierra Madre. Nasa loob mismo ng NEUST–Gabaldon campus ang Gabaldon Falls na maabot sa isang maikli at preskong forest walk.",
+                "Ilang minuto lang ang layo, nandiyan naman ang Dupinga River—malapad, malinaw, at napakalamig na ilog na may mga nipa huts sa gilid kaya solid na weekend tambayan ng pamilya at barkada."
             ],
             activities: [
-                { title: "Trek to Gabaldon Falls", desc: "Take an easy 15–20 minute shaded walk through lush greenery and dip into the refreshing waterfall pool." },
-                { title: "Riverside Picnic at Dupinga River", desc: "Rent a nipa hut along the rocky riverbank, grill local favorites, and swim in cool flowing mountain water." },
-                { title: "Nature Photography", desc: "Capture dramatic mist-covered views of the Sierra Madre mountains framing the valley." },
-                { title: "Gateway Stopover to Dingalan", desc: "Combine your Gabaldon trip with a short drive over the mountain pass to Dingalan, Aurora’s coastline." }
+                { title: "Trek to Gabaldon Falls", desc: "Mag-enjoy sa madaling 15–20 minute trail sa gitna ng mga puno at magtampisaw sa malamig na pool ng falls." },
+                { title: "Riverside Picnic at Dupinga River", desc: "Mag-rent ng kubo sa gilid ng ilog, mag-ihaw ng liempo o tilapia, at mag-swimming sa malinaw na agos." },
+                { title: "Nature Photography", desc: "Kumuha ng cinematic shots ng misty Sierra Madre mountains na nakapalibot sa lambak." },
+                { title: "Gateway Stopover to Dingalan", desc: "Pwedeng-pwede mong isabay sa itinerary mo ang biyahe paakyat ng mountain pass papuntang Dingalan, Aurora." }
             ],
-            directions: "From Cabanatuan City, drive or ride a bus/van east through Palayan City and Bongabon toward Gabaldon (about 1.5 hours). Dupinga River sits right along the main highway, while Gabaldon Falls is inside the NEUST Gabaldon campus.",
+            directions: "Mula Cabanatuan City, dumaan sa Palayan City at Bongabon papuntang Gabaldon (mga 1.5 oras na biyahe). Tabing-highway lang ang Dupinga River, habang ang Gabaldon Falls naman ay nasa loob ng NEUST Gabaldon campus.",
             tips: [
-                "Avoid swimming in the river during heavy rainfall, as mountain water levels can rise quickly.",
-                "Wear grippy footwear for the mossy rocks around Gabaldon Falls and Dupinga River.",
-                "Bring extra dry clothes and cash for cottage rentals and environmental fees."
+                "Iwasang maligo sa ilog kapag malakas ang ulan dahil mabilis tumaas ang tubig mula sa bundok.",
+                "Magsuot ng footwear na makapit dahil madulas ang mga lumot sa paligid ng falls at bato.",
+                "Magdala ng pamalit na tuyong damit at extra cash para sa cottage rental at environmental fees."
             ]
         },
         mt387: {
@@ -1730,41 +1923,45 @@
             category: "Mountain Trekking & Eco-Adventure",
             bestTime: "November – May (Sunrise Hikes)",
             idealFor: "Beginner Hikers, Campers & Adventure Groups",
-            tagline: "Rolling emerald cogon-grass ridges, dramatic 360-degree mountain panoramas, and a refreshing post-hike dip at Aloha Falls.",
+            tagline: "Mala-Batanes na green ridges, 360-degree mountain views, at nakaka-refresh na sidetrip sa Aloha Falls.",
             accentHex: "#C47A00",
             accentRgb: "196, 122, 0",
             image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1600&q=80",
+            sourceName: "Unsplash — Mountain Ridge Scenic View",
+            sourceUrl: "https://unsplash.com",
             overview: [
-                "Rising approximately 724 meters above sea level in Barangay Puncan, Carranglan, Mt. 387—locally known as Batong Amat—is one of Northern and Central Luzon’s most beloved beginner-friendly hikes. Its name comes from the 387 hectares of protected forestland cared for by the local community.",
-                "Hikers are rewarded with picturesque open ridges reminiscent of Batanes’ rolling hills, a famous lone 'Lovers' Tree' photo spot, and sweeping views where the Caraballo and Sierra Madre mountain ranges meet."
+                "May taas na nasa 724 meters above sea level sa Barangay Puncan, Carranglan, ang Mt. 387—na kilala rin bilang Batong Amat—ay isa sa paboritong beginner-friendly hikes sa Luzon. Galing ang pangalan nito sa 387 hectares ng protected forestland na inaalagaan ng komunidad.",
+                "Sulit ang pag-akyat dahil sa malawak na rolling hills na parang Batanes, ang sikat na 'Lovers' Tree' photo spot, at panoramic view kung saan nagtatagpo ang Caraballo at Sierra Madre mountain ranges."
             ],
             activities: [
-                { title: "Sunrise Summit Hike", desc: "Complete a rewarding 2–3 hour ascent to catch a sea of clouds and golden sunrise over the ridges." },
-                { title: "Photo Stop at Lovers' Tree", desc: "Pause along the breezy grassy ridge for iconic wide-angle mountain portraits." },
-                { title: "Side Trip to Aloha Falls", desc: "Cool off after your descent with a short trek to the cascading, tiered waters of nearby Aloha Falls." },
-                { title: "Tree Planting & Eco-Tourism", desc: "Support the local community’s reforestation efforts by joining guided eco-activities at the jump-off." }
+                { title: "Sunrise Summit Hike", desc: "Mag-akyat nang 2–3 oras para abutan ang sea of clouds at golden sunrise sa tuktok ng bundok." },
+                { title: "Photo Stop at Lovers' Tree", desc: "Magpahinga sa mahanging ridge at magpa-picture sa iconic na nag-iisang puno sa gitna ng damuhan." },
+                { title: "Side Trip to Aloha Falls", desc: "Pagbaba mula sa hike, magpalamig sa maganda at tiered cascades ng Aloha Falls." },
+                { title: "Tree Planting & Eco-Tourism", desc: "Suportahan ang reforestation program ng barangay sa pamamagitan ng pagtatanim ng seedlings." }
             ],
-            directions: "From Cabanatuan City or San Jose City, travel north along Maharlika Highway toward Carranglan and stop at Barangay Puncan (the official registration and jump-off point, about 1.5–2 hours from Cabanatuan).",
+            directions: "Mula Cabanatuan City o San Jose City, bumiyahe pa-north via Maharlika Highway papuntang Carranglan at bumaba sa Barangay Puncan (ang official jump-off point, mga 1.5–2 oras mula Cabanatuan).",
             tips: [
-                "Register at the Barangay Puncan tourism office—hiring a certified local guide is required.",
-                "Start early (around 4:30 AM – 5:30 AM) because the open ridge trail gets sunny by mid-morning.",
-                "Pack at least 1.5–2 liters of water, trail snacks, sunblock, and a windbreaker."
+                "Mag-register sa Barangay Puncan tourism office—required ang accredited local guide.",
+                "Mag-start nang maaga (4:30 AM – 5:30 AM) dahil open trail ito at umiinit na pagsapit ng mid-morning.",
+                "Magbaon ng 1.5–2 liters ng tubig, trail snacks, sunblock, at light windbreaker."
             ]
         }
     };
 
-    /* ==================== 2. EXPANDED CULTURE PAGES DATA ==================== */
+    /* ==================== 2. EXPANDED CULTURE & HERITAGE DATA (REAL IMAGES + SOURCES) ==================== */
     const culturePages = {
         festivals: {
             title: "Vibrant Festivals of Nueva Ecija",
             breadcrumb: "Home / Culture / Vibrant Festivals",
-            tagline: "Year-round celebrations of faith, bountiful harvests, and community pride across every Novo Ecijano town.",
+            tagline: "Buong taong selebrasyon ng pananampalataya, masaganang ani, at pagkakaisa ng bawat bayan sa Nueva Ecija.",
             accentHex: "#C47A00",
             accentRgb: "196, 122, 0",
-            heroImage: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1600&q=80",
+            heroImage: "https://commons.wikimedia.org/wiki/Special:FilePath/Taong-Putik_Festival.jpg?width=1400",
+            heroSourceName: "Wikimedia Commons — Taong-Putik Festival (Aliaga)",
+            heroSourceUrl: "https://commons.wikimedia.org/wiki/File:Taong-Putik_Festival.jpg",
             overview: [
-                "Festivals in Nueva Ecija are deeply rooted in gratitude—honoring patron saints, celebrating abundant rice and onion harvests, and bringing entire communities together through street dancing, music, and shared feasts.",
-                "Whether you visit during the cool months of spring or the rainy season of June, there is always a colorful fiesta welcoming travelers with warmth."
+                "Ang mga fiesta sa Nueva Ecija ay malalim na naka-ugat sa pasasalamat—para sa mga patron saint, sa magandang ani ng palay at sibuyas, at sa masayang pagsasama-sama ng buong komunidad sa street dancing, musika, at salo-salo.",
+                "Kahit anong buwan ka bumisita, sigurado na may makukulay na selebrasyon at mababait na lokal na sasalubong sa’yo."
             ],
             gridKicker: "Annual Celebrations",
             gridHeading: "Must-Experience Festivals",
@@ -1773,42 +1970,52 @@
                     title: "Taong Putik Festival",
                     badge: "Aliaga • June 24",
                     tags: ["Religious Devotion", "Cultural Icon"],
-                    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80",
-                    desc: "Devotees in Barangay Bibiclat coat themselves in mud and dried banana leaves in honor of St. John the Baptist, reenacting an iconic local miracle of survival and humility."
+                    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Taong-Putik_Festival.jpg?width=900",
+                    sourceName: "Wikimedia Commons — Taong-Putik Festival",
+                    sourceUrl: "https://commons.wikimedia.org/wiki/File:Taong-Putik_Festival.jpg",
+                    desc: "Sa Barangay Bibiclat, nagpapahid ng putik at nagdadamit ng tuyong dahon ng saging ang mga deboto bilang pagpupugay kay St. John the Baptist at pag-alala sa isang milagro ng kaligtasan."
                 },
                 {
                     title: "Tanduyong Festival",
                     badge: "San Jose City • April",
                     tags: ["Harvest Fiesta", "Street Dance"],
-                    image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=80",
-                    desc: "Named after a native shallot grown abundantly in San Jose City, this lively festival bursts with vibrant costumes, brass bands, and thanksgiving dances."
+                    image: "https://commons.wikimedia.org/wiki/Special:FilePath/0017jfTsinelas_Festival_Floats_Parade_Gapan_City_Ecijafvf_33.JPG?width=900",
+                    sourceName: "Wikimedia Commons — Judgefloro (Nueva Ecija Fiesta Parade)",
+                    sourceUrl: "https://commons.wikimedia.org/wiki/File:0017jfTsinelas_Festival_Floats_Parade_Gapan_City_Ecijafvf_33.JPG",
+                    desc: "Pinangalan sa native na sibuyas na tanduyong, puno ng makukulay na costumes, masiglang street dance, at pasasalamat para sa masaganang ani ang sikat na fiesta na ito."
                 },
                 {
                     title: "Pagibang Damara Festival",
                     badge: "San Jose City • April",
                     tags: ["Rice Harvest", "Community"],
-                    image: "https://images.unsplash.com/photo-1536657464919-892534f60d6e?auto=format&fit=crop&w=900&q=80",
-                    desc: "Celebrates the traditional dismantling of the 'damara'—temporary bamboo shelters built in the rice fields—marking the joyful completion of a successful harvest."
+                    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Jaen_rice_field_(Jaen,_Nueva_Ecija;_07-23-2023).jpg?width=900",
+                    sourceName: "Wikimedia Commons — Patrickroque01 (Nueva Ecija Rice Fields)",
+                    sourceUrl: "https://commons.wikimedia.org/wiki/File:Jaen_rice_field_(Jaen,_Nueva_Ecija;_07-23-2023).jpg",
+                    desc: "Ipinagdiriwang dito ang tradisyon ng pagbabaklas ng 'damara'—mga kubong kawayan sa gitna ng palayan—bilang simbolo ng masayang pagtatapos ng matagumpay na anihan."
                 },
                 {
                     title: "Sibuyasan Festival",
                     badge: "Bongabon • April",
                     tags: ["Onion Capital", "Agri-Tourism"],
-                    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
-                    desc: "Honors Bongabon’s proud status as the Onion Capital of the Philippines with agri-fairs, culinary showcases, and colorful parades."
+                    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Bongabongjf4386_08.JPG?width=900",
+                    sourceName: "Wikimedia Commons — Ramon FVelasquez (Bongabon, Nueva Ecija)",
+                    sourceUrl: "https://commons.wikimedia.org/wiki/File:Bongabongjf4386_08.JPG",
+                    desc: "Binibigyang-pugay ang Bongabon bilang Onion Capital of the Philippines sa pamamagitan ng agri-fairs, culinary contests, at masiglang parada."
                 }
             ]
         },
         heritage: {
             title: "Craft, Architecture & Resilience",
             breadcrumb: "Home / Culture / Craft & Resilience",
-            tagline: "Centuries-old churches, agricultural innovation, and artisan traditions shaped by generations of Novo Ecijanos.",
+            tagline: "Mga makasaysayang simbahan, agricultural innovation, at gawang-kamay na ipinagmamalaki ng bawat henerasyon ng Novo Ecijano.",
             accentHex: "#008751",
             accentRgb: "0, 122, 74",
-            heroImage: "https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=1600&q=80",
+            heroImage: "https://commons.wikimedia.org/wiki/Special:FilePath/Gapan_Church.jpg?width=1400",
+            heroSourceName: "Wikimedia Commons — Elmer B. Domingo (Gapan Church)",
+            heroSourceUrl: "https://commons.wikimedia.org/wiki/File:Gapan_Church.jpg",
             overview: [
-                "Beyond its natural wonders, Nueva Ecija is a living archive of Philippine history—from Spanish-era stone churches and revolutionary landmarks in San Isidro and Cabanatuan to the hardworking farming communities that feed the nation.",
-                "Local artisans, heritage conservationists, and modern agri-tourism centers continue to preserve this proud legacy for new generations of travelers."
+                "Bukod sa magagandang bundok at ilog, buhay na buhay ang kasaysayan sa Nueva Ecija—mula sa mga Spanish-era churches at revolutionary sites sa Cabanatuan at Gapan hanggang sa masisipag na magsasakang nagpapakain sa bansa.",
+                "Patuloy na pinangangalagaan ng mga local artisans, heritage advocates, at science centers ang proud legacy na ito para ma-experience ng mga susunod pang henerasyon."
             ],
             gridKicker: "Living Legacy",
             gridHeading: "Heritage & Artisan Highlights",
@@ -1817,152 +2024,605 @@
                     title: "Three Kings Parish (Gapan City)",
                     badge: "Gapan City • 1856",
                     tags: ["National Shrine", "Byzantine Architecture"],
-                    image: "https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=900&q=80",
-                    desc: "One of the oldest and grandest Roman Catholic churches in Central Luzon, renowned for its limestone walls, towering facade, and centuries of spiritual history."
+                    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Gapan_Church.jpg?width=900",
+                    sourceName: "Wikimedia Commons — Elmer B. Domingo (Gapan Church)",
+                    sourceUrl: "https://commons.wikimedia.org/wiki/File:Gapan_Church.jpg",
+                    desc: "Isa sa pinakamatanda at pinakamalaking simbahan sa Central Luzon! Kilala ito sa makapal na limestone walls, engrandeng facade, at malalim na kasaysayan ng pananampalataya."
                 },
                 {
                     title: "Science City of Muñoz & PhilRice",
                     badge: "Muñoz • Agri-Heritage",
                     tags: ["Rice Granary", "Science Tourism"],
-                    image: "https://images.unsplash.com/photo-1536657464919-892534f60d6e?auto=format&fit=crop&w=900&q=80",
-                    desc: "Home to the Philippine Rice Research Institute and the Philippine Carabao Center, showcasing the agricultural science and resilience behind the nation’s staple food."
+                    image: "https://commons.wikimedia.org/wiki/Special:FilePath/09196jfPhilippine_Rice_Research_Institute_Fields_Mu%C3%B1oz_Nueva_Ecijafvf_10.JPG?width=900",
+                    sourceName: "Wikimedia Commons — Judgefloro (PhilRice, Muñoz)",
+                    sourceUrl: "https://commons.wikimedia.org/wiki/File:09196jfPhilippine_Rice_Research_Institute_Fields_Mu%C3%B1oz_Nueva_Ecijafvf_10.JPG",
+                    desc: "Tahanan ng Philippine Rice Research Institute at Philippine Carabao Center—dito makikita ang agham, sipag, at inobasyon sa likod ng pangunahing pagkain ng bansa."
                 },
                 {
                     title: "Traditional Weaving & Slipper Making",
                     badge: "Gapan & Cabiao",
                     tags: ["Local Craft", "Pasalubong"],
-                    image: "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=900&q=80",
-                    desc: "Gapan City is famed as the 'Footwear Capital of the North,' where family-run workshops craft durable handmade slippers, woven bags, and native home decor."
+                    image: "https://commons.wikimedia.org/wiki/Special:FilePath/09688jfTsinelas_Festival_Music_Bands_Hall_Anniversary_Gapan_Cityhood_Ecijafvf_13.JPG?width=900",
+                    sourceName: "Wikimedia Commons — Judgefloro (Gapan Tsinelas Heritage)",
+                    sourceUrl: "https://commons.wikimedia.org/wiki/File:09688jfTsinelas_Festival_Music_Bands_Hall_Anniversary_Gapan_Cityhood_Ecijafvf_13.JPG",
+                    desc: "Kilala ang Gapan City bilang 'Footwear Capital of the North' kung saan gumagawa ang mga pamilyang artisan ng matitibay na tsinelas, native bags, at home decor."
                 },
                 {
                     title: "Cabanatuan Historical Plaza & Monuments",
                     badge: "Cabanatuan City",
                     tags: ["Revolutionary History", "Heritage Walk"],
-                    image: "https://images.unsplash.com/photo-1565060169194-19fabf63012c?auto=format&fit=crop&w=900&q=80",
-                    desc: "Explore Plaza Lucero and the historic cathedral grounds linked to General Antonio Luna and the pivotal chapters of the First Philippine Republic."
+                    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Cabanatuan_Cathedral,_Nueva_Ecija,_April_2023.jpg?width=900",
+                    sourceName: "Wikimedia Commons — Cabanatuan Cathedral, Nueva Ecija",
+                    sourceUrl: "https://commons.wikimedia.org/wiki/File:Cabanatuan_Cathedral,_Nueva_Ecija,_April_2023.jpg",
+                    desc: "Bisitahin ang Plaza Lucero at ang makasaysayang Cabanatuan Cathedral na may malaking bahagi sa kwento ni Gen. Antonio Luna at ng Unang Republika ng Pilipinas."
                 }
             ]
         }
     };
 
-    /* ==================== 3. CUISINE DATA (ALL WITH PICTURES) ==================== */
+    /* ==================== 3. CUISINE DATA (REAL IMAGES + SOURCES + TAGLISH) ==================== */
     const cuisineItems = [
         {
+            id: "cuisine-0",
             title: "Batotay (Sweet Beef Longganisa)",
             origin: "Cabanatuan City",
             type: "Signature Savory",
-            image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80",
-            desc: "Cabanatuan’s beloved sweet-savory beef sausage—juicy, aromatic, and caramelized when pan-fried, best paired with garlic fried rice and spiced vinegar."
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Longganisa_two_varieties.jpg?width=900",
+            sourceName: "Wikimedia Commons — Philippine Longganisa Varieties",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Longganisa_two_varieties.jpg",
+            desc: "Paborito sa Cabanatuan ang matamis-malinamnam na beef sausage na ito—juicy at caramelized kapag pinirito, tapos solid ipares sa sinangag at maanghang na suka!"
         },
         {
+            id: "cuisine-1",
             title: "Cabanatuan Garlic Longganisa",
             origin: "Cabanatuan Public Market",
             type: "Breakfast Classic",
-            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
-            desc: "Boldly seasoned with native garlic, black pepper, and vinegar, this skin-on pork sausage delivers an unmistakable punch of Central Luzon flavor."
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Lucban_Longganisa.jpg?width=900",
+            sourceName: "Wikimedia Commons — Native Filipino Garlic Longganisa",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Lucban_Longganisa.jpg",
+            desc: "Siksik sa native na bawang, paminta, at konting asim ng suka—isang kagat pa lang, ramdam mo na agad ang authentic almusal vibes ng Central Luzon."
         },
         {
+            id: "cuisine-2",
             title: "Carabao Milk Pastillas & Kesong Puti",
             origin: "Muñoz & San Jose",
             type: "Dairy Delicacy",
-            image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80",
-            desc: "Melt-in-your-mouth milk candies and fresh white cheese crafted from rich, locally sourced carabao milk—an essential Novo Ecijano pasalubong."
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Pastillas_made_from_carabao%27s_milk.jpg?width=900",
+            sourceName: "Wikimedia Commons — Pastillas Made from Carabao's Milk",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Pastillas_made_from_carabao%27s_milk.jpg",
+            desc: "Super lambot at creamy na pastillas at fresh kesong puti na gawa sa purong gatas ng kalabaw—must-buy pasalubong bago ka umuwi!"
         },
         {
+            id: "cuisine-3",
             title: "Inihaw na Tilapia & Adobong Hito",
             origin: "Pantabangan & Talavera",
             type: "Freshwater Feast",
-            image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80",
-            desc: "Freshly caught tilapia stuffed with tomatoes and onions and grilled over charcoal, alongside tender catfish simmered in tangy soy-garlic sauce."
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Fried_Tilapia.jpg?width=900",
+            sourceName: "Wikimedia Commons — Isenna (Filipino Tilapia Dish)",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Fried_Tilapia.jpg",
+            desc: "Bagong huling tilapia na pinalamanan ng kamatis at sibuyas, plus malambot na adobong hito—panalo lalo na kapag may sawsawang toyo-kalamansi at mainit na kanin."
         },
         {
+            id: "cuisine-4",
             title: "Puno’s Cheese & Cashew Ice Cream",
             origin: "Cabanatuan City",
             type: "Iconic Dessert",
-            image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80",
-            desc: "A generational favorite since 1957—creamy homemade ice cream packed with generous chunks of cheddar cheese, roasted cashews, and sweet macapuno."
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Cheese_and_chocolate_sorbetes_(Philippines).jpg?width=900",
+            sourceName: "Wikimedia Commons — Philippine Cheese Sorbetes",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Cheese_and_chocolate_sorbetes_(Philippines).jpg",
+            desc: "Classic favorite mula pa noong 1957—super creamy na homemade ice cream na puno ng cheese bits, roasted cashews, at matamis na macapuno."
         },
         {
+            id: "cuisine-5",
             title: "Native Kakanin & Highland Coffee",
             origin: "Gabaldon & Carranglan",
             type: "Merienda",
-            image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
-            desc: "Smoky grilled glutinous rice treats, bibingka, and warm local brewed coffee enjoyed best after a cool morning hike or road trip."
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Bibingka_with_its_usual_toppings.jpg?width=900",
+            sourceName: "Wikimedia Commons — Markalthea 15 (Filipino Bibingka)",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Bibingka_with_its_usual_toppings.jpg",
+            desc: "Mainit na bibingka at kakanin na may keso at niyog, sabayan pa ng bagong timplang kape—the best na pang-merienda pagkatapos ng hike o road trip."
         }
     ];
 
-    /* ==================== 4. RESTAURANTS DATA (ALL WITH PICTURES) ==================== */
+    /* ==================== 4. RESTAURANTS DATA (TAGLISH DESCRIPTIONS + SOURCES) ==================== */
     const restaurantItems = [
         {
+            id: "resto-0",
             title: "Hapag Vicentico’s",
             location: "Cabanatuan City",
             specialty: "Filipino Heritage Dining",
             price: "₱₱ • Family-Friendly",
-            image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
-            desc: "A celebrated Cabanatuan institution known for elevated Filipino comfort food—famous for its crispy pata, kare-kare, and signature batotay platters."
+            image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+            sourceName: "Unsplash — Restaurant Dining Ambience",
+            sourceUrl: "https://unsplash.com",
+            desc: "Kilalang dining institution sa Cabanatuan para sa elevated Filipino comfort food—patok na patok dito ang crispy pata, kare-kare, at signature batotay platters."
         },
         {
+            id: "resto-1",
             title: "Puno’s Ice Cream & Sherbet",
             location: "Cabanatuan City (Multiple Branches)",
             specialty: "Artisanal Ice Cream & Sherbet",
             price: "₱ • Must-Stop Dessert",
-            image: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=900&q=80",
-            desc: "Nueva Ecija’s most iconic homegrown creamery. Stop by for a scoop of Cheese Cashew Macapuno or refreshing Buko Lychee sherbet to beat the heat."
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Cheese_and_chocolate_sorbetes_(Philippines).jpg?width=1200",
+            sourceName: "Wikimedia Commons — Philippine Cheese Sorbetes",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Cheese_and_chocolate_sorbetes_(Philippines).jpg",
+            desc: "Ang pinaka-iconic na homegrown creamery ng Nueva Ecija! Huwag kalimutang umorder ng Cheese Cashew Macapuno o refreshing Buko Lychee sherbet pangontra sa init."
         },
         {
+            id: "resto-2",
             title: "Edna’s Cakeland & Bistro",
             location: "Cabanatuan City",
             specialty: "Cakes, Pastries & All-Day Dining",
             price: "₱₱ • Cozy Cafe",
-            image: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=80",
-            desc: "A beloved local bakery-restaurant serving rich chocolate cakes, cheesy ensaymada, and hearty pasta and rice meals perfect for merienda."
+            image: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1200&q=80",
+            sourceName: "Unsplash — Cafe & Pastry Interior",
+            sourceUrl: "https://unsplash.com",
+            desc: "Paboritong bakery-bistro ng mga lokal dahil sa rich chocolate cakes, malambot na cheesy ensaymada, at nakakabusog na pasta at rice meals."
         },
         {
+            id: "resto-3",
             title: "Highland Bali Lakeside Dining",
             location: "Pantabangan, Nueva Ecija",
             specialty: "Scenic Resort & Filipino-Asian Cuisine",
             price: "₱₱₱ • Panoramic View",
-            image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80",
-            desc: "Dine overlooking the tranquil blue waters of Pantabangan Lake with cool mountain winds, fresh grilled tilapia, and Balinese-inspired ambiance."
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Pantabangan_Lake_Nueva_Ecija.jpg?width=1200",
+            sourceName: "Wikimedia Commons — Pantabangan Lake View",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Pantabangan_Lake_Nueva_Ecija.jpg",
+            desc: "Kumain habang tanaw ang asul na Pantabangan Lake at nakakalma na hangin mula sa bundok—perfect pang-special occasion o chill weekend lunch."
         },
         {
+            id: "resto-4",
             title: "Joey’s Restaurant",
             location: "Cabanatuan City",
             specialty: "Classic Steaks & Filipino Favorites",
             price: "₱₱ • Timeless Local Spot",
-            image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80",
-            desc: "A longtime favorite of Novo Ecijano families, serving sizzling plates, classic fried chicken, and comforting heirloom dishes in a warm setting."
+            image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+            sourceName: "Unsplash — Classic Dining Room",
+            sourceUrl: "https://unsplash.com",
+            desc: "Matagal nang go-to ng mga pamilyang Novo Ecijano para sa sizzling plates, classic fried chicken, at lutong-bahay na comfort dishes."
         },
         {
+            id: "resto-5",
             title: "Bongabon & Gabaldon Roadside Grills",
             location: "Bongabon – Gabaldon Highway",
             specialty: "Charcoal-Grilled Meats & River Fish",
             price: "₱ • Barkada Stopover",
-            image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
-            desc: "Open-air eateries along the Sierra Madre foothills offering freshly grilled hito, sinigang sa bayabas, and farm-fresh vegetables straight from nearby fields."
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Fried_Tilapia.jpg?width=1200",
+            sourceName: "Wikimedia Commons — Isenna (Freshwater Fish Dish)",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Fried_Tilapia.jpg",
+            desc: "Mga preskong kainan sa gilid ng daan pa-Sierra Madre na may bagong ihaw na hito, sinigang sa bayabas, at farm-fresh gulay."
         }
     ];
 
-    /* ==================== 5. FULL GALLERY DATA (ALL WITH PICTURES) ==================== */
+    /* ==================== 5. FULL GALLERY DATA (REAL IMAGES + SOURCES + TAGLISH) ==================== */
     const galleryPhotos = [
-        { title: "Minalungao Emerald Canyon", category: "nature", label: "Nature • General Tinio", image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" },
-        { title: "Pantabangan Highland Reservoir", category: "nature", label: "Nature • Pantabangan", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" },
-        { title: "Gabaldon Forest Cascades", category: "nature", label: "Nature • Gabaldon", image: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=900&q=80" },
-        { title: "Mt. 387 Sunrise Ridges", category: "nature", label: "Nature • Carranglan", image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=900&q=80" },
-        { title: "Golden Rice Fields of Nueva Ecija", category: "culture", label: "Heritage • Rice Granary", image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" },
-        { title: "Festive Street Celebrations", category: "culture", label: "Culture • Festivals", image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=80" },
-        { title: "Historic Stone Church Facades", category: "culture", label: "Heritage • Gapan City", image: "https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=900&q=80" },
-        { title: "Camp Pangatian Memorial Grounds", category: "culture", label: "History • Cabanatuan", image: "https://images.unsplash.com/photo-1565060169194-19fabf63012c?auto=format&fit=crop&w=900&q=80" },
-        { title: "Savory Batotay & Longganisa Feast", category: "food", label: "Cuisine • Cabanatuan", image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" },
-        { title: "Carabao Milk Pastillas & Sweets", category: "food", label: "Cuisine • Muñoz", image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80" },
-        { title: "Homegrown Ice Cream & Sherbet", category: "food", label: "Dining • Cabanatuan", image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80" },
-        { title: "Lakeside Dining Experience", category: "food", label: "Dining • Pantabangan", image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80" }
+        {
+            title: "Minalungao Emerald Canyon",
+            category: "nature",
+            label: "Nature • General Tinio",
+            desc: "Malinaw na berdeng ilog at naglalakihang limestone cliffs na paboritong puntahan sa General Tinio.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Minalungao_National_Park_2.jpg?width=1000",
+            sourceName: "Wikimedia Commons — Minalungao National Park",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Minalungao_National_Park_2.jpg"
+        },
+        {
+            title: "Pantabangan Highland Reservoir",
+            category: "nature",
+            label: "Nature • Pantabangan",
+            desc: "Tahimik at malawak na tubig ng Pantabangan Lake na pinalilibutan ng kabundukan.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Pantabangan_Lake_Nueva_Ecija.jpg?width=1000",
+            sourceName: "Wikimedia Commons — Pantabangan Lake",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Pantabangan_Lake_Nueva_Ecija.jpg"
+        },
+        {
+            title: "Dupinga River & Gabaldon Foothills",
+            category: "nature",
+            label: "Nature • Gabaldon",
+            desc: "Malamig at malinaw na tubig ng Dupinga River na sakto sa weekend picnic ng buong pamilya.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/DupingaRiverjf9490_10.JPG?width=1000",
+            sourceName: "Wikimedia Commons — Ramon FVelasquez",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:DupingaRiverjf9490_10.JPG"
+        },
+        {
+            title: "Jaen & San Leonardo Rice Fields",
+            category: "nature",
+            label: "Nature • Rice Granary",
+            desc: "Preskong berdeng palayan na nagpapaalala kung bakit Nueva Ecija ang Rice Granary of the Philippines.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Jaen_rice_field_(Jaen,_Nueva_Ecija;_07-23-2023).jpg?width=1000",
+            sourceName: "Wikimedia Commons — Patrickroque01",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Jaen_rice_field_(Jaen,_Nueva_Ecija;_07-23-2023).jpg"
+        },
+        {
+            title: "Taong Putik Festival Devotees",
+            category: "culture",
+            label: "Culture • Aliaga",
+            desc: "Taunang debosyon sa Aliaga tuwing June 24 bilang pasasalamat kay St. John the Baptist.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Taong-Putik_Festival.jpg?width=1000",
+            sourceName: "Wikimedia Commons — Taong-Putik Festival",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Taong-Putik_Festival.jpg"
+        },
+        {
+            title: "Three Kings Parish Church",
+            category: "culture",
+            label: "Heritage • Gapan City",
+            desc: "Makasaysayang simbahan sa Gapan City na kilala sa lumang arkitektura at makapal na batong pader.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Gapan_Church.jpg?width=1000",
+            sourceName: "Wikimedia Commons — Elmer B. Domingo",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Gapan_Church.jpg"
+        },
+        {
+            title: "Cabanatuan Cathedral",
+            category: "culture",
+            label: "Heritage • Cabanatuan City",
+            desc: "Ang St. Nicholas of Tolentine Cathedral sa gitna ng Cabanatuan na saksi sa mahahalagang yugto ng kasaysayan.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Cabanatuan_Cathedral,_Nueva_Ecija,_April_2023.jpg?width=1000",
+            sourceName: "Wikimedia Commons — Cabanatuan Cathedral",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Cabanatuan_Cathedral,_Nueva_Ecija,_April_2023.jpg"
+        },
+        {
+            title: "Camp Pangatian Memorial Grounds",
+            category: "culture",
+            label: "History • Cabanatuan",
+            desc: "Dambana ng alaala at kabayanihan mula sa makasaysayang Great Raid ng 1945.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Camp_Pangatian_Shrine_in_Cabanatuan_City,_Nueva_Eija.JPG?width=1000",
+            sourceName: "Wikimedia Commons — Camp Pangatian Shrine",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Camp_Pangatian_Shrine_in_Cabanatuan_City,_Nueva_Eija.JPG"
+        },
+        {
+            title: "Savory Batotay & Longganisa Feast",
+            category: "food",
+            label: "Cuisine • Cabanatuan",
+            desc: "Malinamnam na longganisa at batotay na best partner ng mainit na sinangag sa umaga.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Longganisa_two_varieties.jpg?width=1000",
+            sourceName: "Wikimedia Commons — Longganisa Varieties",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Longganisa_two_varieties.jpg"
+        },
+        {
+            title: "Carabao Milk Pastillas & Kesong Puti",
+            category: "food",
+            label: "Cuisine • Muñoz & San Jose",
+            desc: "Creamy pastillas at fresh white cheese mula sa purong gatas ng kalabaw.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kesong_puti.jpg?width=1000",
+            sourceName: "Wikimedia Commons — Kesong Puti",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Kesong_puti.jpg"
+        },
+        {
+            title: "Homegrown Cheese Ice Cream & Sherbet",
+            category: "food",
+            label: "Dining • Cabanatuan",
+            desc: "Pampalamig na homemade cheese sorbetes na patok sa lahat ng edad.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Cheese_and_chocolate_sorbetes_(Philippines).jpg?width=1000",
+            sourceName: "Wikimedia Commons — Philippine Cheese Sorbetes",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Cheese_and_chocolate_sorbetes_(Philippines).jpg"
+        },
+        {
+            title: "Traditional Bibingka Merienda",
+            category: "food",
+            label: "Cuisine • Nueva Ecija",
+            desc: "Bagong lutong bibingka na may keso, itlog na maalat, at niyog—perfect kasama ng kape.",
+            image: "https://commons.wikimedia.org/wiki/Special:FilePath/Bibingka_with_its_usual_toppings.jpg?width=1000",
+            sourceName: "Wikimedia Commons — Markalthea 15",
+            sourceUrl: "https://commons.wikimedia.org/wiki/File:Bibingka_with_its_usual_toppings.jpg"
+        }
     ];
 
-    /* ==================== RENDER STATIC SUBPAGE GRIDS ==================== */
+    /* ==================== 6. MEMBERS YEARBOOK & INTERACTIVE DONUT CHART ==================== */
+    const STORAGE_KEY = 'lakbay_ne_members_v1';
+
+    /* Replace placeholder names, mottos, roles, or photo URLs here */
+    const defaultMembersData = [
+        { id: 1,  name: "Member 01 Name", motto: "“Travel far enough to meet yourself and love your roots.”",      role: "Project Lead & Planning",   contribution: 10, color: "#0038A8", photo: "" },
+        { id: 2,  name: "Member 02 Name", motto: "“Proud Novo Ecijano, sharing stories one destination at a time.”", role: "UI/UX & Styling",           contribution: 10, color: "#FCD116", photo: "" },
+        { id: 3,  name: "Member 03 Name", motto: "“Good design brings culture and heritage closer to home.”",       role: "Frontend Development",      contribution: 10, color: "#CE1126", photo: "" },
+        { id: 4,  name: "Member 04 Name", motto: "“Every road in Nueva Ecija leads to a story worth telling.”",     role: "Destinations Research",     contribution: 10, color: "#008751", photo: "" },
+        { id: 5,  name: "Member 05 Name", motto: "“Preserve the past, celebrate the vibrant present.”",              role: "Culture & Heritage Writer", contribution: 10, color: "#008B9A", photo: "" },
+        { id: 6,  name: "Member 06 Name", motto: "“You haven’t truly traveled until you’ve tasted the local food.”", role: "Cuisine & Food Curation",   contribution: 10, color: "#0B1F3A", photo: "" },
+        { id: 7,  name: "Member 07 Name", motto: "“Capturing moments that make people fall in love with Luzon.”",    role: "Gallery & Media Sourcing",  contribution: 10, color: "#E08E00", photo: "" },
+        { id: 8,  name: "Member 08 Name", motto: "“Smart planning turns simple trips into core memories.”",          role: "Travel Guide & Budgeting",  contribution: 10, color: "#2563EB", photo: "" },
+        { id: 9,  name: "Member 09 Name", motto: "“Teamwork makes every journey lighter and brighter.”",            role: "Content Editing & Taglish", contribution: 10, color: "#E11D48", photo: "" },
+        { id: 10, name: "Member 10 Name", motto: "“Keep exploring, keep learning, and always love local.”",          role: "QA Testing & Documentation",contribution: 10, color: "#14B8A6", photo: "" }
+    ];
+
+    function loadMembersState() {
+        try {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+            if (Array.isArray(saved) && saved.length === 10) return saved;
+        } catch (e) {}
+        return defaultMembersData.map(m => ({ ...m }));
+    }
+
+    function saveMembersState() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(membersState));
+        } catch (e) {}
+    }
+
+    let membersState = loadMembersState();
+    let hoveredMemberIndex = null;
+
+    function renderYearbookGrid() {
+        const grid = document.getElementById('yearbookGrid');
+        grid.innerHTML = membersState.map((m, idx) => `
+            <div class="yearbook-card" style="--member-color: ${m.color};">
+                <div class="yearbook-frame" data-member-idx="${idx}" title="Click to upload a photo for ${m.name}">
+                    <span class="yearbook-num">#${String(idx + 1).padStart(2, '0')}</span>
+                    <div class="yearbook-frame-inner">
+                        ${m.photo
+                            ? `<img src="${m.photo}" alt="${m.name}">`
+                            : `<div class="yearbook-placeholder">
+                                   <svg viewBox="0 0 24 24" aria-hidden="true">
+                                       <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/>
+                                   </svg>
+                                   <span>Photo Placeholder</span>
+                               </div>`
+                        }
+                        <span class="yearbook-upload-hint">Click to Upload Photo</span>
+                    </div>
+                    <input type="file" accept="image/*" class="hidden member-file-input" data-member-idx="${idx}">
+                </div>
+                <h3 class="yearbook-name" id="yb-name-${idx}">${m.name}</h3>
+                <p class="yearbook-motto">${m.motto}</p>
+            </div>
+        `).join('');
+
+        grid.querySelectorAll('.yearbook-frame').forEach(frame => {
+            const idx = Number(frame.dataset.memberIdx);
+            const fileInput = frame.querySelector('.member-file-input');
+            frame.addEventListener('click', (e) => {
+                if (e.target !== fileInput) fileInput.click();
+            });
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files && e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = () => {
+                    membersState[idx].photo = reader.result;
+                    saveMembersState();
+                    renderYearbookGrid();
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+    }
+
+    function updateDonutCenter(total) {
+        const kickerEl = document.getElementById('donutCenterKicker');
+        const valueEl = document.getElementById('donutCenterValue');
+        const subEl = document.getElementById('donutCenterSub');
+
+        if (hoveredMemberIndex !== null && membersState[hoveredMemberIndex]) {
+            const m = membersState[hoveredMemberIndex];
+            const val = Math.max(0, Number(m.contribution) || 0);
+            const pct = total > 0 ? (val / total) * 100 : 0;
+            kickerEl.textContent = m.name;
+            valueEl.textContent = `${pct.toFixed(1)}%`;
+            subEl.textContent = `${m.role} (${val} pts)`;
+        } else {
+            kickerEl.textContent = 'Total Contribution';
+            valueEl.textContent = total > 0 ? '100%' : '0%';
+            subEl.textContent = `${total} pts • 10 Members`;
+        }
+    }
+
+    function updateDonutChart() {
+        const total = membersState.reduce((sum, m) => sum + Math.max(0, Number(m.contribution) || 0), 0);
+        const radius = 112;
+        const circumference = 2 * Math.PI * radius;
+        const slicesGroup = document.getElementById('donutSlices');
+        const legendEl = document.getElementById('donutLegend');
+
+        let cumulative = 0;
+        slicesGroup.innerHTML = membersState.map((m, idx) => {
+            const val = Math.max(0, Number(m.contribution) || 0);
+            const pct = total > 0 ? (val / total) * 100 : 0;
+            const dashLength = total > 0 ? (val / total) * circumference : 0;
+            const offset = -cumulative;
+            cumulative += dashLength;
+
+            const pctSpan = document.getElementById(`contrib-pct-${idx}`);
+            if (pctSpan) pctSpan.textContent = `${pct.toFixed(1)}%`;
+
+            if (dashLength <= 0) return '';
+            return `
+                <circle
+                    class="donut-slice ${hoveredMemberIndex === idx ? 'active-slice' : ''}"
+                    cx="160" cy="160" r="${radius}"
+                    stroke="${m.color}"
+                    stroke-dasharray="${dashLength.toFixed(3)} ${circumference.toFixed(3)}"
+                    stroke-dashoffset="${offset.toFixed(3)}"
+                    data-idx="${idx}">
+                </circle>
+            `;
+        }).join('');
+
+        legendEl.innerHTML = membersState.map((m, idx) => {
+            const val = Math.max(0, Number(m.contribution) || 0);
+            const pct = total > 0 ? (val / total) * 100 : 0;
+            return `
+                <div class="legend-item" data-idx="${idx}">
+                    <div class="legend-left">
+                        <span class="legend-swatch" style="background: ${m.color};"></span>
+                        <span class="legend-name">${m.name}</span>
+                    </div>
+                    <span class="legend-pct">${pct.toFixed(1)}%</span>
+                </div>
+            `;
+        }).join('');
+
+        document.getElementById('contribTotalPill').textContent =
+            total > 0 ? `Total: ${total} pts (100.0%)` : 'Total: 0 pts (0.0%)';
+
+        updateDonutCenter(total);
+
+        const bindHover = (el) => {
+            const idx = Number(el.dataset.idx);
+            el.addEventListener('mouseenter', () => {
+                hoveredMemberIndex = idx;
+                slicesGroup.querySelectorAll('.donut-slice').forEach(s => {
+                    s.classList.toggle('active-slice', Number(s.dataset.idx) === idx);
+                });
+                updateDonutCenter(total);
+            });
+            el.addEventListener('mouseleave', () => {
+                hoveredMemberIndex = null;
+                slicesGroup.querySelectorAll('.donut-slice').forEach(s => s.classList.remove('active-slice'));
+                updateDonutCenter(total);
+            });
+        };
+
+        slicesGroup.querySelectorAll('.donut-slice').forEach(bindHover);
+        legendEl.querySelectorAll('.legend-item').forEach(bindHover);
+    }
+
+    function renderContribControls() {
+        const listEl = document.getElementById('contribInputsList');
+        listEl.innerHTML = membersState.map((m, idx) => `
+            <div class="contrib-row">
+                <div class="contrib-color-bar" style="background: ${m.color};"></div>
+                <input type="text" class="contrib-input" data-field="name" data-idx="${idx}" value="${m.name}" aria-label="Member ${idx + 1} name" placeholder="Member Name">
+                <input type="text" class="contrib-input" data-field="role" data-idx="${idx}" value="${m.role}" aria-label="Member ${idx + 1} work attribution" placeholder="Work Attribution">
+                <input type="range" class="contrib-slider" min="0" max="100" step="1" value="${Math.min(100, m.contribution)}" id="contrib-slider-${idx}" data-idx="${idx}" aria-label="Member ${idx + 1} contribution slider">
+                <input type="number" class="contrib-input contrib-num-input" min="0" max="1000" step="1" value="${m.contribution}" id="contrib-num-${idx}" data-idx="${idx}" aria-label="Member ${idx + 1} contribution value">
+                <span class="contrib-pct-badge" id="contrib-pct-${idx}">10.0%</span>
+            </div>
+        `).join('');
+
+        listEl.querySelectorAll('input[data-field="name"]').forEach(input => {
+            input.addEventListener('input', (e) => {
+                const idx = Number(e.target.dataset.idx);
+                membersState[idx].name = e.target.value || `Member ${String(idx + 1).padStart(2, '0')}`;
+                const ybName = document.getElementById(`yb-name-${idx}`);
+                if (ybName) ybName.textContent = membersState[idx].name;
+                saveMembersState();
+                updateDonutChart();
+            });
+        });
+
+        listEl.querySelectorAll('input[data-field="role"]').forEach(input => {
+            input.addEventListener('input', (e) => {
+                const idx = Number(e.target.dataset.idx);
+                membersState[idx].role = e.target.value;
+                saveMembersState();
+            });
+        });
+
+        listEl.querySelectorAll('.contrib-slider').forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const idx = Number(e.target.dataset.idx);
+                const val = Math.max(0, Number(e.target.value) || 0);
+                membersState[idx].contribution = val;
+                document.getElementById(`contrib-num-${idx}`).value = val;
+                saveMembersState();
+                updateDonutChart();
+            });
+        });
+
+        listEl.querySelectorAll('.contrib-num-input').forEach(numInput => {
+            numInput.addEventListener('input', (e) => {
+                const idx = Number(e.target.dataset.idx);
+                const val = Math.max(0, Number(e.target.value) || 0);
+                membersState[idx].contribution = val;
+                document.getElementById(`contrib-slider-${idx}`).value = Math.min(100, val);
+                saveMembersState();
+                updateDonutChart();
+            });
+        });
+    }
+
+    document.getElementById('equalContribBtn').addEventListener('click', () => {
+        membersState.forEach(m => { m.contribution = 10; });
+        saveMembersState();
+        renderContribControls();
+        updateDonutChart();
+    });
+
+    document.getElementById('resetContribBtn').addEventListener('click', () => {
+        membersState = defaultMembersData.map(m => ({ ...m }));
+        saveMembersState();
+        renderYearbookGrid();
+        renderContribControls();
+        updateDonutChart();
+    });
+
+    /* ==================== HELPER: CLICKABLE TOP CAROUSEL BUILDER ==================== */
+    function initSpotlightCarousel({ trackId, dotsId, prevId, nextId, slides, onSlideClick }) {
+        const track = document.getElementById(trackId);
+        const dotsWrap = document.getElementById(dotsId);
+        const prevBtn = document.getElementById(prevId);
+        const nextBtn = document.getElementById(nextId);
+        let currentIndex = 0;
+
+        track.innerHTML = slides.map((s, idx) => `
+            <div class="page-carousel-slide" data-index="${idx}" style="background-image: url('${s.image}');">
+                <div class="page-slide-content">
+                    <span class="page-slide-badge">${s.badge}</span>
+                    <h2>${s.title}</h2>
+                    <p>${s.desc}</p>
+                    <span class="page-slide-action">${s.cta} &#8594;</span>
+                    <div class="img-source-dark">
+                        Source: <a href="${s.sourceUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${s.sourceName}</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        dotsWrap.innerHTML = slides.map((_, idx) => `
+            <button class="carousel-dot ${idx === 0 ? 'active' : ''}" data-dot="${idx}" aria-label="Slide ${idx + 1}"></button>
+        `).join('');
+
+        const dots = Array.from(dotsWrap.querySelectorAll('.carousel-dot'));
+
+        function goTo(index) {
+            currentIndex = (index + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+        }
+
+        prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(currentIndex - 1); });
+        nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(currentIndex + 1); });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => goTo(Number(dot.dataset.dot)));
+        });
+
+        track.querySelectorAll('.page-carousel-slide').forEach(slideEl => {
+            slideEl.addEventListener('click', () => {
+                const idx = Number(slideEl.dataset.index);
+                onSlideClick(slides[idx], idx);
+            });
+        });
+    }
+
+    function scrollToAndHighlight(cardId) {
+        const target = document.getElementById(cardId);
+        if (!target) return;
+        document.querySelectorAll('.entry-highlight').forEach(el => el.classList.remove('entry-highlight'));
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.classList.add('entry-highlight');
+        setTimeout(() => target.classList.remove('entry-highlight'), 2400);
+    }
+
+    /* ==================== LIGHTBOX MODAL ==================== */
+    const lightbox = document.getElementById('photoLightbox');
+    function openLightbox(title, label, image, desc, sourceName, sourceUrl) {
+        document.getElementById('lightboxImg').src = image;
+        document.getElementById('lightboxImg').alt = title;
+        document.getElementById('lightboxLabel').textContent = label;
+        document.getElementById('lightboxTitle').textContent = title;
+        document.getElementById('lightboxDesc').textContent = desc;
+        document.getElementById('lightboxSource').innerHTML = `Source: <a href="${sourceUrl}" target="_blank" rel="noopener">${sourceName}</a>`;
+        lightbox.classList.remove('hidden');
+    }
+
+    document.getElementById('closeLightbox').addEventListener('click', () => lightbox.classList.add('hidden'));
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) lightbox.classList.add('hidden');
+    });
+
+    /* ==================== RENDER SUBPAGE GRIDS & CAROUSELS ==================== */
     function populateCuisineAndRestaurants() {
         document.getElementById('cuisineGrid').innerHTML = cuisineItems.map(item => `
-            <div class="entry-card">
+            <div class="entry-card" id="${item.id}">
                 <div class="entry-img">
                     <img src="${item.image}" alt="${item.title}">
                     <span class="entry-pill">${item.origin}</span>
@@ -1974,11 +2634,14 @@
                     </div>
                     <p>${item.desc}</p>
                 </div>
+                <div class="img-source">
+                    Source: <a href="${item.sourceUrl}" target="_blank" rel="noopener">${item.sourceName}</a>
+                </div>
             </div>
         `).join('');
 
         document.getElementById('restaurantsGrid').innerHTML = restaurantItems.map(item => `
-            <div class="entry-card">
+            <div class="entry-card" id="${item.id}">
                 <div class="entry-img">
                     <img src="${item.image}" alt="${item.title}">
                     <span class="entry-pill">${item.location}</span>
@@ -1991,8 +2654,65 @@
                     </div>
                     <p>${item.desc}</p>
                 </div>
+                <div class="img-source">
+                    Source: <a href="${item.sourceUrl}" target="_blank" rel="noopener">${item.sourceName}</a>
+                </div>
             </div>
         `).join('');
+
+        initSpotlightCarousel({
+            trackId: 'cuisineCarouselTrack',
+            dotsId: 'cuisineCarouselDots',
+            prevId: 'cuisinePrev',
+            nextId: 'cuisineNext',
+            slides: cuisineItems.slice(0, 4).map(item => ({
+                id: item.id,
+                badge: `${item.origin} • ${item.type}`,
+                title: item.title,
+                desc: item.desc,
+                image: item.image,
+                cta: 'Tingnan ang Dish',
+                sourceName: item.sourceName,
+                sourceUrl: item.sourceUrl
+            })),
+            onSlideClick: (slide) => scrollToAndHighlight(slide.id)
+        });
+
+        initSpotlightCarousel({
+            trackId: 'restoCarouselTrack',
+            dotsId: 'restoCarouselDots',
+            prevId: 'restoPrev',
+            nextId: 'restoNext',
+            slides: restaurantItems.slice(0, 4).map(item => ({
+                id: item.id,
+                badge: `${item.location} • ${item.price}`,
+                title: item.title,
+                desc: item.desc,
+                image: item.image,
+                cta: 'Tingnan ang Restaurant',
+                sourceName: item.sourceName,
+                sourceUrl: item.sourceUrl
+            })),
+            onSlideClick: (slide) => scrollToAndHighlight(slide.id)
+        });
+
+        const featuredGallery = [galleryPhotos[0], galleryPhotos[4], galleryPhotos[5], galleryPhotos[8]];
+        initSpotlightCarousel({
+            trackId: 'galleryCarouselTrack',
+            dotsId: 'galleryCarouselDots',
+            prevId: 'galleryPrev',
+            nextId: 'galleryNext',
+            slides: featuredGallery.map(item => ({
+                badge: item.label,
+                title: item.title,
+                desc: item.desc,
+                image: item.image,
+                cta: 'Buksan ang Full Photo',
+                sourceName: item.sourceName,
+                sourceUrl: item.sourceUrl
+            })),
+            onSlideClick: (slide) => openLightbox(slide.title, slide.badge, slide.image, slide.desc, slide.sourceName, slide.sourceUrl)
+        });
     }
 
     function renderGallery(filter = 'all') {
@@ -2000,15 +2720,27 @@
             ? galleryPhotos
             : galleryPhotos.filter(p => p.category === filter);
 
-        document.getElementById('fullGalleryGrid').innerHTML = filtered.map(photo => `
+        document.getElementById('fullGalleryGrid').innerHTML = filtered.map((photo, index) => `
             <div class="gallery-card">
-                <img src="${photo.image}" alt="${photo.title}">
-                <div class="gallery-caption">
-                    <span>${photo.label}</span>
-                    <strong>${photo.title}</strong>
+                <div class="gallery-media" data-photo-index="${index}">
+                    <img src="${photo.image}" alt="${photo.title}">
+                    <div class="gallery-caption">
+                        <span>${photo.label}</span>
+                        <strong>${photo.title}</strong>
+                    </div>
+                </div>
+                <div class="img-source">
+                    Source: <a href="${photo.sourceUrl}" target="_blank" rel="noopener">${photo.sourceName}</a>
                 </div>
             </div>
         `).join('');
+
+        document.querySelectorAll('#fullGalleryGrid .gallery-media').forEach((el, idx) => {
+            el.addEventListener('click', () => {
+                const p = filtered[idx];
+                openLightbox(p.title, p.label, p.image, p.desc, p.sourceName, p.sourceUrl);
+            });
+        });
     }
 
     document.getElementById('galleryFilters').addEventListener('click', (e) => {
@@ -2026,7 +2758,8 @@
         culture: document.getElementById('culturePage'),
         cuisine: document.getElementById('cuisinePage'),
         restaurants: document.getElementById('restaurantsPage'),
-        gallery: document.getElementById('galleryPage')
+        gallery: document.getElementById('galleryPage'),
+        members: document.getElementById('membersPage')
     };
 
     function hideAllViews() {
@@ -2047,6 +2780,7 @@
         document.getElementById('detailBreadcrumb').textContent = `Home / Destinations / ${place.title}`;
         document.getElementById('detailTitle').textContent = place.title;
         document.getElementById('detailTagline').textContent = place.tagline;
+        document.getElementById('detailHeroSource').innerHTML = `Photo Source: <a href="${place.sourceUrl}" target="_blank" rel="noopener">${place.sourceName}</a>`;
 
         document.getElementById('factLocation').textContent = place.municipality;
         document.getElementById('factCategory').textContent = place.category;
@@ -2081,6 +2815,7 @@
         document.getElementById('cultureBreadcrumb').textContent = data.breadcrumb;
         document.getElementById('cultureTitle').textContent = data.title;
         document.getElementById('cultureTagline').textContent = data.tagline;
+        document.getElementById('cultureHeroSource').innerHTML = `Photo Source: <a href="${data.heroSourceUrl}" target="_blank" rel="noopener">${data.heroSourceName}</a>`;
         document.getElementById('cultureOverview').innerHTML = data.overview.map(p => `<p>${p}</p>`).join('');
         document.getElementById('cultureGridKicker').textContent = data.gridKicker;
         document.getElementById('cultureGridHeading').textContent = data.gridHeading;
@@ -2097,6 +2832,9 @@
                         ${entry.tags.map(t => `<span class="meta-chip">${t}</span>`).join('')}
                     </div>
                     <p>${entry.desc}</p>
+                </div>
+                <div class="img-source">
+                    Source: <a href="${entry.sourceUrl}" target="_blank" rel="noopener">${entry.sourceName}</a>
                 </div>
             </div>
         `).join('');
@@ -2142,13 +2880,15 @@
             showStaticSubpage('restaurants', 'Restaurants', '#page/restaurants');
         } else if (hash === '#page/gallery') {
             showStaticSubpage('gallery', 'Photo Gallery', '#page/gallery');
+        } else if (hash === '#page/members') {
+            showStaticSubpage('members', 'Members & Contributions', '#page/members');
         } else {
             const sectionId = hash.replace('#', '');
             showHomeView(sectionId && sectionId !== 'home' ? sectionId : null);
         }
     }
 
-    /* ==================== CAROUSEL CONTROLS ==================== */
+    /* ==================== HOMEPAGE DESTINATIONS CAROUSEL ==================== */
     const viewport = document.getElementById('carouselViewport');
     const track = document.getElementById('carouselTrack');
     const cards = Array.from(track.querySelectorAll('.card'));
@@ -2197,17 +2937,26 @@
 
     viewport.addEventListener('scroll', updateActiveDot);
 
-    /* ==================== INIT & CONTACT FORM ==================== */
+    /* ==================== LIGHTBOX ESC KEY, CONTACT FORM & INIT ==================== */
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+            lightbox.classList.add('hidden');
+        }
+    });
+
     document.getElementById('contactForm').addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('Salamat! Your message has been sent to Lakbay, Novo Ecijano.');
+        alert('Maraming salamat! Naipadala na ang message mo sa Lakbay, Novo Ecijano.');
         e.target.reset();
     });
 
+    renderYearbookGrid();
+    renderContribControls();
+    updateDonutChart();
     populateCuisineAndRestaurants();
     renderGallery('all');
     window.addEventListener('hashchange', handleRoute);
-    window.addEventListener('DOMContentLoaded', handleRoute);
+    handleRoute();
 </script>
 
 </body>
